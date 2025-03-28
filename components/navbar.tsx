@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi"; 
-import LOGO from "../../Assests/SVG/Logo.svg";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,7 +13,7 @@ const Navbar: React.FC = () => {
       
         <Link href="/">
           <Image
-            src={LOGO}
+            src="/images/logo.svg"
             alt="Farm Natura Logo"
             width={150}
             height={50}
@@ -23,7 +22,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-8 text-[#333] font-semibold ml-auto">
+        <ul className="md:flex space-x-8 text-[#5C5C5C] font-semibold ml-auto">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About</Link></li>
           <li><Link href="/highlights">Highlights</Link></li>
@@ -32,7 +31,7 @@ const Navbar: React.FC = () => {
 
         {/* Contact Us Button (Hidden on Mobile) */}
         <Link href="/contact">
-          <button className="hidden md:block border border-green-600 text-green-700 px-10 py-2 rounded-md hover:bg-green-100 transition lg:ml-22">
+          <button className="md:block border border-green-600 text-green-700 px-10 py-2 rounded-md hover:bg-green-100 transition lg:ml-22">
             Contact Us
           </button>
         </Link>
