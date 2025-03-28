@@ -1,0 +1,124 @@
+"use client";
+
+import React, { useState } from "react";
+import Image from "next/image";
+
+const FarmLandOptions = () => {
+  const [activeTab, setActiveTab] = useState<"plot" | "pricing">("plot");
+
+  const cards = [
+    {
+      image: "/images/farmland-1.svg",
+      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+    },
+    {
+      image: "/images/farmland-2.svg",
+      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+    },
+    {
+      image: "/images/farmland-3.svg",
+      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+    },
+  ];
+
+  return (
+    <section className="relative bg-[#FFFFFF] py-12 px-6 md:px-16 h-[1200px]">
+      <div
+        className="absolute bottom-0 left-0 w-full h-[300px] bg-no-repeat bg-cover bg-bottom"
+        style={{ backgroundImage: "url('/images/farmland-6.svg')" }}
+      ></div>
+
+      <Image
+        src="/images/farmland-4.svg"
+        alt="Top Left Decor"
+        width={250}
+        height={299}
+        className="absolute top-0 left-[61px]"
+      />
+      <Image
+        src="/images/farmland-5.svg"
+        alt="Top Right Decor"
+        width={250}
+        height={250}
+        className="absolute top-0 right-0"
+      />
+
+      {/* Header */}
+      <div className="flex flex-col items-center text-center relative z-10">
+        <h2
+          className="flex items-center text-center justify-center text-3xl md:text-4xl font-bold text-gray-800"
+          style={{ fontFamily: "Jost", fontWeight: 600, fontSize: "40px" }}
+        >
+          Farm Land Options
+          <img
+            src="/images/leave.svg"
+            alt="leave-img"
+            width={110}
+            height={81}
+          />
+        </h2>
+
+        {/* Tab Section */}
+        <div
+          className="flex items-center justify-center space-x-4 mt-6"
+          style={{ fontFamily: "Sofia Pro", fontWeight: 400, fontSize: "18px" }}
+        >
+          <button
+            className={`px-6 py-2 w-[240px] rounded-lg transition font-medium text-sm md:text-base ${
+              activeTab === "plot"
+                ? "bg-[#358B6C] text-white"
+                : "bg-transparent text-green-700"
+            }`}
+            onClick={() => setActiveTab("plot")}
+          >
+            Plot Sizes
+          </button>
+          <div className="h-15 w-[1px] bg-gray-400 mx-3"></div>
+          <button
+            className={`px-6 py-2 rounded-lg transition font-medium text-sm md:text-base ${
+              activeTab === "pricing"
+                ? "bg-[#358B6C] text-white"
+                : "bg-transparent text-green-700"
+            }`}
+            onClick={() => setActiveTab("pricing")}
+          >
+            Pricing
+          </button>
+        </div>
+      </div>
+
+      {/* Cards Section */}
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-7 z-10">
+        {cards.map((card, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center"
+            style={{
+              fontFamily: "Sofia Pro",
+              fontWeight: 400,
+              fontSize: "19px",
+            }}
+          >
+            <div className="relative w-full h-[427px] rounded-lg overflow-hidden">
+              <Image
+                src={card.image}
+                alt="Farm Land"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+
+            <p className="text-gray-700 text-sm mt-4 text-center">
+              {card.text}
+            </p>
+            <button className="mt-4 mx-auto px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition">
+              Download Brochure
+            </button>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default FarmLandOptions;
