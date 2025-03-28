@@ -44,14 +44,18 @@ const footerLinks = [
   { label: "DISCLAIMER", url: "/disclaimer" },
 ];
 
-const FarmNaturaFooter: React.FC = () => {
+interface FarmNaturaFooterProps {
+  bgColor: string;
+}
+
+const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
   return (
-    <footer className="bg-[#F5F2E6] p-6 w-full relative  px-6 md:px-20">
-      <img
+    <footer className="p-6 w-full relative  px-6 md:px-20" style={{ backgroundColor: bgColor }}>
+      {/* <img
         src="/images/horizontal-img.svg"
         alt="hr-img"
         style={{ marginTop: "6px" }}
-      />
+      /> */}
 
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 gap-20 mt-10">
         {/* Left side */}

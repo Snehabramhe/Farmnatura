@@ -17,8 +17,8 @@ const ProjectHighlights = () => {
         <CustomFarmlands />
         <FarmingExperience />
         <TestimonialSection />
-        <MoveInSection />
-        <FarmNaturaFooter />
+        <MoveInSection bgColor={"#F5F2E6"} />
+        <FarmNaturaFooter bgColor={"#F5F2E6"}/>
       </main>
     </>
   );

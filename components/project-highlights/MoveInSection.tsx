@@ -3,9 +3,13 @@
 import React from "react";
 import Image from "next/image";
 
-const MoveInSection = () => {
+interface MoveInSectionProps {
+  bgColor: string;
+}
+
+const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   return (
-    <section className="relative bg-[#F5F2E6] py-16 px-6 md:px-20 flex justify-center">
+    <section className="relative py-16 px-6 md:px-20 flex justify-center" style={{ backgroundColor: bgColor }}>
       <div className="absolute top-5 left-0">
         <Image src="/images/tree-img.svg" alt="Tree" width={540} height={200} />
       </div>
@@ -37,7 +41,7 @@ const MoveInSection = () => {
       <div className="relative w-full mt-29">
         <div
           className="relative bg-[url('/images/Rectangle-img.svg')] bg-cover text-white p-8 flex flex-col md:flex-row items-center w-full h-full"
-          style={{ borderRadius: "25px" }}
+          style={{ borderRadius: "50px" }}
         >
           <div className="flex-1 text-center md:text-left ml-[12%]">
             <h2
