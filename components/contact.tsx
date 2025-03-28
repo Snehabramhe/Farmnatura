@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Navbar from "../../navbar/index";
-import Footer from "../../Footer/Footer";
+import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 
 const Contact = () => {
   
@@ -43,16 +42,15 @@ const Contact = () => {
   }, [success]);
 
   return (
-    <div className="bg-[#FFFBE5] min-h-screen">
-      <Navbar />
-      <div className="flex flex-col md:flex-row items-center bg-[#FFFBE5] p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto">
+    <div className="bg-[#FFFFFF] min-h-screen">
+      <div className="flex flex-col md:flex-row items-center bg-[#FFFFFF] p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto mt-8">
         {/* Image Section */}
         <div className="w-full md:w-1/2">
           <Image src="/images/form.svg" alt="Contact Form Image" width={400} height={300} className="w-full h-auto rounded-lg" />
         </div>
 
         {/* Form Section */}
-        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10">
+        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 ">
           <h2 className="text-lg font-bold text-green-800 mb-1">Have</h2>
           <h3 className="text-xl font-semibold text-green-800 mb-1">Questions?</h3>
           <h2 className="text-lg text-green-800 mt-6">Send Us A Message</h2>
@@ -109,11 +107,12 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <div className="w-[90%] border-t-2 border-[#243355]/50 pt-5 pb-0 mt-20"></div>
-      </div>
-      <Footer />
+      <div className="bg-[#FFFBE5] mt-10">
+      <FarmNaturaFooter/> 
     </div>
+      
+    </div>
+     
   );
 };
 
