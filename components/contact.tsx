@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
+import MoveInSection from "./project-highlights/MoveInSection";
 
 const Contact = () => {
   
@@ -106,10 +107,13 @@ const Contact = () => {
           </form>
         </div>
       </div>
+       <div className="mt-15">
+          <MoveInSection bgColor="#FFFBE5"/>
+        </div>
 
-      <div className="bg-[#FFFBE5] mt-10">
-      <FarmNaturaFooter/> 
-    </div>
+        <div>
+          <FarmNaturaFooter bgColor="#FFFBE5"/>
+        </div>
       
     </div>
      
