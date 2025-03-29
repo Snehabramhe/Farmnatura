@@ -36,15 +36,15 @@ const About = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden overflow-y-hidden">
-      <div className="mt-11 pl-[75px] lg:pl-[150px]">
+      <div className="mt-11 pl-[75px] xl:pl-[150px]">
         <h2
-          className="font-jost font-semibold text-[30px] lg:text-[50px] text-primary-text"
+          className="font-jost font-semibold text-[30px] xl:text-[50px] text-primary-text"
           id="about-heading"
         >
           Why Managed farmland
         </h2>
         <p
-          className="font-sofia-pro-regular text-[16px] lg:text-[20px] mt-5"
+          className="font-sofia-pro-regular text-[16px] xl:text-[20px] mt-5"
           id="about-content"
         >
           Farm Natura offers a community of like-minded families from Hyderabad,

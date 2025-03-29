@@ -61,13 +61,13 @@ const Choose = () => {
 
   return (
     <div className="relative min-h-dvh w-screen overflow-x-hidden overflow-y-hidden bg-white">
-      <div className="mt-11 px-[30px] lg:px-[150px]">
+      <div className="mt-11 px-[30px] 2xl:px-[150px]">
         <div className="flex flex-row items-center justify-between">
           <div
             className="flex flex-row items-center relative"
             id="header-heading"
           >
-            <h1 className="font-jost text-[30px] lg:text-[70px] font-semibold text-primary-text">
+            <h1 className="font-jost text-[30px] xl:text-[45px] 2xl:text-[70px] font-semibold text-primary-text">
               Reason to
               <br />
               Choose
@@ -90,7 +90,7 @@ const Choose = () => {
             />
           </div>
           <div
-            className="flex flex-row items-center justify-end max-w-[60%] lg:max-w-[40%]"
+            className="flex flex-row items-center justify-end max-w-[60%] 2xl:max-w-[40%]"
             id="header-explore"
           >
             <Image
@@ -101,10 +101,10 @@ const Choose = () => {
               className="w-[200px] h-[200px] object-cover"
             />
             <div className="ml-3">
-              <p className="font-jost font-semibold text-[16px] lg:text-[30px] text-primary-text">
+              <p className="font-jost font-semibold text-[16px] xl:text-[24px] 2xl:text-[30px] text-primary-text">
                 Explore Farm Land Options
               </p>
-              <p className="mt-3 font-sofia-pro-regular text-[14px] lg:text-[20px] text-black">
+              <p className="mt-3 font-sofia-pro-regular text-[14px] xl:text-[16px] 2xl:text-[20px] text-black">
                 Farm Natura offers a community of like-minded families from
                 Hyderabad, where lifestyle is built basing on Natural Farming
                 with an intent to focus on Health & Happiness.
@@ -143,17 +143,17 @@ const Choose = () => {
               width={200}
               height={200}
               alt="img-2"
-              className="w-[400] h-[500px] object-contain absolute right-0 -bottom-1/2"
+              className="w-[300px] h-[400px] 2xl:w-[400] 2xl:h-[500px] object-contain absolute right-0 -bottom-1/2"
             />
           </div>
           <div
-            className="absolute -bottom-[80%] left-[12%]"
+            className="absolute -bottom-[60%] 2xl:-bottom-[80%] left-0 2xl:left-[12%]"
             id="images-content"
           >
-            <p className="font-jost text-[16px] lg:text-[30px] text-primary-text font-semibold">
+            <p className="font-jost text-[16px] xl:text-[24px] 2xl:text-[30px] text-primary-text font-semibold">
               Explore Farm Land Options
             </p>
-            <p className="font-sofia-pro-regular text-[14px] lg:text-[20px] mt-4 max-w-[50%]">
+            <p className="font-sofia-pro-regular text-[14px] xl:text-[16px] 2xl:text-[20px] mt-4 max-w-[50%]">
               Grow investments | Farm Natura is located near the Airport,
               Srisailam highway is a prestigious Farmhouses For Sale in
               Hyderabad concept. It is located Near Maheshwaram. The project has
@@ -180,7 +180,7 @@ const Choose = () => {
         width={200}
         height={200}
         alt="choose-right"
-        className="w-[400px] h-[500px] object-contain absolute -right-20 bottom-[22%]"
+        className="w-[400px] h-[500px] object-contain absolute -right-24 2xl:-right-20 bottom-[22%]"
       />
     </div>
   );

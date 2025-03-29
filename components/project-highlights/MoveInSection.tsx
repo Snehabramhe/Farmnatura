@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 interface MoveInSectionProps {
   bgColor: string;
@@ -9,7 +9,10 @@ interface MoveInSectionProps {
 
 const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   return (
-    <section className="relative py-16 px-6 md:px-20 flex justify-center" style={{ backgroundColor: bgColor }}>
+    <section
+      className="relative py-16 px-6 md:px-20 flex justify-center"
+      style={{ backgroundColor: bgColor }}
+    >
       <div className="absolute top-5 left-0">
         <Image src="/images/tree-img.svg" alt="Tree" width={540} height={200} />
       </div>
@@ -48,13 +51,17 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
               className="text-2xl md:text-4xl"
               style={{ fontFamily: "Jost", fontWeight: 400, fontSize: "30px" }}
             >
-              Ready To Move In Are You?
+              Ready To Move
+              <br className="block xl:hidden" />
+              In Are You?
             </h2>
             <p
               className="text-md md:text-lg mt-2 opacity-80"
               style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "17px" }}
             >
-              Check out the new farms for sale in Hyderabad by Farm Natura.
+              Check out the new farms for sale in
+              <br className="block xl:hidden" />
+              Hyderabad by Farm Natura.
             </p>
             <button
               className="mt-10 bg-white text-black px-8 top-[50%] py-2 rounded-md shadow hover:bg-gray-100 transition"

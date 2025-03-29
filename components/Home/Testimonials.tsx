@@ -52,7 +52,7 @@ const Testimonials = () => {
       <p className="font-libre-caslon-display text-[300px] text-[#939393] absolute top-0 left-[40%]">
         &ldquo;
       </p>
-      <div className="pt-[175px] pl-[150px]">
+      <div className="pt-[175px] pl-[30px] 2xl:pl-[150px]">
         <p
           className="font-poppins text-[16px] lg:text-[24px]"
           id="testimonials-heading"

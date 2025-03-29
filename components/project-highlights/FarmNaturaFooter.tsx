@@ -1,5 +1,5 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 // Social media links configuration
 const socialMediaLinks = [
@@ -50,7 +50,10 @@ interface FarmNaturaFooterProps {
 
 const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
   return (
-    <footer className="p-6 w-full relative  px-6 md:px-20" style={{ backgroundColor: bgColor }}>
+    <footer
+      className="p-6 w-full relative  px-6 md:px-20"
+      style={{ backgroundColor: bgColor }}
+    >
       <img
         src="/images/horizontal-img.svg"
         alt="hr-img"
@@ -90,14 +93,15 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
           <div className="flex items-center justify-center md:justify-start space-x-2">
             <img src="/images/location.svg" alt="location" />
             <p className="text-sm">
-              345 Faulconer Drive, Suite 4 • Charlottesville, CA 12345
+              Planet Green ,Above Hyundai Show Room Building, Q- City Road,
+              Financial District, Gowlidoddi , Hyderabad
             </p>
           </div>
 
           <div className="flex items-center justify-center md:justify-between space-x-4 w-[370px]">
             <div className="flex items-center space-x-2">
               <img src="/images/phone.svg" alt="phone" />
-              <p className="text-sm">(123) 456-7890</p>
+              <p className="text-sm">9579555666</p>
             </div>
             <div className="flex items-center space-x-2">
               <img src="/images/fax.svg" alt="fax" />

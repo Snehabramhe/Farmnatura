@@ -1,10 +1,9 @@
-import Footer from "@/components/Common/Footer";
-import QuickLinks from "@/components/Common/QuickLinks";
 import About from "@/components/Home/About";
 import Choose from "@/components/Home/Choose";
 import KeyHighlights from "@/components/Home/KeyHighlights";
-import MoveIn from "@/components/Home/MoveIn";
 import Testimonials from "@/components/Home/Testimonials";
+import FarmNaturaFooter from "@/components/project-highlights/FarmNaturaFooter";
+import MoveInSection from "@/components/project-highlights/MoveInSection";
 import Hero from "../components/Home/Hero";
 
 const HomePage = () => {
@@ -16,9 +15,11 @@ const HomePage = () => {
       <KeyHighlights />
       <Choose />
       <Testimonials />
-      <MoveIn />
-      <Footer />
-      <QuickLinks />
+      {/* <MoveIn /> */}
+      <MoveInSection bgColor={"white"} />
+      <FarmNaturaFooter bgColor={"white"} />
+      {/* <Footer />
+      <QuickLinks /> */}
     </main>
   );
 };
