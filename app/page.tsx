@@ -14,6 +14,11 @@ const HomePage = () => {
       <About />
       <KeyHighlights />
       <Choose />
+      <div className="relative">
+        <p className="font-poppins text-[173px] text-[#2433551F] -rotate-90 absolute -top-42 -right-[30%] 2xl:-right-[20%] z-20">
+          Farm Natura
+        </p>
+      </div>
       <Testimonials />
       {/* <MoveIn /> */}
       <MoveInSection bgColor={"white"} />

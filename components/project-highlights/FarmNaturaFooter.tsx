@@ -103,10 +103,10 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
               <img src="/images/phone.svg" alt="phone" />
               <p className="text-sm">9579555666</p>
             </div>
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               <img src="/images/fax.svg" alt="fax" />
               <p className="text-sm">(123) 456-7890</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Social Media Icons */}

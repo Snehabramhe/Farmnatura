@@ -42,7 +42,7 @@ const KeyHighlights = () => {
         alt="top-img"
         className="w-screen h-screen object-cover absolute top-0 left-0 -z-[1]"
       />
-      <div className="mt-11 pl-[30px] xl:pl-[100px]">
+      <div className="mt-11 pl-[30px] xl:pl-[100px] z-10">
         <div className="flex flex-row items-center" id="highlight-header">
           <h2 className="font-jost font-semibold text-[35px] 2xl:text-[70px] text-primary-text">
             Key Highlights
@@ -91,7 +91,7 @@ const KeyHighlights = () => {
             </div>
           ))}
           {activeItem && (
-            <div className="flex xl:flex-row flex-col items-center justify-center absolute -right-[30%] 2xl:-right-[25%]">
+            <div className="flex xl:flex-row flex-col items-center justify-center absolute -right-[26%] 2xl:-right-[25%]">
               <div className="w-[250px] h-[150px] xl:w-[350px] xl:h-[200px] 2xl:w-[500px] 2xl:h-[400px] rounded-[12px] 2xl:rounded-[26px] border border-[#C69E67] flex items-center justify-center">
                 <Image
                   src={activeItem.img}
@@ -116,13 +116,13 @@ const KeyHighlights = () => {
           )}
         </div>
       </div>
-      {/* <Image
+      <Image
         src="/svg/key-highlights-bg.svg"
         width={200}
         height={200}
         alt="bg"
-        className="w-screen h-full object-cover absolute bottom-0 left-0"
-      /> */}
+        className="w-screen h-full object-cover absolute bottom-0 left-0 z-[1]"
+      />
     </div>
   );
 };
