@@ -381,7 +381,7 @@ const AboutSection: React.FC = () => {
                   className="mt-10 rounded-lg shadow-md"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-10 mt-16 space-y-4">
+              <div className="flex flex-col items-center md:items-start ml-10 mt-16 space-y-4 z-50">
                 <h3 className="mt-4 text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, fontSize:"25px", color:"#727272"}}>
                   Sustainable communities close to nature
                 </h3>
