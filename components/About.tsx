@@ -263,13 +263,13 @@ const AboutSection: React.FC = () => {
       </section>
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24">
         {/* Background Image in Corner */}
-        <div className="absolute top-[-220] right-0 w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-100">
+        <div className="absolute -top-10 -right-45 w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-100">
           <Image
             src="/images/corner-plant.svg" // Ensure this image exists in /public/images
             alt="Corner Plant"
             width={500}
             height={300}
-            className="object-contain"
+            className="object-contain w-80 h-80"
           />
         </div>
 
@@ -287,7 +287,7 @@ const AboutSection: React.FC = () => {
                 alt="Leaf Icon"
                 width={90}
                 height={30}
-                className="absolute left-60 -top-8"
+                className="absolute left-48 -top-8"
               />
             </h2>
             <p className="text-gray-700 text-lg mt-15" style={{fontFamily:"Josefin Sans", fontWeight: 400, fontSize: "16px"}}>
@@ -316,12 +316,14 @@ const AboutSection: React.FC = () => {
                 alt="Planet Green Logo"
                 width={300}
                 height={120}
+                className="w-50 h-50 xl:w-70 xl:h-70"
               />
               <Image
                 src="/images/planet-green-icon.svg"
                 alt="Planet Green Icon"
                 width={300}
                 height={333}
+                className="w-50 h-50 xl:w-70 xl:h-70"
               />
             </div>
           </div>

@@ -43,21 +43,21 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
 
       <div className="relative w-full mt-29">
         <div
-          className="relative bg-[url('/images/Rectangle-img.svg')] bg-cover text-white p-8 flex flex-col md:flex-row items-center w-full h-full"
-          style={{ borderRadius: "50px" }}
+          className="relative bg-[url('/images/Rectangle-img.svg')] bg-contain bg-no-repeat bg-center text-white p-8 lg:p-16 flex flex-row items-center w-full h-full"
+          // style={{ borderRadius: "50px" }}
         >
-          <div className="flex-1 text-center md:text-left ml-[12%]">
+          <div className="flex-1 text-left ml-[12%]">
             <h2
-              className="text-2xl md:text-4xl"
-              style={{ fontFamily: "Jost", fontWeight: 400, fontSize: "30px" }}
+              className="text-xl lg:text-2xl xl:text-4xl"
+              style={{ fontFamily: "Jost", fontWeight: 400 }}
             >
               Ready To Move
               <br className="block xl:hidden" />
               In Are You?
             </h2>
             <p
-              className="text-md md:text-lg mt-2 opacity-80"
-              style={{ fontFamily: "Jost", fontWeight: 300, fontSize: "17px" }}
+              className="text-[10px] lg:text-[14px] xl:text-xl mt-2 opacity-80"
+              style={{ fontFamily: "Jost", fontWeight: 300 }}
             >
               Check out the new farms for sale in
               <br className="block xl:hidden" />
@@ -78,7 +78,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
                 alt="Farm Couple"
                 width={400}
                 height={200}
-                className="rounded-lg absolute right-13 -top-20"
+                className="rounded-lg w-50 h-50 lg:w-70 lg:h-70 xl:w-100 xl:h-100 absolute right-10 xl:right-20 -top-20 md:top-[10] lg:top-[-20] xl:top-[-110]"
               />
             </div>
           </div>

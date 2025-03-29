@@ -6,7 +6,7 @@ const socialMediaLinks = [
   {
     name: "Facebook",
     icon: "/images/fb.svg",
-    url: "https://facebook.com/farmnatura",
+    url: "https://www.facebook.com/farmnatura.in",
   },
   {
     name: "Twitter",
@@ -16,17 +16,17 @@ const socialMediaLinks = [
   {
     name: "LinkedIn",
     icon: "/images/linkedin.svg",
-    url: "https://linkedin.com/company/farmnatura",
+    url: "https://www.linkedin.com/company/farm-natura/",
   },
   {
     name: "YouTube",
     icon: "/images/youtube.svg",
-    url: "https://youtube.com/farmnatura",
+    url: "https://www.youtube.com/@FarmNatura",
   },
   {
     name: "Instagram",
     icon: "/images/insta.svg",
-    url: "https://instagram.com/farmnatura",
+    url: "https://www.instagram.com/farmnatura.in/",
   },
   {
     name: "Google+",
