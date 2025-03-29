@@ -1,9 +1,149 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MoveInSection from "./project-highlights/MoveInSection";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutSection: React.FC = () => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const evolutionRef = useRef<HTMLDivElement | null>(null);
+  const researchRef = useRef<HTMLDivElement | null>(null); 
+  const inspiredBy = useRef<HTMLDivElement  | null>(null);// For another section
+  const vision = useRef<HTMLDivElement | null>(null);
+  const About= useRef<HTMLDivElement | null>(null);
+
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      if (textRef.current) {
+        const anim = gsap.fromTo(
+          textRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            paused: true, // we'll control this with scroll
+          }
+        );
+
+        ScrollTrigger.create({
+          trigger: textRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          onEnter: () => anim.play(),
+          onLeave: () => anim.reverse(),
+          onEnterBack: () => anim.play(),
+          onLeaveBack: () => anim.reverse(),
+          // markers: true, // uncomment for debug
+        });
+      }
+    });
+    if (evolutionRef.current) {
+      const anim = gsap.fromTo(
+        evolutionRef.current.querySelectorAll('h2, p, a'),
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: evolutionRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            onEnter: () => anim.play(),
+            onLeave: () => anim.reverse(),
+            onEnterBack: () => anim.play(),
+            onLeaveBack: () => anim.reverse(),
+          },
+        }
+      );}
+      if (researchRef.current) {
+        gsap.fromTo(
+          researchRef.current.querySelectorAll('.fade-in'), // Target specific elements
+          { opacity: 0, x: -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: researchRef.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
+
+      if (inspiredBy.current) {
+        gsap.fromTo(
+          inspiredBy.current,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: inspiredBy.current,
+              start: 'top 85%',
+              end: 'top 50%',
+              toggleActions: 'play reverse play reverse', // 👈 this is key!
+              markers: false, // set to true if you want to debug
+            },
+          }
+        );
+      }
+      if (vision.current) {
+        gsap.fromTo(
+          vision.current,
+          { opacity: 0, y: -50 }, // from above and invisible
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: vision.current,
+              start: "top 50%",       // when section enters
+              end: "bottom 20%",      // when bottom of section is leaving
+              toggleActions: "play reverse play reverse", // fade in on enter, fade out on leave
+              markers: false,         // change to true for debugging
+            },
+          }
+        );
+      }
+      if (About.current) {
+        gsap.fromTo(
+          About.current,
+          { x: -100, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: About.current,
+              start: "top 80%",        // Trigger when top enters 80% viewport
+              end: "bottom 20%",       // Ends when bottom reaches 20%
+              toggleActions: "play reverse play reverse", // show/hide
+              markers: false,          // set to true to debug
+            },
+          }
+        );
+      }
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
@@ -17,7 +157,10 @@ const AboutSection: React.FC = () => {
           className="opacity-90"
         />
 
-        <div className="absolute left-6 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2 text-white">
+        <div
+          ref={textRef}
+          className="absolute left-6 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2 text-white"
+        >
           <h1 className="text-3xl md:text-5xl font-bold">About Us</h1>
         </div>
       </section>
@@ -25,7 +168,7 @@ const AboutSection: React.FC = () => {
       <section className="bg-yellow-50 px-0 ">
         <div className="mr-0 space-y-28 relative">
           {/* Evolution Natural Farming Section */}
-          <div className="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+          <div ref={evolutionRef}  className="flex flex-col md:flex-row items-center md:justify-between w-full relative">
             {/* Left - Text */}
             <div className="md:w-1/2 z-10 px-6 md:px-12 -space-y-[20px] mt-12">
               <h2 className=" md:text-5xl font-bold text-[#404040]"  style={{fontFamily:"Jost",fontWeight:600,fontSize:"40px"}}>
@@ -66,7 +209,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Research & Development Section */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative -mt-[5%]">
+          <div  className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative -mt-[5%]">
             {/* Left - Image Full Width */}
             <div className="relative w-full md:w-1/2 flex flex-col ml-0">
               <Image
@@ -86,30 +229,32 @@ const AboutSection: React.FC = () => {
             </div>
             {/* Right - Text */}
             <div className="w-full md:w-1/2 relative">
-              <div className="relative z-10 flex flex-col w-[534] mt-10 font-bold text-[#404040] -space-y-[10px]" style={{fontFamily:"Jost",fontWeight:600,fontSize:"50px"}}>
-                <span>Research & </span>
-                <span style={{marginLeft:"16%"}}>Development</span>
-                <img src="/images/leave.svg" alt="leave-img" width={90} height={71} style={{ marginLeft:"68%",marginTop:"-14%"}}/>
-              </div>
-              <p className="mt-4 text-[#282828]  w-[700px]" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
+              <div ref={researchRef} className="relative z-10 flex flex-col w-[534] mt-10 font-bold text-[#404040] -space-y-[10px]" style={{fontFamily:"Jost",fontWeight:600,fontSize:"50px"}}>
+              <span className="fade-in">Research & </span>
+              <span className="fade-in" style={{marginLeft:"16%"}}>Development</span>
+                <img className="fade-in" src="/images/leave.svg" alt="leave-img" width={90} height={71} style={{ marginLeft:"68%",marginTop:"-14%"}}/>
+              
+              <p className="fade-in mt-4 text-[#282828]  w-[700px]" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
               Respct Mother Nature And Land. `&quot;`We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.`&quot;` <br/><br/>
               Our passion is to promote the `&quot;`Agri`&quot;` based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
+              </div>
               <a
                 href="/brochure.pdf"
                 download
-                className="mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
               >
                 Download Brochure
               </a>
+              
               <img src="/images/farm-exp-2.svg" alt="home-img" className="absolute -top-32 right-0" width={"600px"} />
             </div>
           </div>
 
           {/* Inspired By Section */}
-          <div className="mb-0">
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 flex justify-center items-center space-x-2 ml-150">
+          <div ref={inspiredBy} className="mb-0">
+            <h2 ref={inspiredBy} className="text-3xl md:text-5xl font-bold text-gray-900 flex justify-center items-center space-x-2 ml-150">
               Inspired By
               <Image
                 src="/images/leave.svg"
@@ -169,9 +314,9 @@ const AboutSection: React.FC = () => {
         ></div>
 
         {/* Content Wrapper */}
-        <div className="relative">
+        <div ref={vision} className="relative">
           {/* Title with Creeper */}
-          <div className="flex flex-col items-center text-center mb-8 space-y-3" style={{fontFamily:"Jost", fontWeight:600, fontSize:"67px", color:"#404040"}}>
+          <div ref={vision} className="flex flex-col items-center text-center mb-8 space-y-3" style={{fontFamily:"Jost", fontWeight:600, fontSize:"67px", color:"#404040"}}>
             <span className="text-4xl md:text-5xl font-bold">
               Vision
             </span>
@@ -274,13 +419,13 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* About Section */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div ref={About} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text */}
-          <div className="md:pr-0">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-50" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
+          <div ref={About} className="md:pr-0">
+            <h2 ref={About} className="text-4xl md:text-5xl font-bold text-gray-900 mt-50" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
               About Planet
             </h2>
-            <h2 className="relative text-4xl md:text-5xl font-bold text-gray-900 ml-30 mt-2" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
+            <h2 ref={About} className="relative text-4xl md:text-5xl font-bold text-gray-900 ml-30 mt-2" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
               Green Infra
               <Image
                 src="/images/leave.svg"
@@ -310,7 +455,7 @@ const AboutSection: React.FC = () => {
             
 
             {/* Planet Green Logo */}
-            <div className="flex mt-6 space-x-7 items-center">
+            <div ref={About} className="flex mt-6 space-x-7 items-center">
               <Image
                 src="/images/planet-green-logo.svg"
                 alt="Planet Green Logo"
@@ -329,7 +474,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Side - Image (FIXED) */}
-          <div className="relative w-screen h-[400px] md:h-[600px] lg:h-[700px] rounded-lg shadow-lg overflow-hidden mt-42">
+          <div ref={About} className="relative w-screen h-[400px] md:h-[600px] lg:h-[700px] rounded-lg shadow-lg overflow-hidden mt-42">
             <Image
               src="/images/farm-field.svg" // Ensure the correct path to the image
               alt="Farm Field"
