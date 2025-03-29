@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
 
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       if (textRef.current) {
         const anim = gsap.fromTo(
           textRef.current,
