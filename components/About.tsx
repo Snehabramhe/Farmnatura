@@ -358,7 +358,7 @@ const AboutSection: React.FC = () => {
                 />
               </div>
               <div className="flex flex-col items-center md:items-start ml-10 space-y-4">
-                <h3 className="mt-4 text-2xl font-semibold text-gray-800 mt-10" style={{fontFamily:"Jost", fontWeight:500, fontSize:"25px", color:"#727272"}}>
+                <h3 className="text-2xl font-semibold text-gray-800 mt-10" style={{fontFamily:"Jost", fontWeight:500, fontSize:"25px", color:"#727272"}}>
                   Creating self-sufficient
                 </h3>
                 <p className="text-gray-600 text-lg max-w-md text-center md:text-left" style={{fontFamily:"Josefin Sans", fontWeight:400, fontSize:"16px", color:"#4A4A4A"}}>
@@ -376,9 +376,9 @@ const AboutSection: React.FC = () => {
                 <Image
                   src="/images/sprout.svg"
                   alt="Sprout growing"
-                  width={300}
-                  height={200}
-                  className="mt-10"
+                  width={500}
+                  height={300}
+                  className="mt-10 rounded-lg shadow-md"
                 />
               </div>
               <div className="flex flex-col items-center md:items-start ml-10 mt-16 space-y-4">
