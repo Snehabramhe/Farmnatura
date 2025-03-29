@@ -36,15 +36,15 @@ const About = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden overflow-y-hidden">
-      <div className="mt-11 pl-[75px] xl:pl-[150px]">
+      <div className="mt-11 pl-[75px] xl:pl-[100px]">
         <h2
-          className="font-jost font-semibold text-[30px] xl:text-[50px] text-primary-text"
+          className="font-jost font-semibold text-[30px] 2xl:text-[50px] text-primary-text"
           id="about-heading"
         >
           Why Managed farmland
         </h2>
         <p
-          className="font-sofia-pro-regular text-[16px] xl:text-[20px] mt-5"
+          className="font-sofia-pro-regular text-[16px] 2xl:text-[20px] mt-5"
           id="about-content"
         >
           Farm Natura offers a community of like-minded families from Hyderabad,
@@ -65,7 +65,7 @@ const About = () => {
         width={200}
         height={200}
         alt="about-right"
-        className="w-1/2 h-1/2 object-cover absolute right-0 top-1/2 -translate-y-[30%]"
+        className="w-full h-full object-contain absolute -right-1/4 top-1/2 -translate-y-[40%]"
       />
     </div>
   );

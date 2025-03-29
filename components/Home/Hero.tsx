@@ -71,7 +71,7 @@ const Hero = () => {
         width={200}
         height={200}
         alt="hero-bg"
-        className="w-screen h-full object-cover"
+        className="w-screen h-[50%] 2xl:h-[65%] object-cover"
       />
       <div
         className="flex flex-col space-y-10 absolute top-20 right-10"

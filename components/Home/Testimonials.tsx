@@ -27,7 +27,7 @@ const Testimonials = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#testimonials-content",
-          start: "bottom center",
+          start: "top center",
           end: "bottom bottom",
           scrub: 3,
         },
