@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
           {
             y: 0,
             opacity: 1,
-            duration: 1.2,
+            duration: 2.5,
             ease: "power3.out",
             paused: true, // we'll control this with scroll
           }
@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 2.5,
           stagger: 0.3,
           ease: 'power3.out',
           scrollTrigger: {
@@ -73,7 +73,7 @@ const AboutSection: React.FC = () => {
           {
             opacity: 1,
             x: 0,
-            duration: 1.2,
+            duration: 2.5,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: researchRef.current,
@@ -91,7 +91,7 @@ const AboutSection: React.FC = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 2.5,
             ease: 'power3.out',
             scrollTrigger: {
               trigger: inspiredBy.current,
@@ -110,7 +110,7 @@ const AboutSection: React.FC = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 1,
+            duration: 2.5,
             ease: "power3.out",
             scrollTrigger: {
               trigger: vision.current,
@@ -129,7 +129,7 @@ const AboutSection: React.FC = () => {
           {
             x: 0,
             opacity: 1,
-            duration: 1,
+            duration: 3,
             ease: "power3.out",
             scrollTrigger: {
               trigger: About.current,

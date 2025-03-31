@@ -1,11 +1,31 @@
 "use client";
 
-import React from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import Image from "next/image";
 
 const TestimonialSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(sectionRef.current, {
+        y: 100, // slide up from 100px below
+        opacity: 0,
+        duration: 1.8, // slower and smoother animation
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%", // when top of section hits 80% of viewport
+          toggleActions: "play none none none",
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative bg-[#F5F2E6] py-16 pl-20">
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-16 pl-20">
       <div className="relative w-full">
         {/* Decorative Quote */}
         <div className="absolute -top-2 left-80 text-8xl text-gray-400 font-serif">
