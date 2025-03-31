@@ -16,7 +16,7 @@ const CustomFarmlands = () => {
   useEffect(() => {
     if (!sectionRef.current) return;
   
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
