@@ -125,10 +125,7 @@ const KeyHighlights = () => {
         alt="bg"
         className="w-screen h-full object-cover absolute bottom-0 left-0 z-[1]"
       />
-
-
-
-        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };

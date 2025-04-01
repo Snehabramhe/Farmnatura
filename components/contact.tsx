@@ -1,8 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect,useRef,useEffect } from "react";
 import Image from "next/image";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 import MoveInSection from "./project-highlights/MoveInSection";
+import gsap from "gsap";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +17,26 @@ const Contact = () => {
 
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+
+ 
+  useLayoutEffect(() => {
+    if (formRef.current) {
+      gsap.fromTo(
+        formRef.current,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.2, 
+        }
+      );
+    }
+  }, []);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -70,8 +92,8 @@ const Contact = () => {
       const data = await response.json();
       console.log('Form Submitted:', data); 
 
-      setSuccess(true); // Mark as successful
-      setFormData({ name: "", email: "", phone: "", interestedIn: "", plotSize: "" }); // Reset form
+      setSuccess(true); 
+      setFormData({ name: "", email: "", phone: "", interestedIn: "", plotSize: "" }); 
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("There was an error submitting the form.");
@@ -89,8 +111,9 @@ const Contact = () => {
 
   return (
     <div className="bg-[#FFFFFF] min-h-screen">
-      <div className="flex flex-col md:flex-row items-center bg-[#FFFFFF] p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto mt-8">
+      <div   ref={formRef}  className="flex flex-col md:flex-row items-center bg-[#FFFFFF] p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto mt-8">
         {/* Image Section */}
+        
         <div className="w-full md:w-1/2">
           <Image src="/images/form.svg" alt="Contact Form Image" width={400} height={300} className="w-full h-auto rounded-lg" />
         </div>

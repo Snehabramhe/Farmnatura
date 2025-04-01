@@ -7,6 +7,12 @@ import { FiMenu, FiX } from "react-icons/fi";
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+
+  const handleLinkClick = () => {
+    
+    setMenuOpen(false);
+  };
+
   return (
     <>
      
@@ -47,13 +53,13 @@ const Navbar: React.FC = () => {
         {menuOpen && (
           <div className="md:hidden bg-[#FFFBE5] shadow-lg absolute top-16 left-0 w-full py-4 px-6">
             <ul className="flex flex-col space-y-4 text-[#333] font-semibold text-lg">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/highlights">Highlights</Link></li>
-              <li><Link href="/gallery">Gallery</Link></li>
+              <li><Link href="/"  onClick={handleLinkClick}>Home</Link></li>
+              <li><Link href="/about" onClick={handleLinkClick}>About</Link></li>
+              <li><Link href="/highlights" onClick={handleLinkClick}>Highlights</Link></li>
+              <li><Link href="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
               <li>
                 <Link href="/contact">
-                  <button className="w-full border border-green-600 text-green-700 px-4 py-2 rounded-md hover:bg-green-100 transition">
+                  <button className="w-full border border-green-600 text-green-700 px-4 py-2 rounded-md hover:bg-green-100 transition" onClick={handleLinkClick}>
                     Contact Us
                   </button>
                 </Link>
