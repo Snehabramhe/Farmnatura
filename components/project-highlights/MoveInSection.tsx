@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +15,7 @@ interface MoveInSectionProps {
 }
 
 const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
+  const router = useRouter();
   const skyRef = useRef<HTMLImageElement>(null);
   const sunRef = useRef<HTMLImageElement>(null);
   const treeRef = useRef<HTMLImageElement>(null);
@@ -21,6 +23,8 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
   const pRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+
 
   useEffect(() => {
     // GSAP context
@@ -158,10 +162,10 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
       <div className="relative w-full mt-29">
         <div
           className="relative bg-[url('/images/Group.svg')] bg-contain bg-no-repeat bg-center text-white p-8 lg:p-16 flex flex-row items-center w-full h-full"
-          // style={{ borderRadius: "50px" }}
         >
           <div className="flex-1 text-left ml-[12%]">
-            <h2 ref={h2Ref}
+            <h2
+              ref={h2Ref}
               className="text-xl lg:text-2xl xl:text-4xl"
               style={{ fontFamily: "Jost", fontWeight: 400 }}
             >
@@ -169,7 +173,8 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
               <br className="block xl:hidden" />
               In Are You?
             </h2>
-            <p  ref={pRef}
+            <p
+              ref={pRef}
               className="text-[10px] lg:text-[14px] xl:text-xl mt-2 opacity-80"
               style={{ fontFamily: "Jost", fontWeight: 300 }}
             >
@@ -177,7 +182,9 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
               <br className="block xl:hidden" />
               Hyderabad by Farm Natura.
             </p>
-            <button ref={buttonRef}
+            <button
+              ref={buttonRef}
+              onClick={() => router.push('/contact')} // Add click handler
               className="mt-10 bg-white text-black px-8 top-[50%] py-2 rounded-md shadow hover:bg-gray-100 transition"
               style={{ fontFamily: "Jost", fontWeight: 500, fontSize: "18px" }}
             >

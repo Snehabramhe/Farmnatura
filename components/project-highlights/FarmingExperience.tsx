@@ -16,8 +16,7 @@ const FarmingExperience: React.FC = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-
-    // Initial hidden state for all elements
+  
     gsap.set(
       [
         titleRef.current,
@@ -28,27 +27,29 @@ const FarmingExperience: React.FC = () => {
       ],
       { opacity: 0, x: -100 }
     );
-
+  
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 50%", // Animation starts when 80% of section is visible
-        end: "bottom 10%", // Animation reverses when scrolling up
-        toggleActions: "play reverse play reverse", // Play animation when entering, reverse when leaving
+        start: "top 50%",
+        end: "bottom 10%",
+        toggleActions: "play reverse play reverse",
         scrub: 1.5,
       },
     });
-
-    tl.to(titleRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power5.out" }, "-=1")
-      .to(descriptionRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power3.out" }, "-=1")
-      .to(
-        Array.from(featureIconsRef.current?.children || []), 
-        { x: 0, opacity: 1, duration: 1.6, stagger: 0.2, ease: "power3.out" }, 
-        "-=0.4"
-      ) // Animates icons one by one
-      .to(rightImageRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power3.out" }, "-=1.2")
-      .to(farmImageRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power3.out" }, "-=1.2");
+  
+    tl.to(
+      [titleRef.current, descriptionRef.current, rightImageRef.current, farmImageRef.current], 
+      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", stagger: 0.1 }, 
+      "-=1"
+    )
+    .to(
+      Array.from(featureIconsRef.current?.children || []), 
+      { x: 0, opacity: 1, duration: 1.6, stagger: 0.2, ease: "power5.out", }, 
+      "-=0.4"
+    ); // Animates icons one by one
   }, []);
+  
 
   return (
     <>
@@ -112,6 +113,6 @@ const FarmingExperience: React.FC = () => {
       ></div>
     </>
   );
-};
 
+}
 export default FarmingExperience;

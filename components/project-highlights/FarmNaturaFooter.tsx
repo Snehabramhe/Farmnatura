@@ -60,7 +60,7 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
         style={{ marginTop: "6px" }}
       />
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 gap-20 mt-10">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 gap-20 mt-20">
         {/* Left side */}
         <div className="flex flex-col items-start gap-5 w-1/2">
           {/* Logo */}
