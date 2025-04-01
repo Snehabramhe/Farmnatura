@@ -101,7 +101,7 @@ const FarmLandOptions = () => {
             Plot Sizes
           </button>
           <div className="h-15 w-[1px] bg-gray-400 mx-3"></div>
-          <button className={`px-6 py-2 rounded-lg transition font-medium ${
+          <button className={`px-6 py-2 w-[240px] rounded-lg transition font-medium ml-4 ${
               activeTab === "pricing" ? "bg-[#358B6C] text-white" : "bg-transparent text-green-700"
             }`} onClick={() => setActiveTab("pricing")}>
             Pricing

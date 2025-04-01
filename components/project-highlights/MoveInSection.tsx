@@ -157,7 +157,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
 
       <div className="relative w-full mt-29">
         <div
-          className="relative bg-[url('/images/Rectangle-img.svg')] bg-contain bg-no-repeat bg-center text-white p-8 lg:p-16 flex flex-row items-center w-full h-full"
+          className="relative bg-[url('/images/Group.svg')] bg-contain bg-no-repeat bg-center text-white p-8 lg:p-16 flex flex-row items-center w-full h-full"
           // style={{ borderRadius: "50px" }}
         >
           <div className="flex-1 text-left ml-[12%]">

@@ -185,8 +185,8 @@ const AboutSection: React.FC = () => {
               </h2>
               <p className="mt-9 text-[#282828]  w-[700px]"  style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. `&quot;`We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us. `&ldquo;` <br/><br/>
-              Our passion is to promote the  `&ldquo;`Agri `&ldquo;` based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot;<br/><br/>
+              Our passion is to promote the  &ldquo; Agri &rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
                 href="/brochure.pdf"
@@ -236,8 +236,8 @@ const AboutSection: React.FC = () => {
               
               <p className="fade-in mt-4 text-[#282828]  w-[700px]" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. `&quot;`We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.`&quot;` <br/><br/>
-              Our passion is to promote the `&quot;`Agri`&quot;` based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo; Agri &rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               </div>
               <a
