@@ -1,3 +1,4 @@
+"use client";
 import About from "@/components/Home/About";
 import Choose from "@/components/Home/Choose";
 import KeyHighlights from "@/components/Home/KeyHighlights";
@@ -6,7 +7,16 @@ import FarmNaturaFooter from "@/components/project-highlights/FarmNaturaFooter";
 import MoveInSection from "@/components/project-highlights/MoveInSection";
 import Hero from "../components/Home/Hero";
 
+
+
+
+
+
 const HomePage = () => {
+
+ 
+
+
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-primary-bg">
       {/* <Navbar /> */}
@@ -25,6 +35,7 @@ const HomePage = () => {
       <FarmNaturaFooter bgColor={"white"} />
       {/* <Footer />
       <QuickLinks /> */}
+         
     </main>
   );
 };

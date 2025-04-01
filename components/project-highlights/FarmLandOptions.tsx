@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Modal from "../Common/Formmodal";
 
 // Register ScrollTrigger once globally
 if (typeof window !== "undefined") {
@@ -20,6 +21,7 @@ const FarmLandOptions = () => {
 
 
   const [activeTab, setActiveTab] = useState<"plot" | "pricing">("plot");
+  
 
   const cards = [
     {
@@ -122,6 +124,8 @@ const FarmLandOptions = () => {
               hover:bg-green-600 hover:text-white transition">
               Download Brochure
             </button>
+
+            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
           </div>
         ))}
       </div>

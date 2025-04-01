@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MoveInSection from "./project-highlights/MoveInSection";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
+import Modal from "./Common/Formmodal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,7 @@ const AboutSection: React.FC = () => {
   const inspiredBy = useRef<HTMLDivElement  | null>(null);// For another section
   const vision = useRef<HTMLDivElement | null>(null);
   const About= useRef<HTMLDivElement | null>(null);
+  const [isModalOpen, setModalOpen] = useState(false);
 
 
   useEffect(() => {
@@ -192,7 +194,7 @@ const AboutSection: React.FC = () => {
               <a
                 href="/brochure.pdf"
                 download
-                className="mt-12 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="mt-12 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"   onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
@@ -255,7 +257,7 @@ const AboutSection: React.FC = () => {
               <a
                 href="/brochure.pdf"
                 download
-                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white" onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
@@ -409,7 +411,7 @@ const AboutSection: React.FC = () => {
               <a
                 href="/brochure.pdf"
                 download
-                className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white"
+                className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white" onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
@@ -500,6 +502,8 @@ const AboutSection: React.FC = () => {
 
       <MoveInSection bgColor={"white"} />
       <FarmNaturaFooter bgColor={"white"} />
+
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };

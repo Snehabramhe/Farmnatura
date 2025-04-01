@@ -4,10 +4,12 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import Modal from "../Common/Formmodal";
 import { Button } from "../ui/button";
 
 const KeyHighlights = () => {
   const [activeItem, setActiveItem] = useState(HIGHLIGHTS[0]);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const listItemRef = useRef([]);
 
@@ -108,8 +110,8 @@ const KeyHighlights = () => {
                 <p className="font-sofia-pro-regular text-[14px] 2xl:text-[20px] mt-2">
                   {activeItem.content}
                 </p>
-                <Button className="mt-4" variant="outline">
-                  <p className="text-primary-green">Download Brochure</p>
+                <Button className="mt-4" variant="outline"  onClick={() => setModalOpen(true)} >
+                  <p className="text-primary-green"  >Download Brochure</p>
                 </Button>
               </div>
             </div>
@@ -123,6 +125,10 @@ const KeyHighlights = () => {
         alt="bg"
         className="w-screen h-full object-cover absolute bottom-0 left-0 z-[1]"
       />
+
+
+
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };

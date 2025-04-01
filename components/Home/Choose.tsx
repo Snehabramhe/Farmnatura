@@ -1,13 +1,17 @@
 "use client";
+import { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Modal from "../Common/Formmodal"
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Choose = () => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
   useGSAP(
     () => {
       const timeline = gsap.timeline();
@@ -120,7 +124,7 @@ const Choose = () => {
                 Hyderabad, where lifestyle is built basing on Natural Farming
                 with an intent to focus on Health & Happiness.
               </p>
-              <Button variant="outline" className="mt-3">
+              <Button variant="outline" className="mt-3"   onClick={() => setModalOpen(true)}     >
                 <p className="text-primary-green">Download Brochure</p>
               </Button>
             </div>
@@ -181,7 +185,7 @@ const Choose = () => {
               to farming. This project deals with sustainable Farming &
               varieties of fruit plantation.
             </p>
-            <Button variant="outline" className="mt-4">
+            <Button variant="outline" className="mt-4" onClick={() => setModalOpen(true)}   >
               <p className="text-primary-green">Download Brochure</p>
             </Button>
           </div>
@@ -201,7 +205,9 @@ const Choose = () => {
         alt="choose-right"
         className="w-[300px] h-[400px] 2xl:w-[400px] 2xl:h-[500px] object-contain absolute -right-24 2xl:-right-20 bottom-[15%]"
       />
+         <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
+    
   );
 };
 

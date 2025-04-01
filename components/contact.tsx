@@ -5,36 +5,77 @@ import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 import MoveInSection from "./project-highlights/MoveInSection";
 
 const Contact = () => {
-  
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
-    message: "",
+    interestedIn: "",
+    plotSize: "",
   });
 
-
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (name === "phone") {
+      if (/[^0-9]/.test(value) || value.length > 10) {
+        return;
+      }
+    }
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("Form Submitted:", formData);
+  
+    if (!formData.fullName || !formData.email || !formData.phone || !formData.interestedIn || !formData.plotSize) {
+      alert("Please fill out all fields.");
+      return;
+    }
 
- 
-    setTimeout(() => {
-      setSuccess(true);
-      setFormData({ fullName: "", email: "", phone: "", message: "" });
-    }, 2000);
+    // Phone validation
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(formData.phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      return;
+    }
+
+    setLoading(true); // Set loading to true when submitting
+
+    try {
+      // API call to submit form data
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      const data = await response.json();
+      console.log('Form Submitted:', data); // Log or process the response data
+
+      setSuccess(true); // Mark as successful
+      setFormData({ fullName: "", email: "", phone: "", interestedIn: "", plotSize: "" }); // Reset form
+    } catch (error) {
+      console.error("Error submitting the form:", error);
+      alert("There was an error submitting the form.");
+    } finally {
+      setLoading(false); // Stop loading when the API call is complete
+    }
   };
 
- 
   useEffect(() => {
     if (success) {
       const timer = setTimeout(() => setSuccess(false), 3000);
@@ -51,7 +92,7 @@ const Contact = () => {
         </div>
 
         {/* Form Section */}
-        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10 ">
+        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10">
           <h2 className="text-lg font-bold text-green-800 mb-1">Have</h2>
           <h3 className="text-xl font-semibold text-green-800 mb-1">Questions?</h3>
           <h2 className="text-lg text-green-800 mt-6">Send Us A Message</h2>
@@ -88,35 +129,55 @@ const Contact = () => {
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               required
             />
-            <textarea
-              name="message"
-              value={formData.message}
+
+            {/* Interested In Dropdown */}
+            <select
+              name="interestedIn"
+              value={formData.interestedIn}
               onChange={handleChange}
-              placeholder="Tell Us About Your Question"
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              rows={4}
               required
-            ></textarea>
+            >
+              <option value="">Interested In</option>
+              <option value="Investments">Investments</option>
+              <option value="Residential Plots">Residential Plots</option>
+              <option value="Weekend Destination">Weekend Destination</option>
+            </select>
+
+            {/* Looking Plot Size Dropdown */}
+            <select
+              name="plotSize"
+              value={formData.plotSize}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            >
+              <option value="">Looking Plot Size</option>
+              <option value="200-300 Sq Yards">200-300 Sq Yards</option>
+              <option value="300-500 Sq Yards">300-500 Sq Yards</option>
+              <option value="500-1000 Sq Yards">500-1000 Sq Yards</option>
+              <option value="Above 1000 Sq Yards">Above 1000 Sq Yards</option>
+            </select>
 
             <button
               type="submit"
               className="flex items-center justify-center gap-2 bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-yellow-600 transition"
+              disabled={loading}
             >
-              Submit →
+              {loading ? 'Submitting...' : 'Submit →'}
             </button>
           </form>
         </div>
       </div>
-       <div className="mt-15">
-          <MoveInSection bgColor="#FFFBE5"/>
-        </div>
 
-        <div>
-          <FarmNaturaFooter bgColor="#FFFBE5"/>
-        </div>
-      
+      <div className="mt-15">
+        <MoveInSection bgColor="#FFFBE5" />
+      </div>
+
+      <div>
+        <FarmNaturaFooter bgColor="#FFFBE5" />
+      </div>
     </div>
-     
   );
 };
 

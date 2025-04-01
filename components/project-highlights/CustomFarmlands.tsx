@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Modal from "../Common/Formmodal";
 
 // Register ScrollTrigger once globally
 if (typeof window !== "undefined") {
@@ -18,6 +19,7 @@ const CustomFarmlands = () => {
   const gridItemsRef = useRef<HTMLDivElement[]>([]);
   const leavetreeRef = useRef<HTMLImageElement>(null);  // Ref for leavetree.svg
 
+   const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -159,13 +161,15 @@ const CustomFarmlands = () => {
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 {item.title}
               </h3>
-              <button className="mt-2 px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition">
+              <button className="mt-2 px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}   >
                 Download Brochure
               </button>
             </div>
           </div>
         ))}
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };

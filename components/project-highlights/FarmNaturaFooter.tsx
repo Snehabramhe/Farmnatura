@@ -93,15 +93,14 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
           <div className="flex items-center justify-center md:justify-start space-x-2">
             <img src="/images/location.svg" alt="location" />
             <p className="text-sm">
-              Planet Green ,Above Hyundai Show Room Building, Q- City Road,
-              Financial District, Gowlidoddi , Hyderabad
+            Planet Green-Dates County Above Hyundai Showroom 2nd Floor, Regent Square Building, Q-City Road, Gowlidoddi, Hyderabad – 500075 
             </p>
           </div>
 
           <div className="flex items-center justify-center md:justify-between space-x-4 w-[370px]">
             <div className="flex items-center space-x-2">
               <img src="/images/phone.svg" alt="phone" />
-              <p className="text-sm">9579555666</p>
+              <p className="text-sm"> +91 9555700900 </p>
             </div>
             {/* <div className="flex items-center space-x-2">
               <img src="/images/fax.svg" alt="fax" />
