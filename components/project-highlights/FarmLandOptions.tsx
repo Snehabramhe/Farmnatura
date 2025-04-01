@@ -21,7 +21,7 @@ const FarmLandOptions = () => {
 
 
   const [activeTab, setActiveTab] = useState<"plot" | "pricing">("plot");
-  
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const cards = [
     {
