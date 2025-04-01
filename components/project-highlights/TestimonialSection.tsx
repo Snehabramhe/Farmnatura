@@ -16,7 +16,7 @@ const TestimonialSection = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%", // when top of section hits 80% of viewport
-          toggleActions: "play none none none",
+          toggleActions: "play reverse play reverse",
         },
       });
     }, sectionRef);

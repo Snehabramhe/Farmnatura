@@ -87,18 +87,18 @@ const AboutSection: React.FC = () => {
       if (inspiredBy.current) {
         gsap.fromTo(
           inspiredBy.current,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: -50 },
           {
             opacity: 1,
             y: 0,
             duration: 2.5,
-            ease: 'power3.out',
+            ease: 'power1.out',
             scrollTrigger: {
               trigger: inspiredBy.current,
               start: 'top 85%',
               end: 'top 50%',
               toggleActions: 'play reverse play reverse', // 👈 this is key!
-              markers: false, // set to true if you want to debug
+            
             },
           }
         );

@@ -58,7 +58,7 @@ export default function WhyFarmNatura() {
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 80%",
-            toggleActions: "play none none reset",
+            toggleActions: "play reverse play reverse",
           },
         }
       );

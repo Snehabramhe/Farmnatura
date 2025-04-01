@@ -16,6 +16,8 @@ const FarmLandOptions = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
   const leftDecorRef = useRef<HTMLImageElement>(null);
   const rightDecorRef = useRef<HTMLImageElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]); // Store references for images
+
 
   const [activeTab, setActiveTab] = useState<"plot" | "pricing">("plot");
 
@@ -39,18 +41,35 @@ const FarmLandOptions = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
-          end: "top 20%",
-          toggleActions: "play none none none", // Ensures animation plays only once
+          start: "top 90%",
+          end: "top 30%",
+          toggleActions: "play reverse play reverse", // Ensures animation plays only once
+          scrub:1,
         },
-        defaults: { ease: "power2.out", duration: 1.5 },
+        defaults: { ease: "power1.out", duration: 1.5 },
       });
 
       tl.from(headingRef.current, { y: -50, opacity: 0 })
         .from(buttonRef.current, { y: -30, opacity: 0 }, "-=0.8")
         .from(leftDecorRef.current, { x: -100, opacity: 0 }, "-=0.6")
         .from(rightDecorRef.current, { x: 100, opacity: 0 }, "-=0.8");
-    }, containerRef); 
+
+     gsap.from(cardRefs.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration:1.2,
+        ease: "power3.out",
+        stagger: 0.3, // Each image animates one after the other
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          end: "bottom 30%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+    }, containerRef);
+
+
     return () => ctx.revert(); // Cleanup animation to prevent duplicate triggers
   }, []);
   return (
@@ -93,7 +112,7 @@ const FarmLandOptions = () => {
       {/* Cards */}
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-7 z-10">
         {cards.map((card, index) => (
-          <div key={index} className="flex flex-col items-center"
+          <div key={index} ref={(el) => { cardRefs.current[index] = el; }} className="flex flex-col items-center"
             style={{ fontFamily: "Sofia Pro", fontWeight: 400, fontSize: "19px" }}>
             <div className="relative w-full h-[427px] rounded-lg overflow-hidden">
               <Image src={card.image} alt="Farm Land" layout="fill" objectFit="cover" />

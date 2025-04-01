@@ -5,38 +5,76 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// Register ScrollTrigger once globally
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const CustomFarmlands = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLDivElement>(null);
   const leafRef = useRef<HTMLImageElement>(null);
+  const gridItemsRef = useRef<HTMLDivElement[]>([]);
+  const leavetreeRef = useRef<HTMLImageElement>(null);  // Ref for leavetree.svg
+
 
   useEffect(() => {
     if (!sectionRef.current) return;
-  
+
     const ctx = gsap.context(() => {
+      // Title, paragraph, and leaf animations
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none", // Plays only once
+          start: "top 90%", // Animation starts when 90% of section is visible
+          end: "bottom 10%", // Animation reverses when scrolling up
+          toggleActions: "play reverse play reverse",
+          scrub: 1.5,
         },
       });
-  
-      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1 })
-        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1 }, "-=0.6")
-        .from(leafRef.current, { opacity: 0, duration: 1 }, "-=0.8");
+
+      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power5.out" })
+        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power3.out" }, "-=1.2")
+        .from(leafRef.current, { opacity: 0, duration: 1.5 }, "-=1.2");
+
+      // Animating grid items from the left
+      gridItemsRef.current.forEach((item, index) => {
+        gsap.from(item, {
+          x: -100, // Start the animation from the left
+          opacity: 0, // Make it invisible initially
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%", // Trigger the animation when the item is 80% in view
+            end: "top 30%", // Reverse when 30% of the item leaves the viewport
+            toggleActions: "play reverse play reverse", // Play on enter and reverse on leave
+          },
+        });
+      });
+      gsap.from(leavetreeRef.current, {
+        x: -100,         // Animate from right to left
+        opacity: 0,     // Start invisible
+        duration:2,    // Slow down the animation
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: leavetreeRef.current,
+          start: "top 80%", // Start animation when 80% of the image is visible
+          end: "top 30%",   // Reverse when 30% of the image leaves the viewport
+          scrub: 1,
+          toggleActions: "play reverse play reverse", // Play on enter and reverse on leave
+        },
+      });
     }, sectionRef);
-  
+
     return () => ctx.revert(); // Cleanup GSAP animations on unmount
   }, []);
-  
 
   return (
     <section ref={sectionRef} className="relative bg-[#F5F2E6] py-16 px-6 md:px-16">
       <Image
+        ref={leavetreeRef}
         src="/images/leavetree.svg"
         alt="Vine Decoration"
         width={330}
@@ -96,13 +134,19 @@ const CustomFarmlands = () => {
         </div>
       </div>
 
+      {/* Grid Section with Animation */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mt-7">
         {[
           { src: "/images/cucumber.svg", title: "Building Your Farmland" },
           { src: "/images/greenland.svg", title: "Design Options" },
           { src: "/images/house.svg", title: "Costs" },
         ].map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            ref={(el) => {
+              gridItemsRef.current[index] = el as HTMLDivElement;
+            }}
+          >
             <div className="relative w-full h-56 md:h-64 overflow-hidden">
               <Image
                 src={item.src}
