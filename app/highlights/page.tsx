@@ -1,4 +1,3 @@
-import Testimonials from "@/components/Home/Testimonials";
 import CustomFarmlands from "@/components/project-highlights/CustomFarmlands";
 import FarmingExperience from "@/components/project-highlights/FarmingExperience";
 import FarmLandOptions from "@/components/project-highlights/FarmLandOptions";
