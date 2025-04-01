@@ -39,7 +39,7 @@ const CustomFarmlands = () => {
         .from(leafRef.current, { opacity: 0, duration: 1.5 }, "-=1.2");
 
       // Animating grid items from the left
-      gridItemsRef.current.forEach((item, index) => {
+      gridItemsRef.current.forEach((item) => {
         gsap.from(item, {
           x: -100, // Start the animation from the left
           opacity: 0, // Make it invisible initially
