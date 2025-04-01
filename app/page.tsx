@@ -8,14 +8,7 @@ import MoveInSection from "@/components/project-highlights/MoveInSection";
 import Hero from "../components/Home/Hero";
 
 
-
-
-
-
 const HomePage = () => {
-
- 
-
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-primary-bg">

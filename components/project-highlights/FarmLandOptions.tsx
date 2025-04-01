@@ -121,7 +121,7 @@ const FarmLandOptions = () => {
             </div>
             <p className="text-gray-700 text-[12px] lg:text-sm w-[2200px]:text-xl mt-4 text-center">{card.text}</p>
             <button className="mt-4 px-4 py-2 border border-green-600 text-green-600 text-[14px] lg:text-sm xl:text-lg w-[2200px]:text-2xl rounded-lg 
-              hover:bg-green-600 hover:text-white transition">
+              hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}  >
               Download Brochure
             </button>
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
+import Image from "next/image";
 import { X } from "lucide-react";
 import { Button } from "../ui/button";
-
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,21 +9,44 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    interestedIn: "",
+    plotSize: "",
+  });
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+
+    if (name === "phone" && (/[^0-9]/.test(value) || value.length > 10)) {
+      return;
+    }
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setLoading(true);
+    setSuccess(false);
+
     try {
-      const response = await fetch("/api/sendMail", {
+      const response = await fetch("http://localhost:3000/api/sendMail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert("Form submitted successfully!");
-        setFormData({ name: "", phone: "", email: "" });
+        setSuccess(true);
+        setFormData({ name: "", phone: "", email: "", interestedIn: "", plotSize: "" });
         onClose();
       } else {
         alert("Error submitting form");
@@ -31,49 +54,104 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     } catch (error) {
       console.error("API error:", error);
       alert("Submission failed!");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.5)] z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
-        <div className="flex justify-between items-center">
-          <h2 className="text-xl font-semibold">Get More Information</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-800">
-            <X size={24} />
-          </button>
+      <div className="relative flex flex-col md:flex-row items-center bg-white p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto mt-8">
+        
+        {/* Close Button (X Icon) */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 transition"
+        >
+          <X size={24} />
+        </button>
+
+        {/* Image Section */}
+        <div className="w-full md:w-1/2">
+          <Image src="/images/form.svg" alt="Contact Form Image" width={400} height={300} className="w-full h-auto rounded-lg" />
         </div>
-        <div className="mt-4">
-          <label className="block text-gray-700">Name</label>
-          <input
-            type="text"
-            className="w-full border p-2 rounded mt-1"
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
 
-          <label className="block text-gray-700 mt-3">Phone</label>
-          <input
-            type="text"
-            className="w-full border p-2 rounded mt-1"
-            value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          />
+        {/* Form Section */}
+        <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10">
+          <h2 className="text-lg font-bold text-green-800 mb-1">Have</h2>
+          <h3 className="text-xl font-semibold text-green-800 mb-1">Questions?</h3>
+          <h2 className="text-lg text-green-800 mt-6">Send Us A Message</h2>
 
-          <label className="block text-gray-700 mt-3">Email</label>
-          <input
-            type="email"
-            className="w-full border p-2 rounded mt-1"
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          />
+          {success && <p className="text-green-600 text-sm mt-2">Your message has been sent successfully!</p>}
 
-          <Button className="mt-4 w-full" onClick={handleSubmit} disabled={loading}>
-            {loading ? "Submitting..." : "Submit"}
-          </Button>
+          <form className="mt-4 space-y-4" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Full Name"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Phone"
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            />
+
+            {/* Interested In Dropdown */}
+            <select
+              name="interestedIn"
+              value={formData.interestedIn}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            >
+              <option value="">Interested In</option>
+              <option value="Investments">Investments</option>
+              <option value="Residential Plots">Residential Plots</option>
+              <option value="Weekend Destination">Weekend Destination</option>
+            </select>
+
+            {/* Looking Plot Size Dropdown */}
+            <select
+              name="plotSize"
+              value={formData.plotSize}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              required
+            >
+              <option value="">Looking Plot Size</option>
+              <option value="200-300 Sq Yards">200-300 Sq Yards</option>
+              <option value="300-500 Sq Yards">300-500 Sq Yards</option>
+              <option value="500-1000 Sq Yards">500-1000 Sq Yards</option>
+              <option value="Above 1000 Sq Yards">Above 1000 Sq Yards</option>
+            </select>
+
+            <button
+              type="submit"
+              className="flex items-center justify-center gap-2 bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-yellow-600 transition"
+              disabled={loading}
+            >
+              {loading ? "Submitting..." : "Submit →"}
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -81,3 +159,4 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 };
 
 export default Modal;
+

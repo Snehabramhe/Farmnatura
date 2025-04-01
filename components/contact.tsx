@@ -6,7 +6,7 @@ import MoveInSection from "./project-highlights/MoveInSection";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     phone: "",
     interestedIn: "",
@@ -35,7 +35,7 @@ const Contact = () => {
     e.preventDefault();
 
   
-    if (!formData.fullName || !formData.email || !formData.phone || !formData.interestedIn || !formData.plotSize) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.interestedIn || !formData.plotSize) {
       alert("Please fill out all fields.");
       return;
     }
@@ -47,16 +47,20 @@ const Contact = () => {
       return;
     }
 
-    setLoading(true); // Set loading to true when submitting
+    setLoading(true); 
 
     try {
-      // API call to submit form data
-      const response = await fetch('/api/contact', {
+      
+      const response = await fetch('http://192.168.0.95:3000/api/sendMail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,  
+          phone: formData.phone,
+          email: formData.email,
+        }),
       });
 
       if (!response.ok) {
@@ -64,15 +68,15 @@ const Contact = () => {
       }
 
       const data = await response.json();
-      console.log('Form Submitted:', data); // Log or process the response data
+      console.log('Form Submitted:', data); 
 
       setSuccess(true); // Mark as successful
-      setFormData({ fullName: "", email: "", phone: "", interestedIn: "", plotSize: "" }); // Reset form
+      setFormData({ name: "", email: "", phone: "", interestedIn: "", plotSize: "" }); // Reset form
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("There was an error submitting the form.");
     } finally {
-      setLoading(false); // Stop loading when the API call is complete
+      setLoading(false); 
     }
   };
 
@@ -104,8 +108,8 @@ const Contact = () => {
           <form className="mt-4 space-y-4" onSubmit={handleSubmit}>
             <input
               type="text"
-              name="fullName"
-              value={formData.fullName}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               placeholder="Full Name"
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
