@@ -204,13 +204,12 @@ const Gallery = () => {
           </button>
         </div>
 
-        <div>
+   
           <MoveInSection bgColor="#FFFBE5" />
-        </div>
-
-        <div>
+  
+     
           <FarmNaturaFooter bgColor="#FFFBE5" />
-        </div>
+    
       </div>
     </div>
   );
