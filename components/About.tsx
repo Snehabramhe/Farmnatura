@@ -192,8 +192,8 @@ const AboutSection: React.FC = () => {
               Our passion is to promote the  &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
-                href="/brochure.pdf"
-                download
+                //href="/brochure.pdf"
+                //download
                 className="mt-12 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"   onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -255,8 +255,8 @@ const AboutSection: React.FC = () => {
               </p>
               </div>
               <a
-                href="/brochure.pdf"
-                download
+                //href="/brochure.pdf"
+                //download
                 className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white" onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -409,8 +409,8 @@ const AboutSection: React.FC = () => {
             
             <div className="xl:ml-160 mt-10 z-2" style={{fontFamily:"Sofia Pro", fontSize:"18px", color:"#358B6C"}}>
               <a
-                href="/brochure.pdf"
-                download
+                //href="/brochure.pdf"
+                //download
                 className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white" onClick={() => setModalOpen(true)}
               >
                 Download Brochure
