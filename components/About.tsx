@@ -185,8 +185,8 @@ const AboutSection: React.FC = () => {
               </h2>
               <p className="mt-9 text-[#282828]  w-[700px]"  style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot;<br/><br/>
-              Our passion is to promote the  &ldquo; Agri &rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the  &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
                 href="/brochure.pdf"
@@ -237,7 +237,7 @@ const AboutSection: React.FC = () => {
               <p className="fade-in mt-4 text-[#282828]  w-[700px]" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
               Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo; Agri &rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               </div>
               <a
@@ -305,11 +305,11 @@ const AboutSection: React.FC = () => {
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24 min-h-screen">
         {/* Background Images */}
         <div
-          className="absolute top-25 left-0 w-1/2 h-full bg-no-repeat bg-cover bg-left z-0"
+          className="absolute top-25 left-0 w-1/2 h-full bg-no-repeat bg-cover bg-left"
           style={{ backgroundImage: 'url("/images/left-bg.svg")' }}
         ></div>
         <div
-          className="absolute top-0 right-0 w-[430px] h-full bg-no-repeat bg-cover bg-right z-10"
+          className="absolute top-0 right-0 w-[430px] h-full bg-no-repeat bg-cover bg-right z-[-20]"
           style={{ backgroundImage: 'url("/images/right-bg.svg")' }}
         ></div>
 
@@ -317,23 +317,23 @@ const AboutSection: React.FC = () => {
         <div ref={vision} className="relative">
           {/* Title with Creeper */}
           <div ref={vision} className="flex flex-col items-center text-center mb-8 space-y-3" style={{fontFamily:"Jost", fontWeight:600, fontSize:"67px", color:"#404040"}}>
-            <span className="text-4xl md:text-5xl font-bold">
+            <span className="text-4xl md:text-5xl font-bold z-2">
               Vision
             </span>
-            <span className="relative text-4xl md:text-5xl font-bold ml-45">
+            <span className="relative text-4xl md:text-5xl font-bold ml-45 z-2">
               &
             </span>
-            <span className="relative text-4xl md:text-5xl font-bold ml-90">
+            <span className="relative text-4xl md:text-5xl font-bold ml-90 z-2 xl:z-0">
               Mission
               <Image
                 src="/images/leave.svg"
                 alt="Leaf Icon"
                 width={100}
                 height={30}
-                className="absolute -right-23 -top-10 z-0"
+                className="absolute -right-20 -top-10 z-0"
               />
             </span>
-            <div className="relative w-[580px] h-[250px] -mt-82 -ml-80 z-0">
+            <div className="relative w-[580px] h-[250px] -mt-82 -ml-80 z-2">
               <Image
                 src="/images/creeper.svg"
                 alt="Creeper"
@@ -345,9 +345,9 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Content Grid */}
-          <div className="flex flex-col items-start mt-50 ml-40">
+          <div ref={vision} className="flex flex-col items-start mt-50 ml-20 lg:ml-40">
             {/* Left Box */}
-            <div className="flex flex-row justify-between z-50">
+            <div className="z-10 flex flex-row justify-between">
               <div>
                 <Image
                   src="/images/dewdrop.svg"
@@ -357,11 +357,11 @@ const AboutSection: React.FC = () => {
                   className="rounded-lg shadow-md"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-10 space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-800 mt-10" style={{fontFamily:"Jost", fontWeight:500, fontSize:"25px", color:"#727272"}}>
+              <div className="flex flex-col items-center md:items-start ml-10 my-auto space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, color:"#727272"}}>
                   Creating self-sufficient
                 </h3>
-                <p className="text-gray-600 text-lg max-w-md text-center md:text-left" style={{fontFamily:"Josefin Sans", fontWeight:400, fontSize:"16px", color:"#4A4A4A"}}>
+                <p className="text-gray-600 text-[12px] lg:text-[16px] max-w-md text-center md:text-left" style={{fontFamily:"Josefin Sans", fontWeight:400, color:"#4A4A4A"}}>
                   We are proud to present Planet Green, a stunning new precinct
                   that is destined to be the residential and commercial showpiece
                   of Nature Friendly.
@@ -371,21 +371,21 @@ const AboutSection: React.FC = () => {
             
 
             {/* Right Box */}
-            <div className="flex flex-row justify-between ml-75 mt-20 z-50">
+            <div className="z-10 flex flex-row justify-between lg:ml-0 xl:ml-75 mt-20">
               <div>
                 <Image
                   src="/images/sprout.svg"
                   alt="Sprout growing"
-                  width={500}
-                  height={300}
-                  className="mt-10 rounded-lg shadow-md"
+                  width={300}
+                  height={200}
+                  className="rounded-lg shadow-md"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-10 mt-16 space-y-4 z-50">
-                <h3 className="mt-4 text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, fontSize:"25px", color:"#727272"}}>
+              <div className="flex flex-col items-center md:items-start ml-10 my-auto space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, color:"#727272"}}>
                   Sustainable communities close to nature
                 </h3>
-                <p className="text-gray-600 text-lg max-w-md" style={{fontFamily:"Josefin Sans", fontWeight:400, fontSize:"16px", color:"#4A4A4A"}}>
+                <p className="text-gray-600 text-[12px] lg:text-[16px] max-w-md" style={{fontFamily:"Josefin Sans", fontWeight:400, color:"#4A4A4A"}}>
                   We are proud to present Planet Green, a stunning new precinct
                   that is destined to be the residential and commercial showpiece
                   of Nature Friendly.
@@ -393,7 +393,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="ml-160 mt-2 z-50" style={{fontFamily:"Sofia Pro", fontSize:"18px", color:"#358B6C"}}>
+            <div className="xl:ml-160 mt-10 z-2" style={{fontFamily:"Sofia Pro", fontSize:"18px", color:"#358B6C"}}>
               <a
                 href="/brochure.pdf"
                 download
