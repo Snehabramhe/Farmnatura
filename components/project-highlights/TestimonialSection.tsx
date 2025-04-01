@@ -9,17 +9,20 @@ const TestimonialSection = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(sectionRef.current, {
-        y: 100, // slide up from 100px below
+        y: 150, // Start further down for a smoother slide
         opacity: 0,
-        duration: 1.8, // slower and smoother animation
-        ease: "power3.out",
+        duration: 2.5, // Slower and more gradual animation
+        ease: "power4.out", // Smooth transition with a slower stop
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // when top of section hits 80% of viewport
-          toggleActions: "play reverse play reverse",
+          start: "top 85%", // Trigger when the top of the section is at 85% of the viewport
+          end: "top 50%", // Extend the end point to slow the effect
+          scrub: 1, // Sync animation with scroll for a more controlled movement
+          toggleActions: "play none none reverse", // Play on enter, reverse on exit
         },
       });
     }, sectionRef);
+    
 
     return () => ctx.revert();
   }, []);

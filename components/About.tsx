@@ -95,9 +95,10 @@ const AboutSection: React.FC = () => {
             ease: 'power1.out',
             scrollTrigger: {
               trigger: inspiredBy.current,
-              start: 'top 85%',
-              end: 'top 50%',
+              start: 'top 80%',
+              end: 'top 54%',
               toggleActions: 'play reverse play reverse', // 👈 this is key!
+              scrub: 0.5,
             
             },
           }
@@ -183,7 +184,7 @@ const AboutSection: React.FC = () => {
                   height={71}
                 />
               </h2>
-              <p className="mt-9 text-[#282828]  w-[700px]"  style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
+              <p className="mt-9 text-[#282828]  w-[700px] text-black"  style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
               Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
               Our passion is to promote the  &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
@@ -196,16 +197,27 @@ const AboutSection: React.FC = () => {
                 Download Brochure
               </a>
             </div>
-            {/* Right - Image Full Width */}
-            <div className="w-full md:w-1/2 flex h-[550px] justify-end">
-              <Image
-                src="/images/cow.svg"
-                alt="Cow"
-                width={1163}
-                height={780}
-                className="contain w-full"
-              />
-            </div>
+
+           {/* Right - Image Full Width */}
+       {/*<div className="relative w-full h-[660px] w-[1163] top-10">
+          <Image
+         // src="/images/cow.svg"
+        //  alt="Cow"
+         // width={1063}
+         // height={780}
+          //className="object-cover w-full h-full absolute top-0 right-0 bottom-5"
+  />
+</div>*/}
+
+     <div className="relative w-screen h-[660px] top-10 overflow-hidden">
+     <Image
+    src="/images/cow.svg"
+    alt="Cow"
+    width={1163}
+    height={780}
+    className="absolute right-0 top-0 h-full object-cover"
+  />
+</div>
           </div>
 
           {/* Research & Development Section */}
@@ -231,10 +243,10 @@ const AboutSection: React.FC = () => {
             <div className="w-full md:w-1/2 relative">
               <div ref={researchRef} className="relative z-10 flex flex-col w-[534] mt-10 font-bold text-[#404040] -space-y-[10px]" style={{fontFamily:"Jost",fontWeight:600,fontSize:"50px"}}>
               <span className="fade-in">Research & </span>
-              <span className="fade-in" style={{marginLeft:"16%"}}>Development</span>
-                <img className="fade-in" src="/images/leave.svg" alt="leave-img" width={90} height={71} style={{ marginLeft:"68%",marginTop:"-14%"}}/>
+              <span className="fade-in flex items-center gap-4" style={{marginLeft:"16%"}}>Development  </span>
+                <img className="fade-in" src="/images/leave.svg" alt="leave-img" width={90} height={71} style={{ marginLeft:"73%",marginTop:"-14%"}}/>
               
-              <p className="fade-in mt-4 text-[#282828]  w-[700px]" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
+              <p className="fade-in mt-4 text-[#282828]  w-[700px] text-black" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
               Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
               Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.

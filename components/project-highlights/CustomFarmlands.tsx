@@ -34,9 +34,9 @@ const CustomFarmlands = () => {
         },
       });
 
-      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power5.out" })
-        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power3.out" }, "-=1.2")
-        .from(leafRef.current, { opacity: 0, duration: 1.5 }, "-=1.2");
+      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power5.out" }, "-=1")
+        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power3.out" }, "-=1")
+        .from(leafRef.current, { opacity: 0, duration: 1.6,ease:"power3.out" }, "-=1");
 
       // Animating grid items from the left
       gridItemsRef.current.forEach((item) => {
@@ -86,7 +86,7 @@ const CustomFarmlands = () => {
         {/* Animated Title */}
         <h2
           ref={titleRef}
-          className="text-3xl flex flex-col relative md:text-5xl font-bold text-gray-800 w-[320px] h-[120px] space-y-3 [word-spacing:20px]"
+          className="text-3xl flex flex-col relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3 [word-spacing:20px]"
           style={{ fontFamily: "Jost", fontWeight: 600, fontSize: "50px" }}
         >
           <span>Customisable</span>
@@ -105,7 +105,7 @@ const CustomFarmlands = () => {
         {/* Animated Paragraphs */}
         <div ref={paragraphRef}>
           <p
-            className="text-gray-700 mt-2"
+            className="text-black-700 mt-2"
             style={{
               fontFamily: "Josefin Sans",
               fontWeight: 400,
@@ -117,7 +117,7 @@ const CustomFarmlands = () => {
             Friendly.
           </p>
           <p
-            className="text-gray-700 mt-2"
+            className="text-black-700 mt-2"
             style={{
               fontFamily: "Josefin Sans",
               fontWeight: 400,

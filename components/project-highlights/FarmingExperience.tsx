@@ -39,7 +39,7 @@ const FarmingExperience: React.FC = () => {
       },
     });
 
-    tl.to(titleRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power5.out" })
+    tl.to(titleRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power5.out" }, "-=1")
       .to(descriptionRef.current, { x: 0, opacity: 1, duration: 1.5, ease: "power3.out" }, "-=1")
       .to(
         Array.from(featureIconsRef.current?.children || []), 
@@ -76,20 +76,21 @@ const FarmingExperience: React.FC = () => {
 
           {/* Feature Icons */}
           <div ref={featureIconsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center mb-12">
-            {[
-              { icon: "/images/flower.svg", title: "Farm Land Within HMDA Limits" },
-              { icon: "/images/sunflower.svg", title: "Serene Natural Contours of Land" },
-              { icon: "/images/yard-work.svg", title: "Rich Black Cotton Soil Near to Village" },
-              { icon: "/images/farmer.svg", title: "Practicing Farming with Indigenous Seeds" },
-            ].map((feature, index) => (
-              <div key={index} className="flex flex-col items-center space-y-2 w-[65%]">
-                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
-                  <img src={feature.icon} alt="not-found" width="70%" height="70%" />
-                </div>
-                <p className="text-sm text-center text-gray-700">{feature.title}</p>
-              </div>
-            ))}
-          </div>
+  {[
+    { icon: "/images/flower.svg", title: "Farm Land Within HMDA Limits", link: "/farm-land" },
+    { icon: "/images/sunflower.svg", title: "Serene Natural Contours of Land", link: "/serene-land" },
+    { icon: "/images/yard-work.svg", title: "Rich Black Cotton Soil Near to Village", link: "/black-soil" },
+    { icon: "/images/farmer.svg", title: "Practicing Farming with Indigenous Seeds", link: "/indigenous-farming" },
+  ].map((feature, index) => (
+    <a key={index} href={feature.link} className="flex flex-col items-center space-y-2 w-[65%] cursor-pointer">
+      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+        <img src={feature.icon} alt="not-found" width="70%" height="70%" />
+      </div>
+      <p className="text-sm text-center text-gray-700">{feature.title}</p>
+    </a>
+  ))}
+</div>
+
         </div>
 
         {/* Right Image */}

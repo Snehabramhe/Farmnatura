@@ -88,6 +88,12 @@ export default function WhyFarmNatura() {
       );
     });
   }, []);
+  const textColors = [
+    "text-white", // First card
+    "text-white", // Second card
+    "text-black", // Third card
+    "text-white", // Fourth card
+  ];
 
   return (
     <section className="bg-[#F5F2E6] py-12 px-4 md:px-12">
@@ -120,9 +126,7 @@ export default function WhyFarmNatura() {
                 className="object-cover w-full h-full"
               />
               <div
-                className={`absolute inset-0 bg-opacity-40 flex flex-col justify-start p-6 ${
-                  index >= 2 ? "text-white" : "text-black"
-                }`}
+                className={`absolute inset-0 bg-opacity-40 flex flex-col justify-start p-6 ${textColors[index]}`}
               >
                 <h3
                   className="text-lg font-bold"
