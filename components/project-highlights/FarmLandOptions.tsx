@@ -75,35 +75,35 @@ const FarmLandOptions = () => {
     return () => ctx.revert(); // Cleanup animation to prevent duplicate triggers
   }, []);
   return (
-    <section ref={containerRef} className="relative bg-white py-12 px-6 lg:px-16 h-[850px] lg:h-[1050px] xl:h-[1200px] w-[2200px]:h-[1800px]">
+    <section ref={containerRef} className="relative bg-white py-12 px-6 lg:px-16 h-[1600px] md:h-[850px] lg:h-[1050px] xl:h-[1200px] w-[2200px]:h-[1800px]">
       {/* Background Image */}
       <div className="absolute bottom-0 left-0 w-full h-[300px] w-[2200px]:h-[600px] bg-no-repeat bg-cover bg-bottom" 
         style={{ backgroundImage: "url('/images/farmland-6.svg')" }}></div>
 
       {/* Left & Right Decor */}
       <Image src="/images/farmland-4.svg" alt="Left Decor" width={250} height={299} 
-        ref={leftDecorRef} className="absolute top-0 w-[130px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] left-[61px]"/>
+        ref={leftDecorRef} className="absolute top-0 w-0 md:w-[130px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] left-[61px]"/>
       <Image src="/images/farmland-5.svg" alt="Right Decor" width={250} height={250} 
-        ref={rightDecorRef} className="absolute top-0 w-[150px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] right-0"/>
+        ref={rightDecorRef} className="absolute top-0 w-0 md:w-[150px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] right-0"/>
 
       {/* Header */}
       <div ref={headingRef} className="flex flex-col items-center text-center relative z-10">
-        <h2 className="mt-[-40px] text-3xl lg:text-4xl xl:text-6xl w-[2200px]:text-8xl font-bold text-gray-800 flex items-center justify-center"
+        <h2 className="mt-[-40px] text-2xl md:text-3xl lg:text-4xl xl:text-6xl w-[2200px]:text-8xl font-bold text-gray-800 flex items-center justify-center"
           style={{ fontFamily: "Jost", fontWeight: 600 }}>
           Farm Land Options
-          <img src="/images/leave.svg" alt="leave-img" width={110} height={81} className="w-[80px] xl:w-[110px]"/>
+          <img src="/images/leave.svg" alt="leave-img" width={110} height={81} className="w-[50px] md:w-[80px] xl:w-[110px]"/>
         </h2>
 
         {/* Tabs */}
-        <div ref={buttonRef} className="flex items-center justify-center space-x-4 lg:mt-6 w-[2200px]:mt-18 text-sm lg:text-lg w-[2200px]:text-2xl"
+        <div ref={buttonRef} className="flex items-center justify-center md:space-x-4 lg:mt-6 w-[2200px]:mt-18 text-sm lg:text-lg w-[2200px]:text-2xl"
           style={{ fontFamily: "Sofia Pro", fontWeight: 400 }}>
-          <button className={`px-4 xl:px-6 py-2 w-[150px] lg:w-[240px] w-[2200px]:w-[450px] rounded-lg transition font-medium ${
+          <button className={`px-1 md:px-4 xl:px-6 py-2 w-[80px] md:w-[150px] lg:w-[240px] w-[2200px]:w-[450px] rounded-lg transition font-medium ${
               activeTab === "plot" ? "bg-[#358B6C] text-white" : "bg-transparent text-green-700"
             }`} onClick={() => setActiveTab("plot")}>
             Plot Sizes
           </button>
           <div className="h-12 lg:h-15 w-[1px] bg-gray-400 mx-3"></div>
-          <button className={`px-4 xl:px-6 py-2  w-[150px] lg:w-[240px] w-[2200px]:w-[450px] ml-3 rounded-lg transition font-medium ${
+          <button className={`px-1 md:px-4 xl:px-6 py-2 w-[80px] md:w-[150px] lg:w-[240px] w-[2200px]:w-[450px] rounded-lg transition font-medium ${
               activeTab === "pricing" ? "bg-[#358B6C] text-white" : "bg-transparent text-green-700"
             }`} onClick={() => setActiveTab("pricing")}>
             Pricing

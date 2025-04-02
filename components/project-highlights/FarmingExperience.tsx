@@ -16,7 +16,7 @@ const FarmingExperience: React.FC = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
-  
+
     gsap.set(
       [
         titleRef.current,
@@ -27,7 +27,7 @@ const FarmingExperience: React.FC = () => {
       ],
       { opacity: 0, x: -100 }
     );
-  
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -37,19 +37,19 @@ const FarmingExperience: React.FC = () => {
         scrub: 1.5,
       },
     });
-  
+
     tl.to(
-      [titleRef.current, descriptionRef.current, rightImageRef.current, farmImageRef.current], 
-      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", stagger: 0.1 }, 
+      [titleRef.current, descriptionRef.current, rightImageRef.current, farmImageRef.current],
+      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", stagger: 0.1 },
       "-=1"
     )
-    .to(
-      Array.from(featureIconsRef.current?.children || []), 
-      { x: 0, opacity: 1, duration: 1.6, stagger: 0.2, ease: "power5.out", }, 
-      "-=0.4"
-    ); // Animates icons one by one
+      .to(
+        Array.from(featureIconsRef.current?.children || []),
+        { x: 0, opacity: 1, duration: 1.6, stagger: 0.2, ease: "power5.out", },
+        "-=0.4"
+      ); // Animates icons one by one
   }, []);
-  
+
 
   return (
     <>
@@ -58,9 +58,9 @@ const FarmingExperience: React.FC = () => {
         <div className="w-full lg:w-2/3 px-6 md:px-12 lg:px-20 flex flex-col z-10" style={{ fontFamily: "Jost" }}>
           {/* Title */}
           <div className="mb-8">
-            <h1 ref={titleRef} className="text-3xl md:text-5xl font-bold text-black-600 flex items-center">
+            <h1 ref={titleRef} className="text-2xl md:text-5xl font-bold text-black-600 flex items-center md:items-start text-center md:text-left">
               The Farming Experience
-              <img src="/images/leave.svg" alt="leaf" width={90} className="ml-2" />
+              <img src="/images/leave.svg" alt="leaf" width={90} className="w-[45px] md:w-[90px] md:ml-2" />
             </h1>
           </div>
 
@@ -77,20 +77,20 @@ const FarmingExperience: React.FC = () => {
 
           {/* Feature Icons */}
           <div ref={featureIconsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-center mb-12">
-  {[
-    { icon: "/images/flower.svg", title: "Farm Land Within HMDA Limits", link: "/farm-land" },
-    { icon: "/images/sunflower.svg", title: "Serene Natural Contours of Land", link: "/serene-land" },
-    { icon: "/images/yard-work.svg", title: "Rich Black Cotton Soil Near to Village", link: "/black-soil" },
-    { icon: "/images/farmer.svg", title: "Practicing Farming with Indigenous Seeds", link: "/indigenous-farming" },
-  ].map((feature, index) => (
-    <a key={index} href={feature.link} className="flex flex-col items-center space-y-2 w-[65%] cursor-pointer">
-      <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-        <img src={feature.icon} alt="not-found" width="70%" height="70%" />
-      </div>
-      <p className="text-sm text-center text-gray-700">{feature.title}</p>
-    </a>
-  ))}
-</div>
+            {[
+              { icon: "/images/flower.svg", title: "Farm Land Within HMDA Limits", link: "/farm-land" },
+              { icon: "/images/sunflower.svg", title: "Serene Natural Contours of Land", link: "/serene-land" },
+              { icon: "/images/yard-work.svg", title: "Rich Black Cotton Soil Near to Village", link: "/black-soil" },
+              { icon: "/images/farmer.svg", title: "Practicing Farming with Indigenous Seeds", link: "/indigenous-farming" },
+            ].map((feature, index) => (
+              <a key={index} href={feature.link} className="flex flex-col items-center space-y-2 w-[65%] cursor-pointer">
+                <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                  <img src={feature.icon} alt="not-found" width="70%" height="70%" />
+                </div>
+                <p className="text-sm text-center text-gray-700">{feature.title}</p>
+              </a>
+            ))}
+          </div>
 
         </div>
 

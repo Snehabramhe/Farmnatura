@@ -175,7 +175,7 @@ const AboutSection: React.FC = () => {
             className="flex flex-col md:flex-row items-center md:justify-between mx-auto w-full relative"
           >
             {/* Left - Text */}
-            <div className="w-full  z-10 px-6 md:px-12 -space-y-[20px] mt-12">
+            <div className="w-full md:w-[60%] z-10 px-6 md:px-12 -space-y-[20px] mt-12">
               <h2
                 className="text-3xl md:text-5xl font-bold text-[#404040]"
                 style={{ fontFamily: "Jost", fontWeight: 600 }}
@@ -195,16 +195,15 @@ const AboutSection: React.FC = () => {
                 />
               </h2>
               <p
-                className="mt-9 w-full text-black"
+                className="mt-9 w-full text-black text-sm lg:text-md 2xl:text-xl"
                 style={{
                   fontFamily: "Sofia Pro",
-                  fontWeight: 400,
-                  fontSize: "15px",
+                  fontWeight: 400
                 }}
               >
-                 Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+                 Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
                 className="fade-in mt-8 ml-[20%] inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
@@ -214,7 +213,7 @@ const AboutSection: React.FC = () => {
               </a>
             </div>
 
-            <div className="relative w-full h-[280px] sm:h-[320px] md:h-[300px] lg:h-[400px] xl:h-[500px] 2xl:w-[1163px] top-10 flex justify-center">
+            <div className="relative w-full md:w-[40%] h-[280px] sm:h-[320px] md:h-[300px] lg:h-[400px] xl:h-[500px] 2xl:w-[1163px] top-10 flex justify-center">
               <Image
                 src="/images/cow.png"
                 alt="Cow"
@@ -226,7 +225,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Research & Development Section */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative -mt-[5%]">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative mt-[-8%] lg:mt-[-4%] xl:mt-0">
             {/* Left - Image Full Width */}
             <div className="relative w-full md:w-1/2 flex flex-col ml-0">
               <Image
@@ -234,7 +233,7 @@ const AboutSection: React.FC = () => {
                 alt="Pottery"
                 width={550}
                 height={400}
-                className="object-cover w-[99%]"
+                className="object-cover w-[98%]"
               />
               <Image
                 src="/images/vine.svg"
@@ -245,10 +244,10 @@ const AboutSection: React.FC = () => {
               />
             </div>
 
-            <div className="w-full md:w-1/2 relative flex flex-col mx-auto items-center  px-6 sm:px-8">
+            <div className="w-full md:w-1/2 relative flex flex-col items-start pr-6">
               <div
                 ref={researchRef}
-                className="relative z-10 flex flex-col mt-4 font-bold text-[#404040] space-y-2 "
+                className="relative z-10 flex flex-col mt-4 font-bold text-[#404040] space-y-2 2xl:ml-[21%]"
                 style={{
                   fontFamily: "Jost",
                   fontWeight: 600,
@@ -256,38 +255,37 @@ const AboutSection: React.FC = () => {
                 }}
               >
                 <span className="fade-in">Research & </span>
-                <span className="fade-in flex justify-center items-center gap-4">
+                <span className="fade-in flex justify-center items-center lg:mt-[-3%] lg:ml-[-10%]">
                   Development
                 </span>
 
                 {/* Leaf Image */}
                 <img
-                  className="fade-in mx-auto mt-2"
+                  className="fade-in mx-auto mt-2 ml-[79%] lg:ml-[74%] xl:ml-[65%] mt-[-21%] lg:mt-[-17%] xl:mt-[-12%]"
                   src="/images/leave.svg"
                   alt="leave-img"
                   width={70}
                   height={55}
-                  style={{ marginLeft: "73%", marginTop: "-20%" }}
+                  // style={{ marginLeft: "73%", marginTop: "-20%" }}
                 />
 
                 {/* Paragraph */}
                 <p
-                  className="fade-in mt-4 w-full sm:max-w-[700px] text-black text-sm sm:text-base"
+                  className="fade-in mt-4 lg:mt-[6%] w-full sm:max-w-[700px] text-black text-sm sm:text-base 2xl:text-lg"
                   style={{
                     fontFamily: "Sofia Pro",
                     fontWeight: 400,
-                    fontSize: "15px",
                   }}
                 >
-                   Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+                   Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
                 </p>
               </div>
 
               {/* Download Button */}
               <a
-                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg 2xl:ml-[21%] font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -297,8 +295,8 @@ const AboutSection: React.FC = () => {
               <img
                 src="/images/farm-exp-2.svg"
                 alt="home-img"
-                className="absolute -top-32 right-0"
-                width={"600px"}
+                className="absolute -top-32 md:top-[-70] lg:top-[-110] xl:top-[-150] 2xl:top-[-280] right-0 w-[400px] lg:w-[550px] xl:w-[650px] 2xl:w-[900px]"
+                // width={"600px"}
               />
             </div>
           </div>

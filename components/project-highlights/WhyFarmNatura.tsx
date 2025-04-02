@@ -114,7 +114,7 @@ export default function WhyFarmNatura() {
                 cardsRef.current[index] = el;
               }}
               className={`relative rounded-lg overflow-hidden shadow-md ${
-                index === 2 ? "-mt-20" : index === 3 ? "mt-4" : ""
+                index === 2 ? "md:-mt-20" : index === 3 ? "mt-4" : ""
               }`}
               style={{ height: `${feature.height}px` }}
             >

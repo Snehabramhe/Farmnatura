@@ -81,10 +81,10 @@ const CustomFarmlands = () => {
         alt="Vine Decoration"
         width={330}
         height={698}
-        className="absolute top-[90] right-0 w-[30%]"
+        className="absolute top-[12%] md:top-[10%] right-0 w-[50%] md:w-[35%]"
       />
 
-      <div className="max-w-4xl text-center md:text-left w-[70%]">
+      <div className=" w-full md:max-w-4xl text-center md:text-left md:w-[70%]">
         {/* Animated Title */}
         <h2
           ref={titleRef}
@@ -107,7 +107,7 @@ const CustomFarmlands = () => {
         {/* Animated Paragraphs */}
         <div ref={paragraphRef}>
           <p
-            className="text-black-700 mt-2"
+            className="text-black-700 mt-50 md:mt-2 mx-auto"
             style={{
               fontFamily: "Josefin Sans",
               fontWeight: 400,
@@ -157,7 +157,7 @@ const CustomFarmlands = () => {
                 objectFit="cover"
               />
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 {item.title}
               </h3>
