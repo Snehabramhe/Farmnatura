@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MoveInSection from "./project-highlights/MoveInSection";
@@ -13,12 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutSection: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
   const evolutionRef = useRef<HTMLDivElement | null>(null);
-  const researchRef = useRef<HTMLDivElement | null>(null); 
-  const inspiredBy = useRef<HTMLDivElement  | null>(null);// For another section
+  const researchRef = useRef<HTMLDivElement | null>(null);
+  const inspiredBy = useRef<HTMLDivElement | null>(null); // For another section
   const vision = useRef<HTMLDivElement | null>(null);
-  const About= useRef<HTMLDivElement | null>(null);
+  const About = useRef<HTMLDivElement | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
-
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,7 +30,7 @@ const AboutSection: React.FC = () => {
             opacity: 1,
             duration: 2.5,
             ease: "power3.out",
-            paused: true, // we'll control this with scroll
+            paused: true,
           }
         );
 
@@ -49,101 +48,101 @@ const AboutSection: React.FC = () => {
     });
     if (evolutionRef.current) {
       const anim = gsap.fromTo(
-        evolutionRef.current.querySelectorAll('h2, p, a'),
+        evolutionRef.current.querySelectorAll("h2, p, a"),
         { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
           duration: 2.5,
           stagger: 0.3,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: evolutionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
+            start: "top 80%",
+            end: "bottom 20%",
             onEnter: () => anim.play(),
             onLeave: () => anim.reverse(),
             onEnterBack: () => anim.play(),
             onLeaveBack: () => anim.reverse(),
           },
         }
-      );}
-      if (researchRef.current) {
-        gsap.fromTo(
-          researchRef.current.querySelectorAll('.fade-in'), // Target specific elements
-          { opacity: 0, x: -50 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 2.5,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: researchRef.current,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
-      }
+      );
+    }
+    if (researchRef.current) {
+      gsap.fromTo(
+        researchRef.current.querySelectorAll(".fade-in"), // Target specific elements
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 2.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: researchRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
 
-      if (inspiredBy.current) {
-        gsap.fromTo(
-          inspiredBy.current,
-          { opacity: 0, y: -50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2.5,
-            ease: 'power1.out',
-            scrollTrigger: {
-              trigger: inspiredBy.current,
-              start: 'top 80%',
-              end: 'top 54%',
-              toggleActions: 'play reverse play reverse', // 👈 this is key!
-              scrub: 0.5,
-            
-            },
-          }
-        );
-      }
-      if (vision.current) {
-        gsap.fromTo(
-          vision.current,
-          { opacity: 0, y: -50 }, // from above and invisible
-          {
-            opacity: 1,
-            y: 0,
-            duration: 2.5,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: vision.current,
-              start: "top 50%",       // when section enters
-              end: "bottom 20%",      // when bottom of section is leaving
-              toggleActions: "play reverse play reverse", // fade in on enter, fade out on leave
-              markers: false,         // change to true for debugging
-            },
-          }
-        );
-      }
-      if (About.current) {
-        gsap.fromTo(
-          About.current,
-          { x: -100, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 3,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: About.current,
-              start: "top 80%",        // Trigger when top enters 80% viewport
-              end: "bottom 20%",       // Ends when bottom reaches 20%
-              toggleActions: "play reverse play reverse", // show/hide
-              markers: false,          // set to true to debug
-            },
-          }
-        );
-      }
+    if (inspiredBy.current) {
+      gsap.fromTo(
+        inspiredBy.current,
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: inspiredBy.current,
+            start: "top 80%",
+            end: "top 54%",
+            toggleActions: "play reverse play reverse", // 👈 this is key!
+            scrub: 0.5,
+          },
+        }
+      );
+    }
+    if (vision.current) {
+      gsap.fromTo(
+        vision.current,
+        { opacity: 0, y: -50 }, // from above and invisible
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: vision.current,
+            start: "top 50%", // when section enters
+            end: "bottom 20%", // when bottom of section is leaving
+            toggleActions: "play reverse play reverse", // fade in on enter, fade out on leave
+            markers: false, // change to true for debugging
+          },
+        }
+      );
+    }
+    if (About.current) {
+      gsap.fromTo(
+        About.current,
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: About.current,
+            start: "top 80%", // Trigger when top enters 80% viewport
+            end: "bottom 20%", // Ends when bottom reaches 20%
+            toggleActions: "play reverse play reverse", // show/hide
+            markers: false, // set to true to debug
+          },
+        }
+      );
+    }
     return () => ctx.revert(); // cleanup on unmount
   }, []);
 
@@ -171,13 +170,22 @@ const AboutSection: React.FC = () => {
       <section className="bg-yellow-50 px-0 ">
         <div className="mr-0 space-y-28 relative">
           {/* Evolution Natural Farming Section */}
-          <div ref={evolutionRef}  className="flex flex-col md:flex-row items-center md:justify-between w-full relative">
+          <div
+            ref={evolutionRef}
+            className="flex flex-col md:flex-row items-center md:justify-between mx-auto w-full relative"
+          >
             {/* Left - Text */}
-            <div className="md:w-1/2 z-10 px-6 md:px-12 -space-y-[20px] mt-12">
-              <h2 className=" md:text-5xl font-bold text-[#404040]"  style={{fontFamily:"Jost",fontWeight:600,fontSize:"40px"}}>
+            <div className="w-full  z-10 px-6 md:px-12 -space-y-[20px] mt-12">
+              <h2
+                className="text-3xl md:text-5xl font-bold text-[#404040]"
+                style={{ fontFamily: "Jost", fontWeight: 600 }}
+              >
                 Evolution Natural
               </h2>
-              <h2 className="md:text-5xl font-bold text-[#404040] flex items-center"  style={{fontFamily:"Jost",fontWeight:600,fontSize:"40px"}}>
+              <h2
+                className="text-3xl md:text-5xl font-bold text-[#404040] flex items-center"
+                style={{ fontFamily: "Jost", fontWeight: 600 }}
+              >
                 Farming
                 <Image
                   src="/images/leave.svg"
@@ -186,44 +194,50 @@ const AboutSection: React.FC = () => {
                   height={71}
                 />
               </h2>
-              <p className="mt-9 w-[700px] text-black"  style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
-              Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the  &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              <p
+                className="mt-9 w-full text-black"
+                style={{
+                  fontFamily: "Sofia Pro",
+                  fontWeight: 400,
+                  fontSize: "15px",
+                }}
+              >
+                Farm Natura offers a community of like-minded families from
+                Hyderabad, where lifestyle is built <br />
+                basing on Natural Farming with an intent to focus on Health &
+                Happiness. <br />
+                <br />
+                Respct Mother Nature And Land. &quot;We Are Part Of Nature;
+                Therefore, We Must Coexist With The <br /> Other Creatures That
+                Live Among Us.&quot; <br />
+                <br />
+                Our passion is to promote the &ldquo;Agri&rdquo; based Culture
+                and bringing back the Ecological balanced <br /> Lifestyle with
+                Health and Happiness. We respect the Mother Nature and nourish
+                the land by <br /> restoring its original fertility back into
+                its Natural State for the generations to come.
               </p>
               <a
-                //href="/brochure.pdf"
-                //download
-                className="mt-12 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"   onClick={() => setModalOpen(true)}
+                className="fade-in mt-8 ml-[20%] inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
             </div>
 
-           {/* Right - Image Full Width */}
-       {/*<div className="relative w-full h-[660px] w-[1163] top-10">
-          <Image
-         // src="/images/cow.svg"
-        //  alt="Cow"
-         // width={1063}
-         // height={780}
-          //className="object-cover w-full h-full absolute top-0 right-0 bottom-5"
-  />
-</div>*/}
-
-     <div className="relative w-screen h-[660px] top-10 overflow-hidden">
-     <Image
-    src="/images/cow.svg"
-    alt="Cow"
-    width={1163}
-    height={780}
-    className="absolute right-0 top-0 h-full object-cover"
-  />
-</div>
+            <div className="relative w-full h-[280px] sm:h-[320px] md:h-[300px] lg:h-[400px] xl:h-[500px] 2xl:w-[1163px] top-10 flex justify-center">
+              <Image
+                src="/images/cow.svg"
+                alt="Cow"
+                width={1163}
+                height={780}
+                className="object-cover w-full h-full"
+              />
+            </div>
           </div>
 
           {/* Research & Development Section */}
-          <div  className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative -mt-[5%]">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full relative -mt-[5%]">
             {/* Left - Image Full Width */}
             <div className="relative w-full md:w-1/2 flex flex-col ml-0">
               <Image
@@ -234,41 +248,89 @@ const AboutSection: React.FC = () => {
                 className="object-cover w-[99%]"
               />
               <Image
-              src="/images/vine.svg"
-              alt="tree"
-              width={280}
-              height={250}
-              className="absolute object-cover w-[70%] top-40 left-0"
+                src="/images/vine.svg"
+                alt="tree"
+                width={280}
+                height={250}
+                className="absolute object-cover md:w-[70%] top-40 left-0 w-0"
               />
             </div>
-            {/* Right - Text */}
-            <div className="w-full md:w-1/2 relative">
-              <div ref={researchRef} className="relative z-10 flex flex-col w-[534] mt-10 font-bold text-[#404040] -space-y-[10px]" style={{fontFamily:"Jost",fontWeight:600,fontSize:"50px"}}>
-              <span className="fade-in">Research & </span>
-              <span className="fade-in flex items-center gap-4" style={{marginLeft:"16%"}}>Development  </span>
-                <img className="fade-in" src="/images/leave.svg" alt="leave-img" width={90} height={71} style={{ marginLeft:"73%",marginTop:"-14%"}}/>
-              
-              <p className="fade-in mt-4 w-[700px] text-black" style={{fontFamily:"Sofia Pro",fontWeight:400,fontSize:"15px"}}>
-              Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
-              </p>
+
+            <div className="w-full md:w-1/2 relative flex flex-col mx-auto items-center  px-6 sm:px-8">
+              <div
+                ref={researchRef}
+                className="relative z-10 flex flex-col mt-4 font-bold text-[#404040] space-y-2 "
+                style={{
+                  fontFamily: "Jost",
+                  fontWeight: 600,
+                  fontSize: "clamp(28px, 5vw, 50px)",
+                }}
+              >
+                <span className="fade-in">Research & </span>
+                <span className="fade-in flex justify-center items-center gap-4">
+                  Development
+                </span>
+
+                {/* Leaf Image */}
+                <img
+                  className="fade-in mx-auto mt-2"
+                  src="/images/leave.svg"
+                  alt="leave-img"
+                  width={70}
+                  height={55}
+                  style={{ marginLeft: "73%", marginTop: "-20%" }}
+                />
+
+                {/* Paragraph */}
+                <p
+                  className="fade-in mt-4 w-full sm:max-w-[700px] text-black text-sm sm:text-base"
+                  style={{
+                    fontFamily: "Sofia Pro",
+                    fontWeight: 400,
+                    fontSize: "15px",
+                  }}
+                >
+                  Farm Natura offers a community of like-minded families from
+                  Hyderabad, where lifestyle is built basing on Natural Farming
+                  with an intent to focus on Health & Happiness.
+                  <br />
+                  <br />
+                  Respect Mother Nature And Land. "We Are Part Of Nature;
+                  Therefore, We Must Coexist With The Other Creatures That Live
+                  Among Us."
+                  <br />
+                  <br />
+                  Our passion is to promote the "Agri" based Culture and bring
+                  back the Ecological balanced Lifestyle with Health and
+                  Happiness. We respect Mother Nature and nourish the land by
+                  restoring its original fertility for future generations.
+                </p>
               </div>
+
+              {/* Download Button */}
               <a
-                //href="/brochure.pdf"
-                //download
-                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-8 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white" onClick={() => setModalOpen(true)}
+                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
-              
-              <img src="/images/farm-exp-2.svg" alt="home-img" className="absolute -top-32 right-0" width={"600px"} />
+
+              {/* Farm Image */}
+              <img
+                src="/images/farm-exp-2.svg"
+                alt="home-img"
+                className="absolute -top-32 right-0"
+                width={"600px"}
+              />
             </div>
           </div>
 
           {/* Inspired By Section */}
-          <div ref={inspiredBy} className="mb-0">
-            <h2 ref={inspiredBy} className="text-3xl md:text-5xl font-bold text-gray-900 flex justify-center items-center space-x-2 ml-150">
+          <div
+            ref={inspiredBy}
+            className="mb-6 mt-[-50] flex flex-col items-center ml-20 md:ml-100"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 flex items-center justify-center space-x-2">
               Inspired By
               <Image
                 src="/images/leave.svg"
@@ -282,29 +344,29 @@ const AboutSection: React.FC = () => {
           {/* Profile Section */}
           <div className="flex flex-col md:flex-row justify-between items-center pb-20 gap-4 px-6 md:px-12 ">
             {/* Vinay Ram */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center w-200">
               <Image
                 src="/images/vinayram.svg"
                 alt="Vinay Ram"
-                width={362}
-                height={362}
+                width={280}
+                height={280}
                 className="rounded-full"
               />
               <p className="mt-4 text-lg font-semibold">Vinay Ram</p>
             </div>
             {/* Subhash Palekar */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center w-200">
               <Image
                 src="/images/subhashpalekar.svg"
                 alt="Subhash Palekar"
-                width={362}
-                height={362}
+                width={280}
+                height={280}
                 className="rounded-full"
               />
               <p className="mt-4 text-lg font-semibold">Subhash Palekar</p>
             </div>
             {/* Tree Image */}
-            <div className="flex flex-col items-center ml-20 -mt-10">
+            <div className="flex flex-col w-0 md:w-350 items-center ml-20 -mt-10">
               <Image
                 src="/images/tree.svg"
                 alt="Tree"
@@ -315,6 +377,7 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </section>
+
       {/* Vision & Mission Section */}
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24 min-h-screen">
         {/* Background Images */}
@@ -330,14 +393,21 @@ const AboutSection: React.FC = () => {
         {/* Content Wrapper */}
         <div ref={vision} className="relative">
           {/* Title with Creeper */}
-          <div ref={vision} className="flex flex-col items-center text-center mb-8 space-y-3" style={{fontFamily:"Jost", fontWeight:600, fontSize:"67px", color:"#404040"}}>
-            <span className="text-4xl md:text-5xl font-bold z-2">
-              Vision
-            </span>
-            <span className="relative text-4xl md:text-5xl font-bold ml-45 z-2">
+          <div
+            ref={vision}
+            className="flex flex-col items-center text-center mb-8 space-y-3"
+            style={{
+              fontFamily: "Jost",
+              fontWeight: 600,
+              fontSize: "67px",
+              color: "#404040",
+            }}
+          >
+            <span className="text-4xl md:text-5xl font-bold z-2">Vision</span>
+            <span className="relative text-4xl md:text-5xl font-bold ml-0 md:ml-45 z-2">
               &
             </span>
-            <span className="relative text-4xl md:text-5xl font-bold ml-90 z-2 xl:z-0">
+            <span className="relative text-4xl md:text-5xl font-bold ml-0 md:ml-90 z-2 xl:z-0">
               Mission
               <Image
                 src="/images/leave.svg"
@@ -347,7 +417,7 @@ const AboutSection: React.FC = () => {
                 className="absolute -right-20 -top-10 z-0"
               />
             </span>
-            <div className="relative w-[580px] h-[250px] -mt-82 -ml-80 z-2">
+            <div className="relative w-0 md:w-[580px] h-[250px] -mt-82 -ml-80 z-2">
               <Image
                 src="/images/creeper.svg"
                 alt="Creeper"
@@ -359,114 +429,165 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Content Grid */}
-          <div ref={vision} className="flex flex-col items-start mt-50 ml-20 lg:ml-40">
+          <div
+            ref={vision}
+            className="flex flex-col items-start mt-50 ml-0 md:ml-20 lg:ml-40"
+          >
             {/* Left Box */}
             <div className="z-10 flex flex-row justify-between">
               <div>
                 <Image
                   src="/images/dewdrop.svg"
                   alt="Dewdrop on leaf"
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={400}
                   className="rounded-lg shadow-md"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-10 my-auto space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, color:"#727272"}}>
+              <div className="flex flex-col items-center md:items-start ml-5 md:ml-10 my-auto space-y-4">
+                <h3
+                  className="text-2xl font-semibold text-black"
+                  style={{
+                    fontFamily: "Jost",
+                    fontWeight: 500,
+                  }}
+                >
                   Creating self-sufficient
                 </h3>
-                <p className="text-gray-600 text-[12px] lg:text-[16px] max-w-md text-center md:text-left" style={{fontFamily:"Josefin Sans", fontWeight:400, color:"#4A4A4A"}}>
+                <p
+                  className="text-black text-[12px] lg:text-[16px] max-w-md md:text-left"
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    fontWeight: 400,
+                  }}
+                >
                   We are proud to present Planet Green, a stunning new precinct
-                  that is destined to be the residential and commercial showpiece
-                  of Nature Friendly.
+                  that is destined to be the residential and commercial
+                  showpiece of Nature Friendly.
                 </p>
+              </div>
             </div>
-          </div>
-            
 
             {/* Right Box */}
-            <div className="z-10 flex flex-row justify-between lg:ml-0 xl:ml-75 mt-20">
+            <div className="z-10 flex flex-row justify-between lg:ml-0 xl:ml-60 mt-20">
               <div>
                 <Image
                   src="/images/sprout.svg"
                   alt="Sprout growing"
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={400}
                   className="rounded-lg shadow-md"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-10 my-auto space-y-4">
-                <h3 className="text-2xl font-semibold text-gray-800" style={{fontFamily:"Jost", fontWeight:500, color:"#727272"}}>
+              <div className="flex flex-col items-center md:items-start ml-5 md:ml-10 my-auto space-y-4">
+                <h3
+                  className="text-2xl font-semibold text-black"
+                  style={{
+                    fontFamily: "Jost",
+                    fontWeight: 500,
+                  }}
+                >
                   Sustainable communities close to nature
                 </h3>
-                <p className="text-gray-600 text-[12px] lg:text-[16px] max-w-md" style={{fontFamily:"Josefin Sans", fontWeight:400, color:"#4A4A4A"}}>
+                <p
+                  className="text-black text-[12px] lg:text-[16px] max-w-md"
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    fontWeight: 400,
+                  }}
+                >
                   We are proud to present Planet Green, a stunning new precinct
-                  that is destined to be the residential and commercial showpiece
-                  of Nature Friendly.
+                  that is destined to be the residential and commercial
+                  showpiece of Nature Friendly.
                 </p>
               </div>
             </div>
-            
-            <div className="xl:ml-160 mt-10 z-2" style={{fontFamily:"Sofia Pro", fontSize:"18px", color:"#358B6C"}}>
+
+            <div
+              className="xl:ml-160 mt-10 z-2 mx-auto"
+              style={{
+                fontFamily: "Sofia Pro",
+                fontSize: "18px",
+                color: "#358B6C",
+              }}
+            >
               <a
-                //href="/brochure.pdf"
-                //download
-                className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white" onClick={() => setModalOpen(true)}
+                className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white"
+                onClick={() => setModalOpen(true)}
               >
                 Download Brochure
               </a>
             </div>
-            
           </div>
         </div>
       </section>
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24">
         {/* Background Image in Corner */}
-        <div className="absolute -top-10 -right-45 w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-100">
+        <div className="absolute -top-12 md:-right-32 lg:-right-56 w-0 md:w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-100">
           <Image
-            src="/images/corner-plant.svg" // Ensure this image exists in /public/images
+            src="/images/corner-plant.svg" 
             alt="Corner Plant"
             width={500}
             height={300}
-            className="object-contain w-80 h-80"
+            className="object-contain w-70 h-70"
           />
         </div>
 
         {/* About Section */}
-        <div ref={About} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div
+          ref={About}
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 -mt-20 md:mt-0"
+        >
           {/* Left Side - Text */}
           <div ref={About} className="md:pr-0">
-            <h2 ref={About} className="text-4xl md:text-5xl font-bold text-gray-900 mt-50" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
+            <h2
+              ref={About}
+              className="text-3xl md:text-4xl font-bold text-gray-900 mt-50"
+              style={{ fontFamily: "Jost", fontWeight: 600}}
+            >
               About Planet
             </h2>
-            <h2 ref={About} className="relative text-4xl md:text-5xl font-bold text-gray-900 ml-30 mt-2" style={{fontFamily:"Jost", fontWeight: 600, fontSize: "40px"}}>
+            <h2
+              ref={About}
+              className="relative text-3xl md:text-4xl font-bold text-gray-900 ml-10 mt-2"
+              style={{ fontFamily: "Jost", fontWeight: 600}}
+            >
               Green Infra
               <Image
                 src="/images/leave.svg"
                 alt="Leaf Icon"
                 width={90}
                 height={30}
-                className="absolute left-48 -top-8"
+                className="absolute left-35 -top-8 md:left-48"
               />
             </h2>
-            <p className="text-gray-700 text-lg mt-15" style={{fontFamily:"Josefin Sans", fontWeight: 400, fontSize: "16px"}}>
+            <p
+              className="text-gray-700 text-lg mt-15"
+              style={{
+                fontFamily: "Josefin Sans",
+                fontWeight: 400,
+                fontSize: "16px",
+              }}
+            >
               We are proud to present Planet Green, a stunning new precinct that
               is destined to be the residential and commercial showpiece of
               Nature Friendly.
-              <br/>
+              <br />
               We are proud to present Planet Green, a stunning new precinct that
               is destined to be the residential and commercial showpiece of
               Nature Friendly.
-              <br/><br/><br/>   
+              <br />
+              <br />
+              <br />
               Grow investments | Farm Natura is located near the Airport,
               Srisailam highway, offering prestigious farmhouses for sale in
-              Hyderabad.The project features abundant water, naturally nutrient-rich soil,
-              and ideal climatic conditions, making it perfect for sustainable
-              farming and fruit plantation.The project features abundant water, naturally nutrient-rich soil,
-              and ideal climatic conditions, making it perfect for sustainable
-              farming and fruit plantation.
+              Hyderabad.The project features abundant water, naturally
+              nutrient-rich soil, and ideal climatic conditions, making it
+              perfect for sustainable farming and fruit plantation.The project
+              features abundant water, naturally nutrient-rich soil, and ideal
+              climatic conditions, making it perfect for sustainable farming and
+              fruit plantation.
             </p>
-            
 
             {/* Planet Green Logo */}
             <div ref={About} className="flex mt-6 space-x-7 items-center">
@@ -475,26 +596,29 @@ const AboutSection: React.FC = () => {
                 alt="Planet Green Logo"
                 width={300}
                 height={120}
-                className="w-50 h-50 xl:w-70 xl:h-70"
+                className="w-40 h-40 xl:w-70 xl:h-70"
               />
               <Image
                 src="/images/planet-green-icon.svg"
                 alt="Planet Green Icon"
                 width={300}
                 height={333}
-                className="w-50 h-50 xl:w-70 xl:h-70"
+                className="w-40 h-40 xl:w-70 xl:h-70"
               />
             </div>
           </div>
 
           {/* Right Side - Image (FIXED) */}
-          <div ref={About} className="relative w-screen h-[400px] md:h-[600px] lg:h-[700px] rounded-lg shadow-lg overflow-hidden mt-42">
+          <div
+            ref={About}
+            className="relative md:w-screen h-[400px] md:h-[600px] lg:h-[700px] rounded-lg shadow-lg overflow-hidden md:mt-42 mt-0"
+          >
             <Image
-              src="/images/farm-field.svg" // Ensure the correct path to the image
+              src="/images/farm-field.svg" 
               alt="Farm Field"
-              width={982} // Adjust for large screens
+              width={982}
               height={500}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full  h-full object-cover rounded-lg"
             />
           </div>
         </div>

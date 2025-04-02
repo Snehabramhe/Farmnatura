@@ -23,10 +23,12 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
   const pRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
 
-
-  useEffect(() => {
+    useEffect(() => {
     // GSAP context
     const ctx = gsap.context(() => {
       // Animate Sky from left and Sun from right
@@ -119,34 +121,56 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
     return () => ctx.revert(); // Cleanup animations on unmount
   }, []);
 
+
   return (
     <section
-      className="relative py-16 px-6 md:px-20 flex justify-center"
+      ref={sectionRef}
+      className="relative flex justify-center items-center px-6 md:px-8 mt-[15%]"
       style={{ backgroundColor: bgColor }}
     >
+      {/* Background Elements */}
+      {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <Image
+          src="/images/tree-left.svg"
+          alt="Tree Left"
+          width={150}
+          height={200}
+          className="absolute left-0 top-10 hidden lg:block"
+        />
+        <Image
+          src="/images/tree-right.svg"
+          alt="Tree Right"
+          width={150}
+          height={200}
+          className="absolute right-0 top-10 hidden lg:block"
+        />
+      </div> */}
+
+
       {/* Animated Tree */}
-      <div className="absolute top-5 left-0" ref={treeRef}>
-        <Image src="/images/tree-img.svg" alt="Tree" width={540} height={200} />
+      <div className="absolute -top-32 md:top-[-100] xl:top-[-140] left-0" ref={treeRef}>
+        <Image src="/images/tree-img.svg" alt="Tree" width={500} height={300} className="md:w-[340] xl:w-[500]"/>
       </div>
 
       {/* Animated Leaves */}
-      <div className="absolute top-5 right-0" ref={leavesRef}>
+      <div className="absolute -top-32 right-0" ref={leavesRef}>
         <Image
           src="/images/tree-leave-img.svg"
           alt="Leaves"
-          width={150}
+          width={200}
           height={200}
+          className="md:w-[120] xl:w-[160]"
         />
       </div>
 
       {/* Animated Sky and Sun */}
-      <div className="absolute -top-1 left-[26%] flex items-center ">
+      <div className="absolute -top-42 md:top-[-100] lg:top-[-140] xl:top-[-160] left-[26%] flex items-center ">
         <Image
           src="/images/sky-img.svg"
           alt="Cloud"
           width={340}
           height={80}
-          className="z-1"
+          className="z-1 md:w-[250] lg:w-[300] xl:w-[340]"
           ref={skyRef}
         />
         <Image
@@ -154,68 +178,46 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
           alt="Sun"
           width={100}
           height={50}
-          className="-ml-27 -mt-10"
+          className="-ml-27 -mt-10 md:w-[50] lg:w-[100]"
           ref={sunRef}
         />
       </div>
 
-      <div className="relative w-full mt-29">
-        <div
-          className="relative bg-[url('/images/Group.svg')] bg-contain bg-no-repeat bg-center text-white p-8 lg:p-16 flex flex-row items-center w-full h-full"
-        >
-          <div className="flex-1 text-left ml-[12%]">
-            <h2
-              ref={h2Ref}
-              className="text-xl lg:text-2xl xl:text-4xl"
-              style={{ fontFamily: "Jost", fontWeight: 400 }}
-            >
-              Ready To Move
-              <br className="block xl:hidden" />
-              In Are You?
-            </h2>
-            <p
-              ref={pRef}
-              className="text-[10px] lg:text-[14px] xl:text-xl mt-2 opacity-80"
-              style={{ fontFamily: "Jost", fontWeight: 300 }}
-            >
-              Check out the new farms for sale in
-              <br className="block xl:hidden" />
-              Hyderabad by Farm Natura.
-            </p>
-            <button
-              ref={buttonRef}
-              onClick={() => router.push('/contact')} // Add click handler
-              className="mt-10 bg-white text-black px-8 top-[50%] py-2 rounded-md shadow hover:bg-gray-100 transition"
-              style={{ fontFamily: "Jost", fontWeight: 500, fontSize: "18px" }}
-            >
-              Get in Touch
-            </button>
-          </div>
-
-          <div className="mt-6 md:mt-0 md:ml-6">
-            <div className="p-2 rounded-lg">
-              <Image
-                src="/images/farm-couple.svg"
-                alt="Farm Couple"
-                width={400}
-                height={200}
-                className="rounded-lg w-50 h-50 lg:w-70 lg:h-70 xl:w-100 xl:h-100 absolute right-10 xl:right-20 -top-20 md:top-[10] lg:top-[-20] xl:top-[-110]"
-              />
-            </div>
-          </div>
+      {/* Content Box */}
+      <div
+        ref={contentRef}
+        className="relative flex flex-col lg:flex-row items-center bg-[url('/images/Group.svg')] bg-cover bg-no-repeat bg-center rounded-xl p-6 md:p-10 w-full md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[700px]"
+      >
+        {/* Left Side (Text Content) */}
+        <div className="flex-1 lg:ml-[15%] -ml-[30%]">
+          <h2 className="text-xl mb-[5%] md:text-xl lg:text-3xl xl:text-4xl 2xl:text-7xl font-medium text-white">
+            Ready To Move In Are You?
+          </h2>
+          <p className="mt-2 lg:mb-[9%] md:mb-[5%] text-[10px] md:text-[8px] lg:text-[12px] xl:text-lg 2xl:text-4xl text-white opacity-80">
+            Check out the new farms for sale in Hyderabad by Farm Natura.
+          </p>
+          <button
+            onClick={() => router.push("/contact")}
+            className="mt-6 bg-white text-black font-medium px-8 2xl:py-6 lg:py-3 md:px-4 md:py-1 md:text-md lg:text-lg xl:text-xl 2xl:text-4xl rounded-md shadow hover:bg-gray-100 transition"
+          >
+            Get in Touch
+          </button>
         </div>
-        <img
-          src="/images/horizontal-img.svg"
-          alt="hr-img"
-          style={{
-            marginTop: "80px",
-            marginBottom: "30px",
-            backgroundColor: "#fffbe4",
-          }}
-        />
+
+        {/* Right Side (Image) */}
+        <div className="flex-1 flex justify-center mt-6 lg:mt-0">
+          <Image
+            src="/images/farm-couple.svg"
+            alt="Farm Couple"
+            width={400}
+            height={300}
+            className="rounded-lg absolute -top-[15%] md:w-[220px]  md:right-[10%] xl:right-[10%] lg:w-[320px] lg:right-[7%] xl:w-[450px] 2xl:w-[650px]"
+          />
+        </div>
       </div>
     </section>
   );
-};
+
+}
 
 export default MoveInSection;
