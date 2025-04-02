@@ -6,12 +6,18 @@ import Testimonials from "@/components/Home/Testimonials";
 import FarmNaturaFooter from "@/components/project-highlights/FarmNaturaFooter";
 import MoveInSection from "@/components/project-highlights/MoveInSection";
 import Hero from "../components/Home/Hero";
+import Head from "next/head";
 
 
 const HomePage = () => {
 
   return (
+    
     <main className="relative min-h-screen w-screen overflow-x-hidden bg-primary-bg">
+         <Head>
+        <link rel="icon" href="/images/logo.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo-530x530.png" sizes="512x512" />
+      </Head>
       {/* <Navbar /> */}
       <Hero />
       <About />
@@ -24,7 +30,7 @@ const HomePage = () => {
       </div>
       <Testimonials />
       {/* <MoveIn /> */}
-      <MoveInSection bgColor={"white"} />
+      <MoveInSection bgColor={"white"} /> 
       <FarmNaturaFooter bgColor={"white"} />
       {/* <Footer />
       <QuickLinks /> */}
