@@ -1,7 +1,7 @@
 export const HIGHLIGHTS = [
   {
     id: 1,
-    title: "India's First Natural Farming Estates.",
+    title: "India's First Natural Farming Estates",
     img: "/svg/highlight-img.svg",
     contentTitle: "India's First Natural Farming Estates.",
     content:
@@ -11,9 +11,9 @@ export const HIGHLIGHTS = [
     id: 2,
     title: "Importance of Soil",
     img: "/svg/highlight-img.svg",
-    contentTitle: "India's First Natural Farming Estates.",
+    contentTitle: "India's First Natural  Estates.",
     content:
-      "Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness.",
+      "Farm Natura offers a community of like-minded  families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness.",
   },
   {
     id: 3,

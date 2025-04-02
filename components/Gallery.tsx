@@ -43,11 +43,11 @@ const Gallery = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: galleryRef.current,
-            start: "top 80%",
+            start: "top 50%",
             once: true, 
           },
         }
@@ -61,12 +61,12 @@ const Gallery = () => {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.2,
           ease: "power2.out",
           stagger: 0.2,
           scrollTrigger: {
             trigger: galleryRef.current,
-            start: "top 85%",
+            start: "top 50%",
             once: true, 
           },
         }
@@ -80,11 +80,11 @@ const Gallery = () => {
           {
             opacity: 1,
             scale: 1,
-            duration: 1.2,
+            duration: 0.5,
             ease: "power2.out",
             scrollTrigger: {
               trigger: specialImageRef.current,
-              start: "top 85%",
+              start: "top 30%",
               once: true,
             },
           }
@@ -93,7 +93,7 @@ const Gallery = () => {
     });
 
     return () => ctx.revert(); 
-  }, []); // 
+  }, []); 
 
 
   const currentImages = allImages.slice(startIndex, startIndex + imagesPerSet);

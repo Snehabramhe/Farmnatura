@@ -124,10 +124,9 @@ const FarmLandOptions = () => {
               hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}  >
               Download Brochure
             </button>
-
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-          </div>
+          </div>  
         ))}
+           <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
     </section>
   );

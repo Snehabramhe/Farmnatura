@@ -12,7 +12,7 @@ const Contact = () => {
     email: "",
     phone: "",
     interestedIn: "",
-    plotSize: "",
+    PlotSize: "",
   });
 
   const [success, setSuccess] = useState(false);
@@ -41,9 +41,11 @@ const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
 
-    if (name === "phone") {
-      if (/[^0-9]/.test(value) || value.length > 10) {
-        return;
+  
+    if (name === "name") {
+      const namePattern = /^[A-Za-z\s]*$/; 
+      if (!namePattern.test(value)) {
+        return; 
       }
     }
 
@@ -56,9 +58,15 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-  
-    if (!formData.name || !formData.email || !formData.phone || !formData.interestedIn || !formData.plotSize) {
+
+    if (!formData.name || !formData.email || !formData.phone || !formData.interestedIn || !formData.PlotSize) {
       alert("Please fill out all fields.");
+      return;
+    }
+    
+    const namePattern = /^[A-Za-z\s]+$/; 
+    if (!namePattern.test(formData.name)) {
+      alert("Name should only contain alphabets.");
       return;
     }
 
@@ -82,6 +90,9 @@ const Contact = () => {
           name: formData.name,  
           phone: formData.phone,
           email: formData.email,
+          interestedIn: formData.interestedIn,
+          PlotSize:formData.PlotSize
+
         }),
       });
 
@@ -93,7 +104,7 @@ const Contact = () => {
       console.log('Form Submitted:', data); 
 
       setSuccess(true); 
-      setFormData({ name: "", email: "", phone: "", interestedIn: "", plotSize: "" }); 
+      setFormData({ name: "", email: "", phone: "", interestedIn: "", PlotSize: "" }); 
     } catch (error) {
       console.error("Error submitting the form:", error);
       alert("There was an error submitting the form.");
@@ -173,8 +184,8 @@ const Contact = () => {
 
             {/* Looking Plot Size Dropdown */}
             <select
-              name="plotSize"
-              value={formData.plotSize}
+              name="PlotSize"
+              value={formData.PlotSize}
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               required

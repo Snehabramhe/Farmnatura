@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
+import { useEffect } from "react";
 
 
 
@@ -16,40 +17,56 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     phone: "",
     email: "",
     interestedIn: "",
-    plotSize: "",
+    PlotSize: "",
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+
+
+   
+  if (name === "name") {
+    const namePattern = /^[A-Za-z\s]*$/; 
+    if (!namePattern.test(value)) {
+      return; 
+    }
+  }
+
 
     if (name === "phone" && (/[^0-9]/.test(value) || value.length > 10)) {
       return;
     }
+
 
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setSuccess(false);
-
+  
     try {
-      const response = await fetch("http://localhost:3000/api/sendMail", {
+      const response = await fetch("http://192.168.0.95:3000/api/sendMail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         setSuccess(true);
-        setFormData({ name: "", phone: "", email: "", interestedIn: "", plotSize: "" });
-        onClose();
+        setFormData({ name: "", phone: "", email: "", interestedIn: "", PlotSize: "" });
+  
+       
+        setTimeout(() => {
+          onClose();
+          setSuccess(false); 
+        }, 3000);
       } else {
         alert("Error submitting form");
       }
@@ -60,6 +77,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       setLoading(false);
     }
   };
+  
+
+ 
 
   if (!isOpen) return null;
 
@@ -67,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.5)] z-50">
       <div className="relative flex flex-col md:flex-row items-center bg-white p-6 md:p-10 rounded-lg shadow-2xl max-w-4xl mx-auto mt-8">
         
-        {/* Close Button (X Icon) */}
+      
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 transition"
@@ -133,8 +153,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
             {/* Looking Plot Size Dropdown */}
             <select
-              name="plotSize"
-              value={formData.plotSize}
+              name="PlotSize"
+              value={formData.PlotSize}
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
               required
