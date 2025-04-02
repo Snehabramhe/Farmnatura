@@ -65,7 +65,7 @@ const About = () => {
         width={200}
         height={200}
         alt="about-right"
-        className="w-full h-full object-contain absolute -right-1/4 top-1/2 -translate-y-[40%]"
+        className="w-full h-full object-contain absolute -right-1/4 sm:-right-1/4 top-1/2  -translate-y-[40%]"
       />
     </div>
   );

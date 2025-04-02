@@ -80,29 +80,22 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
           style={{ fontFamily: "Assistant", fontWeight: 400 }}
         >
           <div className="flex flex-row items-center md:items-start justify-center md:justify-start space-x-0 md:space-x-2 text-center md:text-left">
-            {/* Clickable Location Icon */}
-            <a
-              href="https://maps.app.goo.gl/WFkx7FMcgNfzPgXg9"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
+            <img
                 src="/images/location.svg"
                 alt="Location"
                 className="w-8 h-8 cursor-pointer md:w-10 md:h-10"
               />
-            </a>
             {/* Address Text */}
             <p className="w-[90%] md:w-auto leading-snug">
-              Planet Green-Dates County Above Hyundai Showroom 2nd Floor, Regent
-              Square Building, Q-City Road, Gowlidoddi, Hyderabad – 500075
+            Planet Green’s
+            Farm Natura, Planet Green ,Above Hyundai Show Room Building, Q- City Road, Financial District, Gowlidoddi , Hyderabad
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-center md:justify-between space-y-3 md:space-y-0 space-x-0 md:space-x-4 w-full md:w-[370px]">
             <div className="flex items-center space-x-2">
               <img src="/images/phone.svg" alt="phone" className="w-5 h-5" />
-              <p>+91 9555700900</p>
+              <p>+91 9579555666</p>
             </div>
           </div>
 
