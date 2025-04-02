@@ -25,7 +25,6 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
 
 
     useEffect(() => {

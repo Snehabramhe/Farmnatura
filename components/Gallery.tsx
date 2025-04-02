@@ -28,7 +28,7 @@ const Gallery = () => {
   const specialImageRef = useRef<HTMLImageElement>(null);
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       
       gsap.fromTo(
         titleRef.current,

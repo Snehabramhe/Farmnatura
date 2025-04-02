@@ -202,20 +202,9 @@ const AboutSection: React.FC = () => {
                   fontSize: "15px",
                 }}
               >
-                Farm Natura offers a community of like-minded families from
-                Hyderabad, where lifestyle is built <br />
-                basing on Natural Farming with an intent to focus on Health &
-                Happiness. <br />
-                <br />
-                Respct Mother Nature And Land. &quot;We Are Part Of Nature;
-                Therefore, We Must Coexist With The <br /> Other Creatures That
-                Live Among Us.&quot; <br />
-                <br />
-                Our passion is to promote the &ldquo;Agri&rdquo; based Culture
-                and bringing back the Ecological balanced <br /> Lifestyle with
-                Health and Happiness. We respect the Mother Nature and nourish
-                the land by <br /> restoring its original fertility back into
-                its Natural State for the generations to come.
+                 Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
                 className="fade-in mt-8 ml-[20%] inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
@@ -227,7 +216,7 @@ const AboutSection: React.FC = () => {
 
             <div className="relative w-full h-[280px] sm:h-[320px] md:h-[300px] lg:h-[400px] xl:h-[500px] 2xl:w-[1163px] top-10 flex justify-center">
               <Image
-                src="/images/cow.svg"
+                src="/images/cow.png"
                 alt="Cow"
                 width={1163}
                 height={780}
@@ -290,20 +279,9 @@ const AboutSection: React.FC = () => {
                     fontSize: "15px",
                   }}
                 >
-                  Farm Natura offers a community of like-minded families from
-                  Hyderabad, where lifestyle is built basing on Natural Farming
-                  with an intent to focus on Health & Happiness.
-                  <br />
-                  <br />
-                  Respect Mother Nature And Land. "We Are Part Of Nature;
-                  Therefore, We Must Coexist With The Other Creatures That Live
-                  Among Us."
-                  <br />
-                  <br />
-                  Our passion is to promote the "Agri" based Culture and bring
-                  back the Ecological balanced Lifestyle with Health and
-                  Happiness. We respect Mother Nature and nourish the land by
-                  restoring its original fertility for future generations.
+                   Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
                 </p>
               </div>
 
@@ -569,24 +547,9 @@ const AboutSection: React.FC = () => {
                 fontSize: "16px",
               }}
             >
-              We are proud to present Planet Green, a stunning new precinct that
-              is destined to be the residential and commercial showpiece of
-              Nature Friendly.
-              <br />
-              We are proud to present Planet Green, a stunning new precinct that
-              is destined to be the residential and commercial showpiece of
-              Nature Friendly.
-              <br />
-              <br />
-              <br />
-              Grow investments | Farm Natura is located near the Airport,
-              Srisailam highway, offering prestigious farmhouses for sale in
-              Hyderabad.The project features abundant water, naturally
-              nutrient-rich soil, and ideal climatic conditions, making it
-              perfect for sustainable farming and fruit plantation.The project
-              features abundant water, naturally nutrient-rich soil, and ideal
-              climatic conditions, making it perfect for sustainable farming and
-              fruit plantation.
+               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
             </p>
 
             {/* Planet Green Logo */}
