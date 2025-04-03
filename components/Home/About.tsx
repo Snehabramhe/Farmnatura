@@ -35,38 +35,69 @@ const About = () => {
   );
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden overflow-y-hidden">
-      <div className="mt-11 pl-[75px] xl:pl-[100px]">
-        <h2
-          className="font-jost font-semibold text-[30px] 2xl:text-[50px] text-primary-text"
-          id="about-heading"
-        >
-          Why Managed farmland
-        </h2>
-        <p
-          className="font-sofia-pro-regular text-[16px] 2xl:text-[20px] mt-5"
-          id="about-content"
-        >
-          Farm Natura offers a community of like-minded families from Hyderabad,
-          where lifestyle is built basing on Natural
-          <br />
-          Farming with an intent to focus on Health & Happiness.
-        </p>
+    <div className="relative min-h-dvh w-full overflow-hidden flex flex-col">
+      {/* Content Container */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-8 sm:pt-11 md:pt-16 z-10 flex-1">
+        <div className="max-w-4xl">
+          <h2
+            className="font-jost font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[50px] text-primary-text"
+            id="about-heading"
+          >
+            Why Managed Farmland
+          </h2>
+          <p
+            className="font-sofia-pro-regular text-base sm:text-lg md:text-xl 2xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
+            id="about-content"
+          >
+            Farm Natura offers a community of like-minded families from Hyderabad,
+            where lifestyle is built basing on Natural Farming with an intent to
+            focus on Health & Happiness.
+          </p>
+        </div>
       </div>
-      <Image
-        src="/svg/about-bg.svg"
-        width={200}
-        height={200}
-        alt="about-bg"
-        className="w-screen h-full object-cover"
-      />
-      <Image
-        src="/svg/about-right.svg"
-        width={200}
-        height={200}
-        alt="about-right"
-        className="w-full h-full object-contain absolute -right-1/4 sm:-right-1/4 top-1/2  -translate-y-[40%]"
-      />
+
+      {/* Background Images */}
+      <div className="relative w-full h-full flex-1">
+        <Image
+          src="/svg/about-bg.svg"
+          fill
+          alt="about-bg"
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-end">
+          {/* For mobile/tablet - responsive sizing */}
+          <div className="lg:hidden relative w-full h-full">
+            <Image
+              src="/svg/about-right.svg"
+              fill
+              alt="about-right"
+              className="object-contain object-right"
+              style={{
+                transform: 'translateY(-20%)',
+                right: '-15%'
+              }}
+            />
+          </div>
+
+          {/* For laptop/desktop - larger fixed size */}
+          <div className="hidden lg:block relative" style={{ width: '800px', height: '800px' }}>
+            <Image
+              src="/svg/about-right.svg"
+              width={1200}
+              height={1200}
+              alt="about-right"
+              className="object-contain object-right h-full"
+              style={{
+                transform: 'translateY(-20%)',
+                position: 'absolute',
+                right: '-10%',
+                maxWidth: 'none'
+              }}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
