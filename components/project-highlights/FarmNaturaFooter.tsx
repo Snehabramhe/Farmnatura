@@ -54,7 +54,7 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
         className="w-full max-w-[100%] mt-2"
       />
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 gap-4 mt-15">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 gap-4 mt-15 2xl:mt-[5%]">
         {/* Left side */}
         <div className="flex flex-col items-center md:items-start gap-5 w-full md:w-1/2">
           {/* Logo */}

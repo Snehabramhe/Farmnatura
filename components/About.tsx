@@ -175,7 +175,7 @@ const AboutSection: React.FC = () => {
             className="flex flex-col md:flex-row items-center md:justify-between mx-auto w-full relative"
           >
             {/* Left - Text */}
-            <div className="w-full md:w-[60%] z-10 px-6 md:px-12 -space-y-[20px] mt-12">
+            <div className="w-full md:w-[60%] z-10 px-6 md:px-12 -space-y-[20px] mt-12 flex flex-col md:items-start items-center">
               <h2
                 className="text-3xl md:text-5xl font-bold text-[#404040]"
                 style={{ fontFamily: "Jost", fontWeight: 600 }}
@@ -195,7 +195,7 @@ const AboutSection: React.FC = () => {
                 />
               </h2>
               <p
-                className="mt-9 w-full text-black text-sm lg:text-md 2xl:text-xl"
+                className="mt-9 w-full text-black text-sm lg:text-md xl:text-lg 2xl:text-xl"
                 style={{
                   fontFamily: "Sofia Pro",
                   fontWeight: 400
@@ -203,10 +203,10 @@ const AboutSection: React.FC = () => {
               >
                  Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
               Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
               </p>
               <a
-                className="fade-in mt-8 ml-[20%] inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-13 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -244,7 +244,7 @@ const AboutSection: React.FC = () => {
               />
             </div>
 
-            <div className="w-full md:w-1/2 relative flex flex-col items-start pr-6">
+            <div className="w-full md:w-1/2 relative flex flex-col md:items-start items-center px-6">
               <div
                 ref={researchRef}
                 className="relative z-10 flex flex-col mt-4 font-bold text-[#404040] space-y-2 2xl:ml-[21%]"
@@ -261,12 +261,11 @@ const AboutSection: React.FC = () => {
 
                 {/* Leaf Image */}
                 <img
-                  className="fade-in mx-auto mt-2 ml-[79%] lg:ml-[74%] xl:ml-[65%] mt-[-21%] lg:mt-[-17%] xl:mt-[-12%]"
+                  className="fade-in mx-auto ml-[79%] lg:ml-[74%] xl:ml-[65%] mt-[-21%] lg:mt-[-17%] xl:mt-[-12%]"
                   src="/images/leave.svg"
                   alt="leave-img"
                   width={70}
                   height={55}
-                  // style={{ marginLeft: "73%", marginTop: "-20%" }}
                 />
 
                 {/* Paragraph */}
@@ -285,7 +284,7 @@ const AboutSection: React.FC = () => {
 
               {/* Download Button */}
               <a
-                className="fade-in mt-6 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg 2xl:ml-[21%] font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-10 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg 2xl:ml-[21%] font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -358,11 +357,11 @@ const AboutSection: React.FC = () => {
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24 min-h-screen">
         {/* Background Images */}
         <div
-          className="absolute top-25 left-0 w-1/2 h-full bg-no-repeat bg-cover bg-left"
+          className="absolute top-150 md:top-25 left-0 w-1/2 h-[360px] md:h-[900px]  bg-no-repeat bg-cover bg-left"
           style={{ backgroundImage: 'url("/images/left-bg.svg")' }}
         ></div>
         <div
-          className="absolute top-0 right-0 w-[430px] h-full bg-no-repeat bg-cover bg-right z-[-20]"
+          className="absolute top-0 right-0 w-[375px] h-[450px] md:h-[900px] bg-no-repeat bg-cover bg-right z-[-20]"
           style={{ backgroundImage: 'url("/images/right-bg.svg")' }}
         ></div>
 
@@ -393,7 +392,7 @@ const AboutSection: React.FC = () => {
                 className="absolute -right-20 -top-10 z-0"
               />
             </span>
-            <div className="relative w-0 md:w-[580px] h-[250px] -mt-82 -ml-80 z-2">
+            <div className="relative w-[160px] md:w-[580px] h-[250px] -mt-[25%] -ml-60 md:-mt-82 md:-ml-80 z-2">
               <Image
                 src="/images/creeper.svg"
                 alt="Creeper"
@@ -407,22 +406,22 @@ const AboutSection: React.FC = () => {
           {/* Content Grid */}
           <div
             ref={vision}
-            className="flex flex-col items-start mt-50 ml-0 md:ml-20 lg:ml-40"
+            className="flex flex-col items-start -mt-30 md:mt-40 ml-0 md:ml-20 lg:ml-40"
           >
             {/* Left Box */}
-            <div className="z-10 flex flex-row justify-between">
-              <div>
+            <div className="z-10 flex flex-col md:flex-row gap-5 justify-between">
+              <div className="ml-40 md:ml-0">
                 <Image
                   src="/images/dewdrop.svg"
                   alt="Dewdrop on leaf"
                   width={400}
                   height={400}
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg w-[160] md:w-full xl:w-[260] xl:h-[300]"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-5 md:ml-10 my-auto space-y-4">
+              <div className="flex flex-col items-center w-[70%] md:w-[100%] md:items-start ml-5 md:ml-10 my-auto space-y-4">
                 <h3
-                  className="text-2xl font-semibold text-black"
+                  className="text-xl md:text-2xl font-semibold text-black"
                   style={{
                     fontFamily: "Jost",
                     fontWeight: 500,
@@ -431,7 +430,7 @@ const AboutSection: React.FC = () => {
                   Creating self-sufficient
                 </h3>
                 <p
-                  className="text-black text-[12px] lg:text-[16px] max-w-md md:text-left"
+                  className="text-black text-[12px] lg:text-[16px] max-w-md text-center md:text-left"
                   style={{
                     fontFamily: "Josefin Sans",
                     fontWeight: 400,
@@ -445,19 +444,19 @@ const AboutSection: React.FC = () => {
             </div>
 
             {/* Right Box */}
-            <div className="z-10 flex flex-row justify-between lg:ml-0 xl:ml-60 mt-20">
+            <div className="z-10 mt-20 xl:mt-0 flex flex-col md:flex-row gap-5 justify-between lg:ml-0 xl:ml-60">
               <div>
                 <Image
                   src="/images/sprout.svg"
                   alt="Sprout growing"
                   width={400}
                   height={400}
-                  className="rounded-lg shadow-md"
+                  className="rounded-lg w-[160] md:w-full xl:w-[260] xl:h-[300]"
                 />
               </div>
-              <div className="flex flex-col items-center md:items-start ml-5 md:ml-10 my-auto space-y-4">
+              <div className="flex flex-col w-[70%] md:w-[100%] ml-20 items-center md:items-start md:ml-10 my-auto space-y-4">
                 <h3
-                  className="text-2xl font-semibold text-black"
+                  className="text-xl md:text-2xl font-semibold text-black"
                   style={{
                     fontFamily: "Jost",
                     fontWeight: 500,
@@ -466,7 +465,7 @@ const AboutSection: React.FC = () => {
                   Sustainable communities close to nature
                 </h3>
                 <p
-                  className="text-black text-[12px] lg:text-[16px] max-w-md"
+                  className="text-black text-[12px] lg:text-[16px] max-w-md text-center md:text-left"
                   style={{
                     fontFamily: "Josefin Sans",
                     fontWeight: 400,
@@ -480,7 +479,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div
-              className="xl:ml-160 mt-10 z-2 mx-auto"
+              className="xl:-mt-10 mt-10 ml-15 md:ml-70 xl:ml-135 z-2"
               style={{
                 fontFamily: "Sofia Pro",
                 fontSize: "18px",
@@ -488,7 +487,7 @@ const AboutSection: React.FC = () => {
               }}
             >
               <a
-                className="mt-6 inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white"
+                className="inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -497,22 +496,22 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </section>
-      <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24">
+      <section className="relative px-6 sm:px-12 md:px-16 lg:px-24">
         {/* Background Image in Corner */}
-        <div className="absolute -top-12 md:-right-32 lg:-right-56 w-0 md:w-[400px] h-[400px] lg:w-[500px] lg:h-[500px] z-100">
+        <div className="absolute -top-68 md:-right-32 lg:-right-15 w-0 md:w-[400px] h-[400px] lg:w-[400px] lg:h-[500px] z-0">
           <Image
             src="/images/corner-plant.svg" 
             alt="Corner Plant"
             width={500}
             height={300}
-            className="object-contain w-70 h-70"
+            className="object-contain w-120 h-110"
           />
         </div>
 
         {/* About Section */}
         <div
           ref={About}
-          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 -mt-20 md:mt-0"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 -mt-60 md:mt-0"
         >
           {/* Left Side - Text */}
           <div ref={About} className="md:pr-0">
