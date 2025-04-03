@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     
-    <main className="relative min-h-screen w-screen overflow-x-hidden bg-primary-bg">
+    <main className="relative min-h-screen w-screen overflow-x-hidden">
          <Head>
         <link rel="icon" href="/images/logo.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/images/logo-530x530.png" sizes="512x512" />
@@ -22,13 +22,13 @@ const HomePage = () => {
       <About />
       <KeyHighlights />
       <Choose />
-      <div className="relative">
-        <p className="font-poppins text-[173px] text-[#2433551F] -rotate-90 absolute -top-42 -right-[30%] 2xl:-right-[20%] z-20">
-          Farm Natura
-        </p>
+      <div className="relative h-full">
+          <p className="font-poppins text-[50px] md:text-[70px] lg:text-[90px] xl-text-[90px] 2xl:text-[90px] text-[#2433551F] -rotate-90 absolute -top-10 md:top-15 -right-40 md:-right-83 lg:-right-115 xl:-right-165 w-full h-full flex items-center justify-center whitespace-nowrap leading-none z-10">
+            Farm Natura
+          </p>
       </div>
-      <TestimonialSection/>
-      <MoveInSection bgColor={"white"} /> 
+      <TestimonialSection bgColor={"white"} />
+      <MoveInSection  bgColor={"white"} /> 
       <FarmNaturaFooter bgColor={"white"} />    
     </main>
   );

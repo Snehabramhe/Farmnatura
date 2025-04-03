@@ -4,7 +4,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 
-const TestimonialSection = () => {
+interface TestimonialSectionProps {
+  bgColor: string;
+}
+
+const TestimonialSection:React.FC<TestimonialSectionProps> = ({ bgColor }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,7 +31,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-4 md:px-20 mb-8 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-4 md:px-20 mb-8 overflow-hidden" style={{ backgroundColor: bgColor }}>
       <div className="max-w-7xl mx-auto relative">
         {/* Decorative Quote */}
         <div className="absolute top-5 md:-top-2 left-0 md:left-80 text-6xl md:text-8xl text-gray-400 font-serif">
