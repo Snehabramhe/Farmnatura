@@ -27,15 +27,15 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-4 md:px-20 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-4 md:px-20 mb-8 overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         {/* Decorative Quote */}
-        <div className="absolute hidden md:block -top-2 left-20 md:left-80 text-6xl md:text-8xl text-gray-400 font-serif">
+        <div className="absolute top-5 md:-top-2 left-0 md:left-80 text-6xl md:text-8xl text-gray-400 font-serif">
           “
         </div>
 
         {/* Floral Decoration */}
-        <div className="absolute right-0 top-10 w-24 md:w-44 opacity-70">
+        <div className="absolute right-0 top-20 md:top-10 w-24 md:w-44 opacity-70">
           <Image
             src="/images/flower-img.svg"
             alt="Floral Decoration"
@@ -54,7 +54,7 @@ const TestimonialSection = () => {
             Testimonials
           </h3>
           <h2
-            className="text-2xl md:text-4xl font-medium text-gray-900 mt-2 leading-tight max-w-xs md:max-w-md"
+            className="text-2xl md:text-4xl font-medium text-gray-900 ml-7 md:ml-0 mt-2 leading-tight max-w-xs md:max-w-md"
             style={{ fontFamily: "Jost" }}
           >
             Where Dreams Find Their Perfect Address
@@ -63,14 +63,14 @@ const TestimonialSection = () => {
           {/* Image and User Info Container */}
           <div className="relative mt-6 md:mt-12 mb-4">
             {/* Rectangular Image - Overlapping the green box */}
-            <div className="absolute -bottom-4 left-0 md:-top-8 md:left-8 z-20 w-20 h-24 md:w-48 md:h-56">
+            <div className="absolute -bottom-4 left-1 md:-top-8 md:left-8 z-20 w-25 h-15 md:w-48 md:h-56">
               <div className="overflow-hidden shadow-lg border-2 md:border-4 border-white bg-white">
                 <Image
                   src="/images/girl-img.svg"
                   alt="Testimonial User"
                   width={200}
                   height={250}
-                  className="w-full h-full object-cover"
+                  className="w-full md:h-full object-cover"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ const TestimonialSection = () => {
             {/* Name and Designation - Positioned to right of image */}
             <div className="ml-28 md:ml-64 pt-4 md:pt-8">
               <h3
-                className="text-lg md:text-2xl font-semibold text-gray-900 mb-1 md:mb-2"
+                className="-ml-20 md:ml-0 text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-2"
                 style={{ fontFamily: "Jost" }}
               >
                 Excellency Of Living Standards
@@ -99,9 +99,9 @@ const TestimonialSection = () => {
           </div>
 
           {/* Testimonial Quote Box */}
-          <div className="relative bg-[#3D7B3B] text-white p-6 md:p-8 pt-20 md:pt-12 shadow-lg rounded-lg">
+          <div className="relative bg-[#3D7B3B] text-white p-6 md:p-8 pt-15 md:pt-12 shadow-lg rounded-lg">
             {/* Space for the image overlap */}
-            <div className="absolute -top-4 left-4 md:-top-8 md:left-8 w-20 h-24 md:w-48 md:h-56 z-10"></div>
+            <div className="absolute -top-2 left-4 md:-top-8 md:left-8 w-20 h-24 md:w-48 md:h-56 z-10"></div>
 
             <p
               className="text-sm md:text-base leading-relaxed md:pl-56"

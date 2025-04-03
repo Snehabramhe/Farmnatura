@@ -166,7 +166,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
       {/* Content Box */}
       <div
         ref={contentRef}
-        className="relative flex flex-col lg:flex-row items-center bg-[url('/images/Group.svg')] bg-cover bg-no-repeat bg-center rounded-xl p-6 md:p-10 w-full md:w-full lg:w-full xl:w-full 2xl:w-480 h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px]"
+        className="relative flex flex-col lg:flex-row items-center bg-[url('/images/Group.svg')] bg-cover bg-no-repeat bg-center rounded-xl p-6 md:p-10 w-full md:w-full lg:w-full xl:w-full 2xl:w-480 h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[550px]"
       >
         {/* Left Side (Text Content) */}
         <div className="flex-1 lg:ml-[15%] md:ml-[-30%] ml-[-6%] mt-[-1%]">
