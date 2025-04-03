@@ -10,8 +10,8 @@ import Modal from "../Common/Formmodal"
 gsap.registerPlugin(ScrollTrigger);
 
 const Choose = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
 
+  const [isModalOpen, setModalOpen] = useState(false);
   useGSAP(
     () => {
       const timeline = gsap.timeline();
@@ -73,6 +73,7 @@ const Choose = () => {
     },
     { dependencies: [] }
   );
+
 
   return (
     <div className="relative w-full overflow-x-hidden bg-white">
