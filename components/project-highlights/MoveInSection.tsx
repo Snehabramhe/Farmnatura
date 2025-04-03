@@ -166,19 +166,19 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
       {/* Content Box */}
       <div
         ref={contentRef}
-        className="relative flex flex-col lg:flex-row items-center bg-[url('/images/Group.svg')] bg-cover bg-no-repeat bg-center rounded-xl p-6 md:p-10 w-full h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[700px]"
+        className="relative flex flex-col lg:flex-row items-center bg-[url('/images/Group.svg')] bg-cover bg-no-repeat bg-center rounded-xl p-6 md:p-10 w-full md:w-full lg:w-full xl:w-full 2xl:w-480 h-[100px] md:h-[200px] lg:h-[300px] xl:h-[400px] 2xl:h-[450px]"
       >
         {/* Left Side (Text Content) */}
         <div className="flex-1 lg:ml-[15%] md:ml-[-30%] ml-[-6%] mt-[-1%]">
-          <h2 className="text-[14px] mb-[9%] md:mb-[5%] md:text-xl lg:text-3xl xl:text-4xl 2xl:text-7xl font-medium text-white">
+          <h2 className="text-[14px] mb-[9%] md:mb-[5%] md:text-xl lg:text-3xl xl:text-4xl 2xl:text-4xl font-medium text-white">
             Ready To Move In Are You?
           </h2>
-          <p className="mt-2 mb-[6%] lg:mb-[9%] md:mb-[5%] text-[8px] md:text-[10px] lg:text-[12px] xl:text-lg 2xl:text-4xl text-white opacity-80">
+          <p className="mt-2 mb-[6%] lg:mb-[9%] md:mb-[5%] text-[8px] md:text-[10px] lg:text-[12px] xl:text-lg 2xl:text-2xl text-white opacity-80">
             Check out the new farms for sale in Hyderabad by Farm Natura.
           </p>
           <button
             onClick={() => router.push("/contact")}
-            className="mt-6 ml-18 md:ml-0 bg-[#3D7B3B] md:bg-white text-white md:text-black font-medium px-4 py-2 2xl:py-4 2xl:px-7 lg:py-1  md:py-1 text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-4xl rounded-md shadow hover:bg-gray-100 transition"
+            className="mt-6 ml-18 md:ml-0 bg-[#3D7B3B] md:bg-white text-white md:text-black font-medium px-4 py-2 2xl:py-4 2xl:px-4 lg:py-1  md:py-1 text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-xl rounded-md shadow hover:bg-gray-100 transition"
           >
             Get in Touch
           </button>
@@ -191,7 +191,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
             alt="Farm Couple"
             width={400}
             height={300}
-            className="rounded-lg absolute top-[-20%] md:top-[-15%] w-[100px] right-[4%] md:w-[220px] md:right-[10%] xl:right-[10%] lg:w-[320px] lg:right-[7%] xl:w-[450px] 2xl:w-[650px]"
+            className="rounded-lg absolute top-[-20%] md:top-[-15%] w-[100px] right-[4%] md:w-[220px] md:right-[10%] xl:right-[10%] lg:w-[320px] lg:right-[7%] xl:w-[450px] 2xl:w-[450px]"
           />
         </div>
       </div>

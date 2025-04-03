@@ -2,11 +2,11 @@
 import About from "@/components/Home/About";
 import Choose from "@/components/Home/Choose";
 import KeyHighlights from "@/components/Home/KeyHighlights";
-import Testimonials from "@/components/Home/Testimonials";
 import FarmNaturaFooter from "@/components/project-highlights/FarmNaturaFooter";
 import MoveInSection from "@/components/project-highlights/MoveInSection";
 import Hero from "../components/Home/Hero";
 import Head from "next/head";
+import TestimonialSection from "@/components/project-highlights/TestimonialSection";
 
 
 const HomePage = () => {
@@ -18,7 +18,6 @@ const HomePage = () => {
         <link rel="icon" href="/images/logo.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/images/logo-530x530.png" sizes="512x512" />
       </Head>
-      {/* <Navbar /> */}
       <Hero />
       <About />
       <KeyHighlights />
@@ -28,13 +27,9 @@ const HomePage = () => {
           Farm Natura
         </p>
       </div>
-      <Testimonials />
-      {/* <MoveIn /> */}
+      <TestimonialSection/>
       <MoveInSection bgColor={"white"} /> 
-      <FarmNaturaFooter bgColor={"white"} />
-      {/* <Footer />
-      <QuickLinks /> */}
-         
+      <FarmNaturaFooter bgColor={"white"} />    
     </main>
   );
 };
