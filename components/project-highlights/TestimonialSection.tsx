@@ -8,7 +8,7 @@ interface TestimonialSectionProps {
   bgColor: string;
 }
 
-const TestimonialSection:React.FC<TestimonialSectionProps> = ({ bgColor }) => {
+const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
   const sectionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -31,15 +31,15 @@ const TestimonialSection:React.FC<TestimonialSectionProps> = ({ bgColor }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-4 md:px-20 mb-8 overflow-hidden" style={{ backgroundColor: bgColor }}>
-      <div className="max-w-7xl mx-auto relative">
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 pl-4 md:pl-10 lg::pl-20 2xl:pl-30 mb-8 overflow-hidden"  style={{ backgroundColor: bgColor }}>
+      <div className="relative">
         {/* Decorative Quote */}
         <div className="absolute top-5 md:-top-2 left-0 md:left-80 text-6xl md:text-8xl text-gray-400 font-serif">
           “
         </div>
 
         {/* Floral Decoration */}
-        <div className="absolute right-0 top-20 md:top-10 w-24 md:w-44 opacity-70">
+        <div className="absolute right-0 md:right-15 lg:right-[25%] xl:right-[45%] 2xl:right-[68%] top-20 md:top-25 lg:top-10 w-24 md:w-35 lg:w-44 opacity-70">
           <Image
             src="/images/flower-img.svg"
             alt="Floral Decoration"
