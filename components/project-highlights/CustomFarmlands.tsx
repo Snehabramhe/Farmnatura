@@ -15,7 +15,6 @@ const CustomFarmlands = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLDivElement>(null);
-  const leafRef = useRef<HTMLImageElement>(null);
   const gridItemsRef = useRef<HTMLDivElement[]>([]);
   const leavetreeRef = useRef<HTMLImageElement>(null);  // Ref for leavetree.svg
 

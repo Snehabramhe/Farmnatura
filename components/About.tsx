@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MoveInSection from "./project-highlights/MoveInSection";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 import Modal from "./Common/Formmodal";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -260,7 +260,7 @@ const AboutSection: React.FC = () => {
                 </span>
 
                 {/* Leaf Image */}
-                <img
+                <Image
                   className="fade-in mx-auto ml-[79%] lg:ml-[74%] xl:ml-[65%] mt-[-21%] lg:mt-[-17%] xl:mt-[-12%]"
                   src="/images/leave.svg"
                   alt="leave-img"
