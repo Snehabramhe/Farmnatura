@@ -31,7 +31,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 pl-4 md:pl-10 lg::pl-20 2xl:pl-30 mb-8 overflow-hidden"  style={{ backgroundColor: bgColor }}>
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 pl-4 md:pl-10 lg:pl-20 2xl:pl-30  overflow-hidden"  style={{ backgroundColor: bgColor }}>
       <div className="relative">
         {/* Decorative Quote */}
         <div className="absolute top-5 md:-top-2 left-0 md:left-80 text-6xl md:text-8xl text-gray-400 font-serif">

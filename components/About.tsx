@@ -419,7 +419,7 @@ const AboutSection: React.FC = () => {
                   className="rounded-lg w-[160] md:w-full xl:w-[260] xl:h-[300]"
                 />
               </div>
-              <div className="flex flex-col items-center w-[70%] md:w-[100%] md:items-start ml-5 md:ml-10 my-auto space-y-4">
+              <div className="flex flex-col w-[70%] md:w-[100%] md:items-start ml-5 md:ml-10 my-auto space-y-4">
                 <h3
                   className="text-xl md:text-2xl font-semibold text-black"
                   style={{
@@ -430,7 +430,7 @@ const AboutSection: React.FC = () => {
                   Creating self-sufficient
                 </h3>
                 <p
-                  className="text-black text-[12px] lg:text-[16px] max-w-md text-center md:text-left"
+                  className="text-black text-[12px] lg:text-[16px] max-w-md text-left"
                   style={{
                     fontFamily: "Josefin Sans",
                     fontWeight: 400,
@@ -454,7 +454,7 @@ const AboutSection: React.FC = () => {
                   className="rounded-lg w-[160] md:w-full xl:w-[260] xl:h-[300]"
                 />
               </div>
-              <div className="flex flex-col w-[70%] md:w-[100%] ml-20 items-center md:items-start md:ml-10 my-auto space-y-4">
+              <div className="flex flex-col w-[70%] md:w-[100%] ml-20 md:items-start md:ml-10 my-auto space-y-4">
                 <h3
                   className="text-xl md:text-2xl font-semibold text-black"
                   style={{
@@ -465,7 +465,7 @@ const AboutSection: React.FC = () => {
                   Sustainable communities close to nature
                 </h3>
                 <p
-                  className="text-black text-[12px] lg:text-[16px] max-w-md text-center md:text-left"
+                  className="text-black text-[12px] lg:text-[16px] max-w-md  md:text-left"
                   style={{
                     fontFamily: "Josefin Sans",
                     fontWeight: 400,

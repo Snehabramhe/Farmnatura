@@ -29,16 +29,16 @@ const CustomFarmlands = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%", // Animation starts when 90% of section is visible
-          end: "bottom 10%", // Animation reverses when scrolling up
-          toggleActions: "play reverse play reverse",
-          scrub: 1.5,
+          start: "top 80%", // Animation starts when 80% of section is visible
+          end: "bottom 50%", // Animation reverses when scrolling up
+          toggleActions: "play reverse play reset",
         },
       });
 
-      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power5.out" }, "-=1")
-        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1.6, ease: "power3.out" }, "-=1")
-        .from(leafRef.current, { opacity: 0, duration: 1.6,ease:"power3.out" }, "-=1");
+      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=1")
+        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=0.5")
+        .from(leavetreeRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=0.5")
+
 
       // Animating grid items from the left
       gridItemsRef.current.forEach((item) => {
@@ -49,24 +49,11 @@ const CustomFarmlands = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: item,
-            start: "top 80%", // Trigger the animation when the item is 80% in view
-            end: "top 30%", // Reverse when 30% of the item leaves the viewport
-            toggleActions: "play reverse play reverse", // Play on enter and reverse on leave
+            start: "top 90%", // Trigger the animation when the item is 80% in view
+            end: "top 70%", // Reverse when 70% of the item leaves the viewport
+            toggleActions: "play none play reverse", // Play on enter and reverse on leave
           },
         });
-      });
-      gsap.from(leavetreeRef.current, {
-        x: -100,         // Animate from right to left
-        opacity: 0,     // Start invisible
-        duration:2,    // Slow down the animation
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: leavetreeRef.current,
-          start: "top 80%", // Start animation when 80% of the image is visible
-          end: "top 30%",   // Reverse when 30% of the image leaves the viewport
-          scrub: 1,
-          toggleActions: "play reverse play reverse", // Play on enter and reverse on leave
-        },
       });
     }, sectionRef);
 
@@ -81,26 +68,26 @@ const CustomFarmlands = () => {
         alt="Vine Decoration"
         width={330}
         height={698}
-        className="absolute top-[12%] md:top-[10%] right-0 w-[50%] md:w-[35%]"
+        className="absolute top-[10%] right-0 w-[50%] md:w-[35%] 2xl:w-[25%]"
       />
 
       <div className=" w-full md:max-w-4xl text-center md:text-left md:w-[70%]">
         {/* Animated Title */}
         <h2
           ref={titleRef}
-          className="text-3xl flex flex-col relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3 [word-spacing:20px]"
-          style={{ fontFamily: "Jost", fontWeight: 600, fontSize: "50px" }}
+          className="text-4xl flex flex-col relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3 [word-spacing:20px]"
+          style={{ fontFamily: "Jost", fontWeight: 600 }}
         >
           <span>Customisable</span>
           <span>Farmlands</span>
           {/* Animated Leaf Image */}
           <Image
-            ref={leafRef}
+            // ref={leafRef}
             src="/images/leave.svg"
             alt="Leaf Icon"
             width={90}
             height={81}
-            className="absolute right-2 bottom-0"
+            className="absolute right-2 bottom-4 md:bottom-0 w-[70] md:w-[90]"
           />
         </h2>
 

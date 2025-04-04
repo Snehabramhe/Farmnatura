@@ -27,7 +27,7 @@ const ProjectHighlight: React.FC = () => {
     }
   }, []);
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+    <div className="relative w-full min-h-screen">
       {/* Background Image */}
       <Image
         src="/images/highlights.svg"

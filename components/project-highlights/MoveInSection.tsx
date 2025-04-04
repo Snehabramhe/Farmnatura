@@ -124,16 +124,16 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex justify-center items-center px-6 md:px-8 mt-[15%] mb-[15%] md:mb-[4%]"
+      className="relative flex justify-center items-center px-6 md:px-8 pt-20 md:pt-40 pb-15"
       style={{ backgroundColor: bgColor }}
     >
       {/* Animated Tree */}
-      <div className="absolute top-[-80] md:top-[-100] xl:top-[-140] left-0" ref={treeRef}>
-        <Image src="/images/tree-img.svg" alt="Tree" width={500} height={300} className="w-[140] md:w-[340] xl:w-[500]"/>
+      <div className="absolute top-[5] md:top-[-60] xl:top-[-60] left-0" ref={treeRef}>
+        <Image src="/images/tree-img.svg" alt="Tree" width={500} height={300} className="w-[140] md:w-[280] xl:w-[400]"/>
       </div>
 
       {/* Animated Leaves */}
-      <div className="absolute -top-30 right-0" ref={leavesRef}>
+      <div className="absolute -top-8 md:-top-16 right-0" ref={leavesRef}>
         <Image
           src="/images/tree-leave-img.svg"
           alt="Leaves"
@@ -144,7 +144,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
       </div>
 
       {/* Animated Sky and Sun */}
-      <div className="absolute top-[-50] md:top-[-125] lg:top-[-140] xl:top-[-160] left-[38%] md:left-[26%] flex items-center ">
+      <div className="absolute top-[20] md:top-[20] lg:top-[2]  xl:top-[-30] left-[38%] md:left-[30%] lg:left-[25%] xl:left-[27%] flex items-center ">
         <Image
           src="/images/sky-img.svg"
           alt="Cloud"
@@ -158,7 +158,7 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
           alt="Sun"
           width={100}
           height={50}
-          className="ml-[-40] md:ml-[-60] mt-[-14] md:mt-[-10] w-[30] md:w-[50] lg:w-[100]"
+          className="ml-[-40] md:ml-[-60] lg:ml-[-80] mt-[-14] md:mt-[-10] w-[30] md:w-[50] lg:w-[100]"
           ref={sunRef}
         />
       </div>

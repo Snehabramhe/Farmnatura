@@ -37,43 +37,88 @@ const FarmLandOptions = () => {
       text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
     },
   ];
-
+  
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 90%",
-          end: "top 30%",
-          toggleActions: "play reverse play reverse", // Ensures animation plays only once
-          scrub:1,
-        },
-        defaults: { ease: "power1.out", duration: 1.5 },
-      });
-
-      tl.from(headingRef.current, { y: -50, opacity: 0 })
-        .from(buttonRef.current, { y: -30, opacity: 0 }, "-=0.8")
-        .from(leftDecorRef.current, { x: -100, opacity: 0 }, "-=0.6")
-        .from(rightDecorRef.current, { x: 100, opacity: 0 }, "-=0.8");
-
-     gsap.from(cardRefs.current, {
-        opacity: 0,
-        scale: 0.8,
-        duration:1.2,
-        ease: "power3.out",
-        stagger: 0.3, // Each image animates one after the other
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%",
-          end: "bottom 30%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
-    }, containerRef);
-
-
-    return () => ctx.revert(); // Cleanup animation to prevent duplicate triggers
+    const mm = gsap.matchMedia(); // Create a matchMedia instance
+  
+    mm.add("(min-width: 768px)", () => {
+      // Desktop Animation
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            toggleActions: "play reverse play reverse",
+            scrub: 1,
+          },
+          defaults: { ease: "power1.out", duration: 1.5 },
+        });
+  
+        tl.from(headingRef.current, { y: -50, opacity: 0 })
+          .from(buttonRef.current, { y: -30, opacity: 0 }, "-=0.8")
+          .from(leftDecorRef.current, { x: -100, opacity: 0 }, "-=0.6")
+          .from(rightDecorRef.current, { x: 100, opacity: 0 }, "-=0.8");
+  
+        gsap.from(cardRefs.current, {
+          opacity: 0,
+          scale: 0.8,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 85%",
+            end: "bottom 30%",
+            toggleActions: "play reverse play reverse",
+          },
+        });
+      }, containerRef);
+  
+      return () => ctx.revert(); // Cleanup
+    });
+  
+    mm.add("(max-width: 767px)", () => {
+      // Mobile Animation (adjusted timing and stagger)
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 95%", // Later trigger for mobile
+            end: "top 40%",
+            toggleActions: "play reverse play reverse",
+            scrub: 1,
+          },
+          defaults: { ease: "power1.out", duration: 1 },
+        });
+  
+        tl.from(headingRef.current, { y: -40, opacity: 0 }) // Smaller shift
+          .from(buttonRef.current, { y: -20, opacity: 0 }, "-=0.6") // Faster appearance
+          .from(leftDecorRef.current, { x: -80, opacity: 0 }, "-=0.4")
+          .from(rightDecorRef.current, { x: 80, opacity: 0 }, "-=0.6");
+  
+        gsap.from(cardRefs.current, {
+          opacity: 0,
+          scale: 0.85, // Slightly larger initial scale
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.4, // Slower stagger for mobile
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 95%", // Triggers later for better visibility
+            end: "bottom 50%",
+            toggleActions: "play reverse play reverse",
+          },
+        });
+      }, containerRef);
+  
+      return () => ctx.revert(); // Cleanup
+    });
+  
+    return () => mm.revert(); // Cleanup matchMedia
   }, []);
+  
+  
+  
   return (
     <section ref={containerRef} className="relative bg-white py-12 px-6 lg:px-16 h-[1600px] md:h-[850px] lg:h-[1050px] xl:h-[1200px] w-[2200px]:h-[1800px]">
       {/* Background Image */}

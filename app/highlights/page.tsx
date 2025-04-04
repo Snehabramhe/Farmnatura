@@ -10,7 +10,7 @@ import WhyFarmNatura from "@/components/project-highlights/WhyFarmNatura";
 const ProjectHighlights = () => {
   return (
     <>
-      <main className="relative min-h-screen w-screen overflow-x-hidden bg-primary-bg">
+      <main className="relative min-h-screen w-screen overflow-x-hidden">
         <ProjectHighlight />
         <WhyFarmNatura />
         <FarmLandOptions />
