@@ -512,12 +512,14 @@ const AboutSection: React.FC = () => {
         <div
           ref={About}
           className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 -mt-60 md:mt-0"
+            // className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
         >
           {/* Left Side - Text */}
           <div ref={About} className="md:pr-0">
             <h2
               ref={About}
               className="text-3xl md:text-4xl font-bold text-gray-900 mt-50"
+              // className="text-3xl md:text-4xl font-bold text-gray-900 -mt-10 md:mt-50"
               style={{ fontFamily: "Jost", fontWeight: 600}}
             >
               About Planet

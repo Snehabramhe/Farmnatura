@@ -131,8 +131,8 @@ const Contact = () => {
 
         {/* Form Section */}
         <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-10">
-          <h2 className="text-lg font-bold text-green-800 mb-1">Have</h2>
-          <h3 className="text-xl font-semibold text-green-800 mb-1">Questions?</h3>
+          <h2 className="text-lg font-bold text-green-800 mb-1">Book</h2>
+          <h3 className="text-xl font-semibold text-green-800 mb-1">A site visit</h3>
           <h2 className="text-lg text-green-800 mt-6">Send Us A Message</h2>
 
           {success && (
@@ -177,8 +177,8 @@ const Contact = () => {
               required
             >
               <option value="">Interested In</option>
-              <option value="Investments">Investments</option>
-              <option value="Residential Plots">Residential Plots</option>
+              <option value="Investments">Farm Plots</option>
+              <option value="Residential Plots">Farm House</option>
               <option value="Weekend Destination">Weekend Destination</option>
             </select>
 
@@ -191,10 +191,10 @@ const Contact = () => {
               required
             >
               <option value="">Looking Plot Size</option>
-              <option value="200-300 Sq Yards">200-300 Sq Yards</option>
-              <option value="300-500 Sq Yards">300-500 Sq Yards</option>
-              <option value="500-1000 Sq Yards">500-1000 Sq Yards</option>
-              <option value="Above 1000 Sq Yards">Above 1000 Sq Yards</option>
+              <option value="200-300 Sq Yards">1000 sq.yards</option>
+              <option value="300-500 Sq Yards">1/4 Acre (1210 sq.yards)</option>
+              <option value="500-1000 Sq Yards">1/2 Acre (2420 sq.yards)</option>
+              <option value="Above 1000 Sq Yards">1 Acre (4840 sq.yards)</option>
             </select>
 
             <button

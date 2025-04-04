@@ -127,9 +127,9 @@ const FarmLandOptions = () => {
 
       {/* Left & Right Decor */}
       <Image src="/images/farmland-4.svg" alt="Left Decor" width={250} height={299} 
-        ref={leftDecorRef} className="absolute top-0 w-0 md:w-[130px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] left-[61px]"/>
+        ref={leftDecorRef} className="absolute top-0 w-0 md:w-[130px] lg:w-[180px] xl:w-[250px] w-[2200px]:w-[350px] left-[61px]"/>
       <Image src="/images/farmland-5.svg" alt="Right Decor" width={250} height={250} 
-        ref={rightDecorRef} className="absolute top-0 w-0 md:w-[150px] lg:w-[220px] xl:w-[250px] w-[2200px]:w-[350px] right-0"/>
+        ref={rightDecorRef} className="absolute top-0 w-0 md:w-[150px] lg:w-[190px] xl:w-[250px] w-[2200px]:w-[350px] right-0"/>
 
       {/* Header */}
       <div ref={headingRef} className="flex flex-col items-center text-center relative z-10">

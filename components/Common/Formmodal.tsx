@@ -107,8 +107,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
     {/* Form Section */}
     <div className="w-full md:w-1/2 mt-6 md:mt-0 md:pl-6">
-      <h2 className="text-lg font-bold text-green-800 mb-1 text-center md:text-left">Have</h2>
-      <h3 className="text-xl font-semibold text-green-800 mb-1 text-center md:text-left">Questions?</h3>
+      <h2 className="text-lg font-bold text-green-800 mb-1 text-center md:text-left">Book</h2>
+      <h3 className="text-xl font-semibold text-green-800 mb-1 text-center md:text-left">A site visit</h3>
       <h2 className="text-lg text-green-800 mt-4 md:mt-6 text-center md:text-left">Send Us A Message</h2>
 
       {success && <p className="text-green-600 text-sm mt-2 text-center md:text-left">Your message has been sent successfully!</p>}
@@ -151,9 +151,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           required
         >
           <option value="">Interested In</option>
-          <option value="Investments">Investments</option>
-          <option value="Residential Plots">Residential Plots</option>
-          <option value="Weekend Destination">Weekend Destination</option>
+              <option value="Investments">Farm Plots </option>
+              <option value="Residential Plots">Farm House</option>
+              <option value="Weekend Destination">Weekend Destination</option>
         </select>
 
         {/* Looking Plot Size Dropdown */}
@@ -164,16 +164,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
           required
         >
-          <option value="">Looking Plot Size</option>
-          <option value="200-300 Sq Yards">200-300 Sq Yards</option>
-          <option value="300-500 Sq Yards">300-500 Sq Yards</option>
-          <option value="500-1000 Sq Yards">500-1000 Sq Yards</option>
-          <option value="Above 1000 Sq Yards">Above 1000 Sq Yards</option>
+           <option value="">Looking Plot Size</option>
+              <option value="200-300 Sq Yards">1000 sq.yards</option>
+              <option value="300-500 Sq Yards">1/4 Acre (1210 sq.yards)</option>
+              <option value="500-1000 Sq Yards">1/2 Acre (2420 sq.yards)</option>
+              <option value="Above 1000 Sq Yards">1 Acre (4840 sq.yards)</option>
         </select>
 
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-2 bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-yellow-600 transition"
+          className="w-[60%]  flex items-center justify-center gap-2 bg-yellow-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-yellow-600 transition"
           disabled={loading}
         >
           {loading ? "Submitting..." : "Submit →"}
