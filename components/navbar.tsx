@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
 
         
           <Link href="/contact">
-            <button className="hidden md:block border border-green-600 text-green-700 px-10 py-2 rounded-md hover:bg-green-100 transition lg:ml-22">
+            <button className="hidden md:block border border-green-600 text-green-700 px-10 py-2 rounded-md hover:bg-green-100 transition lg:ml-22 md:ml-10">
               Contact Us
             </button>
           </Link>

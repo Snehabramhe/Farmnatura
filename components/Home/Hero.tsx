@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Modal from "../Common/Formmodal";
 
+
 const Hero = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -71,7 +72,7 @@ const Hero = () => {
         width={200}
         height={200}
         alt="hero-bg-line"
-        className="w-full h-[450px] sm:h-[400px] md:h-[350px] lg:h-[420px] absolute top-[50px] sm:top-[60px] md:top-[70px] lg:top-[80px] left-0 z-10"
+        className="w-full h-[450px] sm:h-[400px] md:h-[350px] lg:h-[420px] absolute top-[50px] sm:top-[60px] md:top-[70px] lg:top-[80px] left-0"
       />
       <Image
         src="/images/sunflower-img.svg"

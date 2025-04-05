@@ -23,7 +23,7 @@ const Choose = () => {
           trigger: "#header-heading",
           start: "top 80%",
           end: "bottom bottom",
-          scrub: 3,
+          scrub: 1,
         },
       });
 
@@ -34,7 +34,7 @@ const Choose = () => {
           trigger: "#header-explore",
           start: "top 80%",
           end: "bottom bottom",
-          scrub: 3,
+          scrub: 1,
         },
       });
 
@@ -56,7 +56,7 @@ const Choose = () => {
           trigger: "#images",
           start: "top 80%",
           end: "bottom bottom",
-          scrub: 3,
+          scrub: 1,
         },
       });
 
@@ -67,7 +67,7 @@ const Choose = () => {
           trigger: "#images-content",
           start: "top 80%",
           end: "bottom bottom",
-          scrub: 3,
+          scrub: 1,
         },
       });
     },
@@ -121,9 +121,11 @@ const Choose = () => {
                 Hyderabad, where lifestyle is built basing on Natural Farming
                 with an intent to focus on Health & Happiness.
               </p>
-              <Button variant="outline" className="mt-2 sm:mt-3" onClick={() => setModalOpen(true)}>
-                <p className="text-primary-green text-sm sm:text-base">Download Brochure</p>
-              </Button>
+              <div className="mt-2 sm:mt-3 flex justify-center md:justify-start">
+                <Button variant="outline" onClick={() => setModalOpen(true)}>
+                  <p className="text-primary-green text-sm sm:text-base">Download Brochure</p>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -141,15 +143,15 @@ const Choose = () => {
         </div>
 
         {/* Images Section */}
-        <div className="relative mt-12 md:mt-16 lg:mt-20" id="images">
+        <div className="relative z-10 mt-12 md:mt-16 lg:mt-20" id="images">
           <div className="relative w-full">
-            <div className="w-full overflow-hidden">
+            <div className="w-full overflow-hidden relative z-1">
               <Image
                 src="/svg/choose-img-1.svg"
                 width={1440}
-                height={400}
+                height={700}
                 alt="img-1"
-                className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-contain"
+                className="w-full h-[250px] sm:h-[300px] md:h-[200px] lg:h-[280px] xl:h-[350px] 2xl:h-[700px] object-contain"
               />
             </div>
             <div className="absolute right-0 bottom-0 w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%]">
@@ -165,13 +167,13 @@ const Choose = () => {
           </div>
 
          <div
-           className="mt-12 sm:mt-14 md:mt-16 lg:mt-0 lg:absolute lg:-bottom-[35%] xl:-bottom-[65%] 2xl:-bottom-[75%] left-0 w-full lg:w-[65%] xl:w-[110%] 2xl:w-[100%]"
+           className="mt-14 sm:mt-16 md:mt-18 lg:mt-0 lg:absolute lg:bottom-[-91%] xl:bottom-[-80%] 2xl:bottom-[-40%] left-0 w-full lg:w-[70%] xl:w-[110%] 2xl:w-[100%]"
            id="images-content"
          >
-           <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1 md:ml-30">
+           <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
              Explore Farm Land Options
            </p>
-          <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl mt-2 sm:mt-3 md:mt-4 ml-0 sm:ml-1 md:ml-30 w-full lg:max-w-[90%] xl:max-w-[75%] 2xl:max-w-[70%]">
+          <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-md 2xl:text-xl mt-2 sm:mt-3 md:mt-4 ml-0 sm:ml-1 w-full lg:max-w-[100%] xl:max-w-[65%] 2xl:max-w-[68%]">
              Grow investments | Farm Natura is located near the Airport,
              Srisailam highway is a prestigious Farmhouses For Sale in
              Hyderabad concept. It is located Near Maheshwaram. The project has
@@ -180,7 +182,7 @@ const Choose = () => {
              to farming. This project deals with sustainable Farming &
              varieties of fruit plantation.
            </p>
-           <div className="flex justify-end lg:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1 md:ml-30">
+           <div className="flex justify-center md:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1">
              <Button variant="outline" onClick={() => setModalOpen(true)}>
                <p className="text-primary-green text-sm sm:text-base md:text-[15px]">Download Brochure</p>
              </Button>

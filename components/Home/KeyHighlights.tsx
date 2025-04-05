@@ -155,15 +155,17 @@ const KeyHighlights = () => {
                 <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-lg text-gray-700">
                   {activeItem.content}
                 </p>
-                <Button
-                  className="mt-4 sm:mt-6 w-fit"
-                  variant="outline"
-                  onClick={() => setModalOpen(true)}
-                >
-                  <span className="text-primary-green text-sm sm:text-base">
-                    Download Brochure
-                  </span>
-                </Button>
+                <div className="flex justify-center md:justify-start">
+                  <Button
+                    className="mt-4 sm:mt-6 w-fit"
+                    variant="outline"
+                    onClick={() => setModalOpen(true)}
+                  >
+                    <span className="text-primary-green text-sm sm:text-base">
+                      Download Brochure
+                    </span>
+                  </Button>
+                </div>
               </div>
             </div>
           )}
