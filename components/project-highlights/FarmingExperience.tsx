@@ -33,7 +33,7 @@ const FarmingExperience: React.FC = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 90%",
+        start: "top 80%",
         end: "bottom 60%",
         toggleActions: "play none play reset",
         // scrub: 0.5,
@@ -42,17 +42,17 @@ const FarmingExperience: React.FC = () => {
 
     tl.to(
       [titleRef.current, descriptionRef.current],
-      { x: 0, opacity: 1, duration: 2.5, ease: "power5.out", stagger: 0.4 },
+      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", stagger: 0.4 },
       "-=1"
     )
     .to(
       [rightImageRef.current],
-      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out" },
+      { x: 0, opacity: 1, duration: 1, ease: "power5.out" },
       "-=1"
     )
     .to(
       Array.from(featureIconsRef.current?.children || []),
-      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", },
+      { x: 0, opacity: 1, duration: 1, ease: "power5.out", },
       "-=1"
     )
     .to(

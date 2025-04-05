@@ -284,7 +284,7 @@ const AboutSection: React.FC = () => {
 
               {/* Download Button */}
               <a
-                className="fade-in mt-10 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg 2xl:ml-[21%] font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
+                className="fade-in mt-10 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg 2xl:ml-[21%] font-semibold transition duration-300 hover:bg-green-700 hover:text-white z-1"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
@@ -294,7 +294,7 @@ const AboutSection: React.FC = () => {
               <img
                 src="/images/farm-exp-2.svg"
                 alt="home-img"
-                className="absolute -top-32 md:top-[-70] lg:top-[-110] xl:top-[-150] 2xl:top-[-280] right-0 w-[400px] lg:w-[550px] xl:w-[650px] 2xl:w-[900px]"
+                className="absolute z-0 -top-32 md:top-[-70] lg:top-[-110] xl:top-[-150] 2xl:top-[-280] right-0 w-[400px] lg:w-[550px] xl:w-[650px] 2xl:w-[900px]"
                 // width={"600px"}
               />
             </div>
@@ -444,7 +444,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             {/* Right Box */}
-            <div className="z-10 mt-20 xl:mt-0 flex flex-col md:flex-row gap-5 justify-between lg:ml-0 xl:ml-60">
+            <div className="relative z-10 mt-20 xl:mt-0 flex flex-col md:flex-row gap-5 justify-between lg:ml-0 xl:ml-60">
               <div>
                 <Image
                   src="/images/sprout.svg"
@@ -479,7 +479,7 @@ const AboutSection: React.FC = () => {
             </div>
 
             <div
-              className="xl:-mt-10 mt-10 ml-15 md:ml-70 xl:ml-135 z-2"
+              className="relative xl:-mt-10 mt-10 ml-15 md:ml-70 xl:ml-135 z-20"
               style={{
                 fontFamily: "Sofia Pro",
                 fontSize: "18px",
@@ -498,7 +498,7 @@ const AboutSection: React.FC = () => {
       </section>
       <section className="relative px-6 sm:px-12 md:px-16 lg:px-24">
         {/* Background Image in Corner */}
-        <div className="absolute -top-68 md:-right-32 lg:-right-15 w-0 md:w-[400px] h-[400px] lg:w-[400px] lg:h-[500px] z-0">
+        <div className="absolute -top-68 md:-right-32 lg:-right-15 w-0 md:w-[400px] h-[400px] lg:w-[400px] lg:h-[500px] z-[-1]">
           <Image
             src="/images/corner-plant.svg" 
             alt="Corner Plant"
@@ -511,15 +511,13 @@ const AboutSection: React.FC = () => {
         {/* About Section */}
         <div
           ref={About}
-          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 -mt-60 md:mt-0"
-            // className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
+            className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
         >
           {/* Left Side - Text */}
           <div ref={About} className="md:pr-0">
             <h2
               ref={About}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mt-50"
-              // className="text-3xl md:text-4xl font-bold text-gray-900 -mt-10 md:mt-50"
+              className="text-3xl md:text-4xl font-bold text-gray-900 -mt-10 md:mt-50"
               style={{ fontFamily: "Jost", fontWeight: 600}}
             >
               About Planet
@@ -546,9 +544,9 @@ const AboutSection: React.FC = () => {
                 fontSize: "16px",
               }}
             >
-               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built <br/>basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The <br/> Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced <br/> Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by <br/> restoring its original fertility back into its Natural State for the generations to come.
+               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
+              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The  Other Creatures That Live Among Us.&quot; <br/><br/>
+              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced  Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
             </p>
 
             {/* Planet Green Logo */}

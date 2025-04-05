@@ -15,8 +15,8 @@ const About = () => {
         duration: 0.7,
         scrollTrigger: {
           trigger: "#about-heading",
-          start: "top center",
-          end: "bottom bottom",
+          start: "top 90%",
+          end: "bottom 60%",
         },
       });
       gsap.from("#about-content", {
@@ -26,8 +26,8 @@ const About = () => {
         delay: 0.5,
         scrollTrigger: {
           trigger: "#about-heading",
-          start: "top center",
-          end: "bottom bottom",
+          start: "top 90%",
+          end: "bottom 60%",
         },
       });
     },
@@ -35,7 +35,7 @@ const About = () => {
   );
 
   return (
-    <div className="relative min-h-dvh w-full overflow-hidden flex flex-col">
+    <div className="relative w-full overflow-hidden flex flex-col">
       {/* Content Container */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-8 sm:pt-11 md:pt-16 z-10 flex-1">
         <div className="text-center">
@@ -46,7 +46,7 @@ const About = () => {
             Why Managed Farmland
           </h2>
           <p
-            className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl 2xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
+            className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
             id="about-content"
           >
             Farm Natura offers a community of like-minded families from Hyderabad,
@@ -57,16 +57,16 @@ const About = () => {
       </div>
 
       {/* Background Images */}
-      <div className="relative w-full h-[600px] flex-1">
+      <div className="relative w-full h-[400px] md:h-[600px] xl:h-[900px]">
         <Image
           src="/svg/about-bg.svg"
           width={2560}
           height={1200}
           alt="about-bg"
-          className="object-cover w-[full] h-[335px] md:h-[full] lg:h-[500] xl:h-[700]"
+          className="object-cover w-[full] h-[400px] md:h-[600px] xl:h-[900px]"
           priority
         />
-        <div className="absolute inset-0 top-10 flex items-center justify-end">
+        <div className="absolute inset-0 top-20 md:top-40 flex items-center justify-end">
           {/* For mobile/tablet - responsive sizing */}
           <div className="lg:hidden relative w-[60%] h-full">
             <Image

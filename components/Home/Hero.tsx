@@ -58,10 +58,10 @@ const Hero = () => {
           focus on Health & Happiness, Indias first nature family estate.
         </p>
         <div
-          className="flex items-center justify-center mt-8 mb-12 sm:mt-8 md:mt-10 lg:mt-12"
+          className="relative z-20 flex items-center justify-center mt-8 mb-12 sm:mt-8 md:mt-10 lg:mt-12"
           id="hero-btn"
         >
-          <Button className="text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4" onClick={() => setModalOpen(true)}>
+          <Button className="relative z-30 text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4" onClick={() => setModalOpen(true)}>
             Book A Site Visit
           </Button>
         </div>
@@ -71,7 +71,7 @@ const Hero = () => {
         width={200}
         height={200}
         alt="hero-bg-line"
-        className="w-full h-[450px] sm:h-[400px] md:h-[350px] lg:h-[420px] absolute top-[50px] sm:top-[60px] md:top-[70px] lg:top-[80px] left-0"
+        className="w-full h-[450px] sm:h-[400px] md:h-[350px] lg:h-[420px] absolute top-[50px] sm:top-[60px] md:top-[70px] lg:top-[80px] left-0 z-10"
       />
       <Image
         src="/images/sunflower-img.svg"

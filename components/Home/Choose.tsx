@@ -21,7 +21,7 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#header-heading",
-          start: "top center",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 3,
         },
@@ -32,7 +32,7 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#header-explore",
-          start: "top center",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 3,
         },
@@ -43,7 +43,7 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#infinity-img",
-          start: "top center",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 1,
         },
@@ -54,7 +54,7 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#images",
-          start: "top center",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 3,
         },
@@ -65,7 +65,7 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#images-content",
-          start: "top center",
+          start: "top 80%",
           end: "bottom bottom",
           scrub: 3,
         },
