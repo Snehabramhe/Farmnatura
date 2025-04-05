@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import image from "../Assests/SVG/image.svg";
 import image2 from "../Assests/SVG/image 70.svg";
 import img1 from "../Assests/SVG/img 1.svg";
@@ -11,10 +11,10 @@ import img2 from "../Assests/SVG/img 2.svg";
 import img3 from "../Assests/SVG/img 3.svg";
 import img4 from "../Assests/SVG/img 4.svg";
 import img5 from "../Assests/SVG/img 5.svg";
+import MoveInSection from "./project-highlights/MoveInSection";
 import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
-import GalaryMoveInSection from "./project-highlights/GalaryMoveInSection";
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const allImages = [img1, img2, img3, img4, img5, img1, img2, img3, img4, img5];
 
@@ -22,8 +22,91 @@ const Gallery = () => {
   const [startIndex, setStartIndex] = useState(0);
   const imagesPerSet = 5;
 
+  const titleRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const specialImageRef = useRef<HTMLImageElement>(null);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      
+      gsap.fromTo(
+        titleRef.current,
+        { opacity: 0, y: 50 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          duration: 1.2, 
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 100%",
+            toggleActions: "play none play reset",
+          },
+        }
+      );
+  
+      gsap.fromTo(
+        galleryRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: galleryRef.current,
+            start: "top 50%",
+            toggleActions: "play none play reset",
+          },
+        }
+      );
+  
+      gsap.fromTo(
+        imageRefs.current,
+        { opacity: 0, scale: 0.8, y: 50 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.2,
+          ease: "power2.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: galleryRef.current,
+            start: "top 50%",
+            toggleActions: "play none play reset",
+          },
+        }
+      );
+  
+      if (specialImageRef.current) {
+        gsap.fromTo(
+          specialImageRef.current,
+          { opacity: 0, scale: 0.8 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: specialImageRef.current,
+              start: "top 30%",
+              toggleActions: "play none play reset",
+            },
+          }
+        );
+      }
+    });
+  
+    // Refresh ScrollTrigger after a short delay to ensure layout is correct.
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+  
+    return () => ctx.revert();
+  }, []);
+  
 
   const currentImages = allImages.slice(startIndex, startIndex + imagesPerSet);
 
@@ -61,9 +144,10 @@ const Gallery = () => {
     <div className="bg-[#FFFBE5] min-h-screen">
       <div className="lg:pt-[30px] pt-[40px] w-full">
         {/* Hero Section */}
-        <div className="relative w-full">
+        <div className="relative w-ful h-[396px] md:h-[684px]">
           <div
-            className="absolute top-1/4 left-6 sm:left-10 md:left-16 lg:left-40 text-white"
+            ref={titleRef}
+            className="absolute z-1 top-[40%] left-6 sm:left-10 md:left-16 lg:left-40 text-white"
           >
             <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-3xl font-bold">
               Life at Farm Natura
@@ -72,7 +156,7 @@ const Gallery = () => {
               Gallery
             </h1>
           </div>
-          <Image src={image} alt="Farm Natura Background" width={1920} height={684} className="w-full h-auto" />
+          <Image src={image} alt="Farm Natura Background" layout="fill" className="object-cover" />
         </div>
 
         {/* Special Image Section */}
@@ -83,13 +167,13 @@ const Gallery = () => {
             width={672}
             height={1542}
             className="w-[80%] sm:w-[60%] md:w-[50%] lg:w-[50%] h-auto"
+            ref={specialImageRef}
           />
           <div className="absolute top-[90%] right-0 w-[60%] border-t-2 border-[#C69A47]"></div>
         </div>
 
         {/* Gallery Grid */}
-        <div 
-        className="grid grid-cols-1 md:grid-cols-3 gap-5 px-15 mt-25">
+        <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-3 gap-5 px-15 mt-25">
           <div className="md:col-span-2">
             <Image src={currentImages[0]} alt="Main Image" width={800} height={400} className="w-full h-full object-cover rounded-lg" />
           </div>
@@ -140,8 +224,8 @@ const Gallery = () => {
           </button>
         </div>
 
-       <GalaryMoveInSection bgColor="#FFFBE5"/> 
-       <FarmNaturaFooter bgColor="#FFFBE5" />
+        <MoveInSection bgColor="#FFFBE5" />
+        <FarmNaturaFooter bgColor="#FFFBE5" />
       </div>
     </div>
   );
