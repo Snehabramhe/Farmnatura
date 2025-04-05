@@ -17,17 +17,20 @@ const About = () => {
           trigger: "#about-heading",
           start: "top 90%",
           end: "bottom 60%",
+          toggleActions: "play none play reset",
+
         },
       });
       gsap.from("#about-content", {
         opacity: 0,
         y: 100,
         duration: 0.7,
-        delay: 0.5,
+        // delay: 0.5,
         scrollTrigger: {
           trigger: "#about-heading",
           start: "top 90%",
           end: "bottom 60%",
+          toggleActions: "play none play reset",
         },
       });
     },

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,105 +20,102 @@ const GalaryMoveInSection: React.FC<GalaryMoveInSectionProps> = ({ bgColor }) =>
   const sunRef = useRef<HTMLImageElement>(null);
   const treeRef = useRef<HTMLImageElement>(null);
   const leavesRef = useRef<HTMLImageElement>(null);
-  const h2Ref = useRef<HTMLHeadingElement>(null);
-  const pRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
 
-    useEffect(() => {
-    // GSAP context
-    const ctx = gsap.context(() => {
-      // Animate Sky from left and Sun from right
-      gsap.from(skyRef.current, {
-        x: -200, // Sky comes from the left
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: skyRef.current,
-          start: "top 80%", // Trigger when 80% of section is visible
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//     useEffect(() => {
+//     // GSAP context
+//     const ctx = gsap.context(() => {
+//       // Animate Sky from left and Sun from right
+//       gsap.from(skyRef.current, {
+//         x: -200, // Sky comes from the left
+//         opacity: 0,
+//         duration: 1.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: skyRef.current,
+//           start: "top 80%", // Trigger when 80% of section is visible
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      gsap.from(sunRef.current, {
-        x: 200, // Sun comes from the right
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sunRef.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//       gsap.from(sunRef.current, {
+//         x: 200, // Sun comes from the right
+//         opacity: 0,
+//         duration: 1.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: sunRef.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      // Animate tree and leaves from left and right
-      gsap.from(treeRef.current, {
-        x: -200, // Tree comes from the left
-        opacity: 0,
-        duration: 1.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: treeRef.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//       // Animate tree and leaves from left and right
+//       gsap.from(treeRef.current, {
+//         x: -200, // Tree comes from the left
+//         opacity: 0,
+//         duration: 1.8,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: treeRef.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      gsap.from(leavesRef.current, {
-        x: 200, // Leaves come from the right
-        opacity: 0,
-        duration: 1.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: leavesRef.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//       gsap.from(leavesRef.current, {
+//         x: 200, // Leaves come from the right
+//         opacity: 0,
+//         duration: 1.8,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: leavesRef.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      // Animate h2, p, and button
-      gsap.from(h2Ref.current, {
-        x: -100, // h2 slides in from left
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: h2Ref.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//       // Animate h2, p, and button
+//       gsap.from(h2Ref.current, {
+//         x: -100, // h2 slides in from left
+//         opacity: 0,
+//         duration: 1.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: h2Ref.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      gsap.from(pRef.current, {
-        x: 100, // p slides in from right
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: pRef.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
+//       gsap.from(pRef.current, {
+//         x: 100, // p slides in from right
+//         opacity: 0,
+//         duration: 1.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: pRef.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
 
-      gsap.from(buttonRef.current, {
-        opacity: 0, // Button fades in
-        duration: 1.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: buttonRef.current,
-          start: "top 80%",
-          toggleActions: "play reverse play reverse",
-        },
-      });
-    }, []);
+//       gsap.from(buttonRef.current, {
+//         opacity: 0, // Button fades in
+//         duration: 1.5,
+//         ease: "power3.out",
+//         scrollTrigger: {
+//           trigger: buttonRef.current,
+//           start: "top 80%",
+//           toggleActions: "play reverse play reverse",
+//         },
+//       });
+//     }, []);
 
-    return () => ctx.revert(); // Cleanup animations on unmount
-  }, []);
+//     return () => ctx.revert(); // Cleanup animations on unmount
+//   }, []);
 
 
   return (

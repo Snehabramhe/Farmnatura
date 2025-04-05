@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Modal from "../Common/Formmodal";
 
-
 const Hero = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -15,30 +14,27 @@ const Hero = () => {
       gsap.from("#hero-heading", {
         opacity: 0,
         y: 100,
-        duration: 0.7,
+        duration: 1,
       });
       gsap.from("#hero-content", {
         opacity: 0,
         y: 100,
-        duration: 0.7,
-        delay: 0.5,
+        duration: 1,
       });
       gsap.from("#hero-btn", {
         opacity: 0,
         y: 100,
-        duration: 0.7,
-        delay: 0.7,
+        duration: 1,
       });
       gsap.from("#social-links", {
         opacity: 0,
         x: 100,
-        duration: 0.5,
-        delay: 0.7,
+        duration: 1,
       });
     },
     { dependencies: [] }
   );
-
+  
   return (
     <div className="relative w-screen overflow-x-hidden overflow-y-hidden bg-primary-bg">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center">
@@ -83,7 +79,7 @@ const Hero = () => {
       />
 
       <div
-        className="flex flex-col space-y-6 absolute top-20 right-0 sm:right-2"
+        className="flex flex-col space-y-6 absolute top-20 right-0 sm:right-2 lg:right-3 xl:right-4 2xl:right-6"
         id="social-links"
       >
         <Image
@@ -139,6 +135,53 @@ const Hero = () => {
           />
         </a>
       </div>
+
+
+
+{/* <div className="fixed top-1/4 right-5 flex flex-col space-y-6 z-50" id="social-links">
+  <Image
+    src="/svg/instagram-outline.svg"
+    width={37}
+    height={37}
+    alt="instagram"
+    className="w-[37px] h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.instagram.com/farmnatura.in", "_blank")}
+  />
+  <Image
+    src="/svg/facebook-outline.svg"
+    width={37}
+    height={37}
+    alt="facebook"
+    className="w-[37px] h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.facebook.com/farmnatura.in", "_blank")}
+  />
+  <Image
+    src="/svg/youtube.svg"
+    width={37}
+    height={37}
+    alt="youtube"
+    className="w-[37px] h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.youtube.com/@FarmNatura", "_blank")}
+  />
+  <a href="https://api.whatsapp.com/send?phone=919100007368" target="_blank" rel="noopener noreferrer">
+    <Image
+      src="/svg/whatapp.svg"
+      width={37}
+      height={37}
+      alt="whatsapp"
+      className="w-[37px] h-[37px] cursor-pointer"
+    />
+  </a>
+  <a href="tel:919579555666">
+    <Image
+      src="/svg/phone.svg"
+      width={37}
+      height={37}
+      alt="phone"
+      className="w-[37px] h-[37px] cursor-pointer"
+    />
+  </a>
+</div> */}
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
 
     </div>

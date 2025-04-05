@@ -21,9 +21,9 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#header-heading",
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.6,
         },
       });
 
@@ -32,9 +32,9 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#header-explore",
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.6,
         },
       });
 
@@ -43,9 +43,9 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#infinity-img",
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.5,
         },
       });
 
@@ -54,9 +54,9 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#images",
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.2,
         },
       });
 
@@ -65,9 +65,9 @@ const Choose = () => {
         y: 100,
         scrollTrigger: {
           trigger: "#images-content",
-          start: "top 80%",
+          start: "top 100%",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 0.3,
         },
       });
     },
@@ -137,13 +137,13 @@ const Choose = () => {
             width={2000}
             height={800}
             alt="infinity"
-            className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] object-contain"
+            className="w-full h-[200px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] 2xl:h-[600px] object-contain"
             id="infinity-img"
           />
         </div>
 
         {/* Images Section */}
-        <div className="relative z-10 mt-12 md:mt-16 lg:mt-20" id="images">
+        <div className="relative z-10 mt-5 md:mt-10" id="images">
           <div className="relative w-full">
             <div className="w-full overflow-hidden relative z-1">
               <Image
@@ -151,23 +151,23 @@ const Choose = () => {
                 width={1440}
                 height={700}
                 alt="img-1"
-                className="w-full h-[250px] sm:h-[300px] md:h-[200px] lg:h-[280px] xl:h-[350px] 2xl:h-[700px] object-contain"
+                className="w-full h-[120px] sm:h-[300px] md:h-[200px] lg:h-[280px] xl:h-[350px] 2xl:h-[700px] object-contain"
               />
             </div>
-            <div className="absolute right-0 bottom-0 w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%]">
+            <div className="absolute right-0 bottom-[-40%] md:bottom-0 w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%]">
               <Image
                 src="/svg/choose-img-2.svg"
                 width={400}
                 height={500}
                 alt="img-2"
-                className="w-full h-auto object-contain"
-                style={{ transform: 'translateY(30%)' }}
+                className="w-full h-auto object-contain translate-y-[30%]"
+                // style={{ transform: 'translateY(30%)' }}
               />
             </div>
           </div>
 
          <div
-           className="mt-14 sm:mt-16 md:mt-18 lg:mt-0 lg:absolute lg:bottom-[-91%] xl:bottom-[-80%] 2xl:bottom-[-40%] left-0 w-full lg:w-[70%] xl:w-[110%] 2xl:w-[100%]"
+           className="mt-25 sm:mt-20 md:mt-18 lg:absolute lg:bottom-[-95%] xl:bottom-[-80%] 2xl:bottom-[-40%] left-0 w-full lg:w-[70%] xl:w-[110%] 2xl:w-[100%]"
            id="images-content"
          >
            <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
