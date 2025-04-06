@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import  React,{ useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
@@ -34,7 +34,7 @@ const Hero = () => {
     },
     { dependencies: [] }
   );
-
+  
   return (
     <div className="relative w-screen overflow-x-hidden overflow-y-hidden bg-primary-bg">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center">
@@ -58,10 +58,7 @@ const Hero = () => {
           className="relative z-20 flex items-center justify-center mt-8 mb-12 sm:mt-8 md:mt-10 lg:mt-12"
           id="hero-btn"
         >
-          <Button
-            className="relative z-30 text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4"
-            onClick={() => setModalOpen(true)}
-          >
+          <Button className="relative z-30 text-sm sm:text-base md:text-lg lg:text-xl px-6 py-3 sm:px-8 sm:py-4" onClick={() => setModalOpen(true)}>
             Book A Site Visit
           </Button>
         </div>
@@ -82,37 +79,37 @@ const Hero = () => {
       />
 
       <div
-        className="fixed top-1/4 right-2 md:right-3 flex flex-col space-y-6 z-50"
+        className="flex flex-col space-y-6 absolute top-20 right-0 sm:right-2 lg:right-3 xl:right-4 2xl:right-6"
         id="social-links"
       >
         <Image
           src="/svg/instagram-outline.svg"
-          width={37}
-          height={37}
           alt="instagram"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+          width={30}
+          height={30}
+          className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
           onClick={() =>
             window.open("https://www.instagram.com/farmnatura.in", "_blank")
           }
         />
         <Image
           src="/svg/facebook-outline.svg"
-          width={37}
-          height={37}
           alt="facebook"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+          width={30}
+          height={30}
+          className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
           onClick={() =>
             window.open("https://www.facebook.com/farmnatura.in", "_blank")
           }
         />
         <Image
-          src="/svg/youtube.svg"
-          width={37}
-          height={37}
-          alt="youtube"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+          src="/svg/twitter-outline.svg"
+          alt="twitter"
+          width={30}
+          height={30}
+          className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
           onClick={() =>
-            window.open("https://www.youtube.com/@FarmNatura", "_blank")
+            window.open("https://twitter.com/farmnatura", "_blank")
           }
         />
         <a
@@ -122,23 +119,71 @@ const Hero = () => {
         >
           <Image
             src="/svg/whatapp.svg"
-            width={37}
-            height={37}
             alt="whatsapp"
-            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+            width={30}
+            height={30}
+            className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
           />
         </a>
         <a href="tel:919579555666">
           <Image
             src="/svg/phone.svg"
-            width={37}
-            height={37}
             alt="phone"
-            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+            width={30}
+            height={30}
+            className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
           />
         </a>
       </div>
+
+
+
+{/* <div className="fixed top-1/4 right-2 md:right-3 flex flex-col space-y-6 z-50" id="social-links">
+  <Image
+    src="/svg/instagram-outline.svg"
+    width={37}
+    height={37}
+    alt="instagram"
+    className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.instagram.com/farmnatura.in", "_blank")}
+  />
+  <Image
+    src="/svg/facebook-outline.svg"
+    width={37}
+    height={37}
+    alt="facebook"
+    className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.facebook.com/farmnatura.in", "_blank")}
+  />
+  <Image
+    src="/svg/youtube.svg"
+    width={37}
+    height={37}
+    alt="youtube"
+    className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+    onClick={() => window.open("https://www.youtube.com/@FarmNatura", "_blank")}
+  />
+  <a href="https://api.whatsapp.com/send?phone=919100007368" target="_blank" rel="noopener noreferrer">
+    <Image
+      src="/svg/whatapp.svg"
+      width={37}
+      height={37}
+      alt="whatsapp"
+      className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+    />
+  </a>
+  <a href="tel:919579555666">
+    <Image
+      src="/svg/phone.svg"
+      width={37}
+      height={37}
+      alt="phone"
+      className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+    />
+  </a>
+</div> */}
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+
     </div>
   );
 };
