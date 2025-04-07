@@ -73,6 +73,34 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
             angle. Welcome to the highest of high living.
           </p>
         </div>
+       
+        <div
+        className="fixed bottom-3.5 right-2 md:right-3 flex flex-col space-y-3 z-50"
+        id="social-links"
+      >
+        <a
+          href="https://api.whatsapp.com/send?phone=919100007368"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/images/whatsapp-icon.svg"
+            alt="whatsapp"
+            width={37}
+            height={37}
+            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+          />
+        </a>
+        <a href="tel:919579555666">
+          <Image
+            src="/images/phone-icon.svg"
+            alt="phone"
+            width={37}
+            height={37}
+            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
+          />
+        </a>
+      </div>
 
         {/* Right side - Contact Information */}
         <div
@@ -101,6 +129,7 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
 
           {/* Social Media Icons */}
           <div className="flex flex-col items-center md:flex-row md:items-center space-y-3 md:space-y-0 space-x-0 md:space-x-7 mt-5">
+            
             <span className="text-gray-600 text-sm md:text-base">
               Social Media
             </span>
@@ -151,6 +180,32 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
           Copyright © 2025 Farmnatura
         </div>
       </div>
+
+      {/* <div className="flex flex-col h-[70] sm:h-[80] lg:h-[90] xl:h-[100] 2xl:h-[110] justify-between absolute right-1 bottom-1">
+      
+        <a
+          href="https://api.whatsapp.com/send?phone=919100007368"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/images/whatsapp-icon.svg"
+            alt="whatsapp"
+            width={30}
+            height={30}
+            className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
+          />
+        </a>
+        <a href="tel:919579555666">
+          <Image
+            src="/images/phone-icon.svg"
+            alt="phone"
+            width={30}
+            height={30}
+            className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[40px] lg:h-[40px] xl:w-[45px] xl:h-[45px] cursor-pointer"
+          />
+        </a>
+      </div> */}
     </footer>
   );
 };

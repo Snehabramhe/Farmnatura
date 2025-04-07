@@ -81,63 +81,6 @@ const Hero = () => {
         className="w-screen h-[50%] sm:h-[45%] md:h-[50%] lg:h-[55%] xl:h-[60%] 2xl:h-[65%] object-cover"
       />
 
-      <div
-        className="fixed top-1/4 right-2 md:right-3 flex flex-col space-y-6 z-50"
-        id="social-links"
-      >
-        <Image
-          src="/svg/instagram-outline.svg"
-          width={37}
-          height={37}
-          alt="instagram"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
-          onClick={() =>
-            window.open("https://www.instagram.com/farmnatura.in", "_blank")
-          }
-        />
-        <Image
-          src="/svg/facebook-outline.svg"
-          width={37}
-          height={37}
-          alt="facebook"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
-          onClick={() =>
-            window.open("https://www.facebook.com/farmnatura.in", "_blank")
-          }
-        />
-        <Image
-          src="/svg/youtube.svg"
-          width={37}
-          height={37}
-          alt="youtube"
-          className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
-          onClick={() =>
-            window.open("https://www.youtube.com/@FarmNatura", "_blank")
-          }
-        />
-        <a
-          href="https://api.whatsapp.com/send?phone=919100007368"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/svg/whatapp.svg"
-            width={37}
-            height={37}
-            alt="whatsapp"
-            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
-          />
-        </a>
-        <a href="tel:919579555666">
-          <Image
-            src="/svg/phone.svg"
-            width={37}
-            height={37}
-            alt="phone"
-            className="w-[25px] h-[25px] md:w-[37px] md:h-[37px] cursor-pointer"
-          />
-        </a>
-      </div>
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );

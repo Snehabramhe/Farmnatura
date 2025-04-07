@@ -11,6 +11,7 @@ import {
   Poppins,
 } from "next/font/google";
 import "./globals.css";
+import StickySocialIcons from "@/components/Common/StickySociallcons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,6 +80,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <StickySocialIcons/>
       </body>
     </html>
   );

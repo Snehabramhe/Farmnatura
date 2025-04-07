@@ -323,8 +323,8 @@ const AboutSection: React.FC = () => {
             {/* Vinay Ram */}
             <div className="flex flex-col items-center w-200">
               <Image
-                src="/images/vijay-ram.jpeg"
-                alt="vijay-ram"
+                src="/images/vijay-Ram.png"
+                alt="vijay-Ram"
                 width={280}
                 height={280}
                 className="rounded-full"
