@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
               alt="Farm Natura Logo"
               width={150}
               height={50}
-              className="cursor-pointer"
+              className="cursor-pointer w-[80px] sm:w-[100px] md:w-[150px] max-w-full"
             />
           </Link>
 

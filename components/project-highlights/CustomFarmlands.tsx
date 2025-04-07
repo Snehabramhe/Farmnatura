@@ -60,25 +60,24 @@ const CustomFarmlands = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-16 px-6 md:px-16">
+    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-6 md:px-16">
       <Image
         ref={leavetreeRef}
         src="/images/leavetree.svg"
         alt="Vine Decoration"
         width={330}
         height={698}
-        className="absolute top-[10%] right-0 w-[50%] md:w-[35%] 2xl:w-[25%]"
+        className="absolute top-[5%] md:top-[10%] right-0 w-[50%] md:w-[35%] 2xl:w-[25%]"
       />
 
       <div className=" w-full md:max-w-4xl text-center md:text-left md:w-[70%]">
         {/* Animated Title */}
         <h2
           ref={titleRef}
-          className="text-4xl flex flex-col relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3 [word-spacing:20px]"
+          className="text-2xl flex flex-col mx-auto md:ml-0 text-center md:text-left relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3"
           style={{ fontFamily: "Jost", fontWeight: 600 }}
         >
-          <span>Customisable</span>
-          <span>Farmlands</span>
+          <span>Customisable Farmlands</span>
           {/* Animated Leaf Image */}
           <Image
             // ref={leafRef}
@@ -86,14 +85,14 @@ const CustomFarmlands = () => {
             alt="Leaf Icon"
             width={90}
             height={81}
-            className="absolute right-2 bottom-4 md:bottom-0 w-[70] md:w-[90]"
+            className="absolute -right-8 md:right-2 bottom-18 md:bottom-0 w-[22%] md:w-[90]"
           />
         </h2>
 
         {/* Animated Paragraphs */}
         <div ref={paragraphRef}>
           <p
-            className="text-black-700 mt-50 md:mt-2 mx-auto"
+            className="text-black-700 mt-[35%] md:mt-2 mx-auto"
             style={{
               fontFamily: "Josefin Sans",
               fontWeight: 400,

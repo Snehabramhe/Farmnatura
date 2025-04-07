@@ -154,11 +154,11 @@ export default function WhyFarmNatura() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-[#F5F2E6] md:py-12 px-4 md:px-12">
+    <section ref={containerRef} className="bg-[#F5F2E6] py-8 md:py-12 px-4 md:px-12">
       <h2
         ref={headingRef}
-        className="text-3xl md:text-4xl font-bold text-[#404040] mb-8"
-        style={{ fontFamily: "Jost", fontWeight: 600, fontSize: "40px" }}
+        className="text-3xl md:text-4xl text-center md:text-left font-bold text-[#404040] mb-8"
+        style={{ fontFamily: "Jost", fontWeight: 600 }}
       >
         Why Farm Natura?
       </h2>

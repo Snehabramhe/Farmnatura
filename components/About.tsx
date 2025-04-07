@@ -177,13 +177,13 @@ const AboutSection: React.FC = () => {
             {/* Left - Text */}
             <div className="w-full md:w-[60%] z-10 px-6 md:px-12 -space-y-[20px] mt-12 flex flex-col md:items-start items-center">
               <h2
-                className="text-3xl md:text-5xl font-bold text-[#404040]"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#404040]"
                 style={{ fontFamily: "Jost", fontWeight: 600 }}
               >
                 Evolution Natural
               </h2>
               <h2
-                className="text-3xl md:text-5xl font-bold text-[#404040] flex items-center"
+                className="text-3xl md:text-4xl lg:text-5xl mt-2 md:mt-1 lg:mt-0 font-bold text-[#404040] flex items-center"
                 style={{ fontFamily: "Jost", fontWeight: 600 }}
               >
                 Farming
@@ -192,6 +192,7 @@ const AboutSection: React.FC = () => {
                   alt="Leaf Icon"
                   width={90}
                   height={71}
+                  className="w-[60px] md:w-[70px] lg:w-[90px]"
                 />
               </h2>
               <p
@@ -261,7 +262,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Leaf Image */}
                 <Image
-                  className="fade-in mx-auto ml-[79%] lg:ml-[74%] xl:ml-[65%] mt-[-21%] lg:mt-[-17%] xl:mt-[-12%]"
+                  className="fade-in ml-[72%] md:ml-[82%] lg:ml-[75%] xl:ml-[65%] -mt-18 lg:mt-[-17%] xl:mt-[-12%]"
                   src="/images/leave.svg"
                   alt="leave-img"
                   width={70}
@@ -303,15 +304,16 @@ const AboutSection: React.FC = () => {
           {/* Inspired By Section */}
           <div
             ref={inspiredBy}
-            className="mb-6 mt-[-50] flex flex-col items-center ml-20 md:ml-100"
+            className="mb-6 -mt-30 md:-mt-20 flex flex-col items-center ml-[5%] md:ml-100"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 flex items-center justify-center space-x-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center justify-center space-x-2">
               Inspired By
               <Image
                 src="/images/leave.svg"
                 alt="Leaf Icon"
-                width={113}
+                width={80}
                 height={30}
+                className="w-[60px] md:w-[70px]"
               />
             </h2>
           </div>
@@ -321,13 +323,13 @@ const AboutSection: React.FC = () => {
             {/* Vinay Ram */}
             <div className="flex flex-col items-center w-200">
               <Image
-                src="/images/vinayram.svg"
-                alt="Vinay Ram"
+                src="/images/vijay-ram.jpeg"
+                alt="vijay-ram"
                 width={280}
                 height={280}
                 className="rounded-full"
               />
-              <p className="mt-4 text-lg font-semibold">Vinay Ram</p>
+              <p className="mt-4 text-lg font-semibold">Vijay Ram</p>
             </div>
             {/* Subhash Palekar */}
             <div className="flex flex-col items-center w-200">
@@ -514,7 +516,7 @@ const AboutSection: React.FC = () => {
             className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
         >
           {/* Left Side - Text */}
-          <div ref={About} className="md:pr-0">
+          <div ref={About} className="md:pr-0 text-center md:text-left">
             <h2
               ref={About}
               className="text-3xl md:text-4xl font-bold text-gray-900 -mt-10 md:mt-50"
@@ -533,11 +535,11 @@ const AboutSection: React.FC = () => {
                 alt="Leaf Icon"
                 width={90}
                 height={30}
-                className="absolute left-35 -top-8 md:left-48"
+                className="absolute left-60 -top-4 md:-top-8 md:left-45 w-[60px] md:w-[90px]"
               />
             </h2>
             <p
-              className="text-gray-700 text-lg mt-15"
+              className="text-gray-700 text-lg mt-8 md:mt-15"
               style={{
                 fontFamily: "Josefin Sans",
                 fontWeight: 400,

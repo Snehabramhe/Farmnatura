@@ -10,7 +10,7 @@ const ProjectHighlight: React.FC = () => {
     if (headingRef.current) {
       gsap.fromTo(
         headingRef.current,
-        { opacity: 0, y: 50 },      // start: transparent and lower
+        { opacity: 0, y: 50 },   
         {
           opacity: 1,
           y: 0,
@@ -27,7 +27,7 @@ const ProjectHighlight: React.FC = () => {
     }
   }, []);
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
       {/* Background Image */}
       <Image
         src="/images/highlights.svg"
@@ -37,10 +37,9 @@ const ProjectHighlight: React.FC = () => {
       />
 
       {/* Overlay Text */}
-      <div ref={headingRef} className="absolute top-[42%] left-5 sm:left-15 bg-opacity-50 p-3 sm:p-5 rounded-lg">
+      <div ref={headingRef} className="absolute left-6 sm:left-8 md:left-16 top-1/2 transform -translate-y-1/2 text-white">
         <h2
-          className="text-white text-lg sm:text-2xl md:text-3xl font-bold"
-          style={{ fontFamily: "Jost", fontWeight: 600, fontSize: "50px" }}
+          className="text-3xl md:text-5xl font-bold"
         >
           Project Highlights
         </h2>
