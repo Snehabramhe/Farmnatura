@@ -262,7 +262,7 @@ const AboutSection: React.FC = () => {
 
                 {/* Leaf Image */}
                 <Image
-                  className="fade-in ml-[72%] md:ml-[82%] lg:ml-[75%] xl:ml-[65%] -mt-18 lg:mt-[-17%] xl:mt-[-12%]"
+                  className="fade-in ml-[75%] md:ml-[85%] lg:ml-[78%] xl:ml-[69%] -mt-18 lg:mt-[-17%] xl:mt-[-12%]"
                   src="/images/leave.svg"
                   alt="leave-img"
                   width={70}
@@ -304,7 +304,7 @@ const AboutSection: React.FC = () => {
           {/* Inspired By Section */}
           <div
             ref={inspiredBy}
-            className="mb-6 -mt-30 md:-mt-20 flex flex-col items-center ml-[5%] md:ml-100"
+            className="mb-6 -mt-30 md:-mt-20 xl:-mt-5 2xl:mt-40 flex flex-col items-center ml-[5%] md:ml-100"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 flex items-center justify-center space-x-2">
               Inspired By
@@ -359,11 +359,11 @@ const AboutSection: React.FC = () => {
       <section className="relative py-16 px-6 sm:px-12 md:px-16 lg:px-24 min-h-screen">
         {/* Background Images */}
         <div
-          className="absolute top-150 md:top-25 left-0 w-1/2 h-[360px] md:h-[900px]  bg-no-repeat bg-cover bg-left"
+          className="absolute top-150 md:top-25 left-0 w-1/2 h-[360px] md:h-[900px] bg-no-repeat bg-cover bg-left"
           style={{ backgroundImage: 'url("/images/left-bg.svg")' }}
         ></div>
         <div
-          className="absolute top-0 right-0 w-[375px] h-[450px] md:h-[900px] bg-no-repeat bg-cover bg-right z-[-20]"
+          className="absolute top-0 right-0 w-[375px] 2xl:w-1/2 h-[450px] md:h-[900px] bg-no-repeat bg-cover bg-right z-[-20]"
           style={{ backgroundImage: 'url("/images/right-bg.svg")' }}
         ></div>
 
