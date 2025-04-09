@@ -119,13 +119,13 @@ const Choose = () => {
               <p className="font-jost font-semibold text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[28px] 2xl:text-[30px] text-primary-text">
                 WHAT MAKES IT THE RIGHT PLACE FOR YOU?
               </p>
-              <p className="mt-2 sm:mt-3 font-sofia-pro-regular text-sm sm:text-base md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] text-black">
-                6+ Years of Revitalization of Soil.
-                <br />
-                Regular R&D to Monitor Soil Health.
-                <br />
-                Expert Assistance & Maintenance.
-              </p>
+
+              <ul className="mt-2 sm:mt-3 font-sofia-pro-regular text-sm sm:text-base md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] text-black list-disc list-inside">
+                <li>6+ Years of Revitalization of Soil.</li>
+                <li>Regular R&D to Monitor Soil Health.</li>
+                <li>Expert Assistance & Maintenance.</li>
+              </ul>
+
               {/* <div className="mt-2 sm:mt-3 flex justify-center md:justify-start">
                 <Button variant="outline" onClick={() => setModalOpen(true)}>
                   <p className="text-primary-green text-sm sm:text-base">Download Brochure</p>
