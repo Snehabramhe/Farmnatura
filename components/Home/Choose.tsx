@@ -114,18 +114,18 @@ const Choose = () => {
             />
             <div className="mt-3 sm:mt-0 sm:ml-3 md:ml-4 lg:ml-6">
               <p className="font-jost font-semibold text-lg sm:text-xl md:text-2xl lg:text-[24px] xl:text-[28px] 2xl:text-[30px] text-primary-text">
-                Explore Farm Land Options
+                WHAT MAKES IT THE RIGHT PLACE FOR YOU?
               </p>
               <p className="mt-2 sm:mt-3 font-sofia-pro-regular text-sm sm:text-base md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] text-black">
-                Farm Natura offers a community of like-minded families from
-                Hyderabad, where lifestyle is built basing on Natural Farming
-                with an intent to focus on Health & Happiness.
+              6+ Years of Revitalization of Soil.<br/>
+Regular R&D to Monitor Soil Health.<br/>
+Expert Assistance & Maintenance.
               </p>
-              <div className="mt-2 sm:mt-3 flex justify-center md:justify-start">
+              {/* <div className="mt-2 sm:mt-3 flex justify-center md:justify-start">
                 <Button variant="outline" onClick={() => setModalOpen(true)}>
                   <p className="text-primary-green text-sm sm:text-base">Download Brochure</p>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -171,22 +171,30 @@ const Choose = () => {
            id="images-content"
          >
            <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
-             Explore Farm Land Options
+            
+           KANDUKUR
+            </p>
+          
+           <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
+            
+           THE FUTURE CITY OF HYDERABAD
            </p>
           <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-md 2xl:text-xl mt-2 sm:mt-3 md:mt-4 ml-0 sm:ml-1 w-full lg:max-w-[100%] xl:max-w-[65%] 2xl:max-w-[68%]">
-             Grow investments | Farm Natura is located near the Airport,
-             Srisailam highway is a prestigious Farmhouses For Sale in
-             Hyderabad concept. It is located Near Maheshwaram. The project has
-             been set up at a land rich in resources like abundant water,
-             naturally nutrient rich soil, apt climatic conditions, easy access
-             to farming. This project deals with sustainable Farming &
-             varieties of fruit plantation.
+          Located in Hyderabad’s fastest-growing zone, Farm Natura offers you the best of both worlds - peaceful countryside living with the promise of booming infrastructure, upcoming developments, and seamless connectivity to the city.
+Just 25 minutes from the RGI Airport, this is where nature meets next.
+
+25 Minutes From RGI Airport
+20 Minutes From ORR
+Upcoming 200-Acre AI City
+Proposed Young India Skills University
+
+
            </p>
-           <div className="flex justify-center md:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1">
+           {/* <div className="flex justify-center md:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1">
              <Button variant="outline" onClick={() => setModalOpen(true)}>
                <p className="text-primary-green text-sm sm:text-base md:text-[15px]">Download Brochure</p>
              </Button>
-           </div>
+           </div> */}
          </div>
         </div>
       </div>

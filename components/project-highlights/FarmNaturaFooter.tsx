@@ -31,12 +31,12 @@ const socialMediaLinks = [
 ];
 
 // Footer links configuration
-const footerLinks = [
-  { label: "ABOUT US", url: "/about" },
-  { label: "CONTACT US", url: "/contact" },
-  { label: "PRIVACY POLICY", url: "/privacy" },
-  { label: "DISCLAIMER", url: "/disclaimer" },
-];
+// const footerLinks = [
+//   { label: "ABOUT US", url: "/about" },
+//   { label: "CONTACT US", url: "/contact" },
+//   { label: "PRIVACY POLICY", url: "/privacy" },
+//   { label: "DISCLAIMER", url: "/disclaimer" },
+// ];
 
 interface FarmNaturaFooterProps {
   bgColor: string;
@@ -163,7 +163,7 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
           className="flex flex-wrap justify-center space-x-4 text-sm md:text-sm"
           style={{ fontFamily: "lato", fontWeight: 400 }}
         >
-          {footerLinks.map(({ label, url }, index) => (
+          {/* {footerLinks.map(({ label, url }, index) => (
             <a
               key={index}
               href={url}
@@ -171,7 +171,7 @@ const FarmNaturaFooter: React.FC<FarmNaturaFooterProps> = ({ bgColor }) => {
             >
               {label}
             </a>
-          ))}
+          ))} */}
         </div>
         <div
           className="text-gray-500 mt-4 md:mt-0 text-xs md:text-sm"

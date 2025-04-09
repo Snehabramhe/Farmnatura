@@ -170,11 +170,11 @@ const MoveInSection: React.FC<MoveInSectionProps> = ({ bgColor }) => {
        >
         {/* Left Side (Text Content) */}
         <div className="flex-1 lg:ml-[15%] md:ml-[-30%] ml-[-6%] mt-[-1%]">
-          <h2 className="text-[14px] mb-[9%] md:mb-[5%] md:text-xl lg:text-3xl xl:text-4xl 2xl:text-4xl font-medium text-white">
-            Ready To Move In Are You?
+          <h2 className="text-[10px] mb-[9%] md:mb-[5%] md:text-xl lg:text-3xl xl:text-4xl 2xl:text-4xl font-medium text-white">
+            Ready to Own Your Piece of Land?
           </h2>
           <p className="mt-2 mb-[6%] lg:mb-[9%] md:mb-[5%] text-[8px] md:text-[10px] lg:text-[12px] xl:text-lg 2xl:text-2xl text-white opacity-80">
-            Check out the new farms for sale in Hyderabad by Farm Natura.
+            Check out the farmlands for sale in Hyderabad by Farm Natura.
           </p>
           <button
             onClick={() => router.push("/contact")}

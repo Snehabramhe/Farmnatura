@@ -42,17 +42,15 @@ const Hero = () => {
           className="font-jost font-semibold text-center text-[32px] mt-5 leading-tight sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[80px] 2xl:text-[100px] text-primary-text"
           id="hero-heading"
         >
-          Farmland Investing
+          LIVE THE FARM LIFE,
           <br />
-          Made Simple
+          ROOTED IN HEALTH AND HAPPINESS.
         </h1>
         <p
           className="text-center mt-8 sm:mt-6 md:mt-8 lg:mt-10 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] font-sofia-pro-regular max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px] 2xl:max-w-[800px]"
           id="hero-content"
         >
-          Farm Natura offers a community of like-minded families from Hyderabad,
-          where lifestyle is built basing on Natural Farming with an intent to
-          focus on Health & Happiness, Indias first nature family estate.
+          India’s First Natural Farming Estates
         </p>
         <div
           className="relative z-20 flex items-center justify-center mt-8 mb-12 sm:mt-8 md:mt-10 lg:mt-12"

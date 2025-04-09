@@ -26,15 +26,15 @@ const FarmLandOptions = () => {
   const cards = [
     {
       image: "/images/farmland-1.svg",
-      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+      text: "Quarter Acre [1210 Sq. Yards] | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
     },
     {
       image: "/images/farmland-2.svg",
-      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+      text: "Half-Acre [2420 Sq. Yards] | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
     },
     {
       image: "/images/farmland-3.svg",
-      text: "Grow investments | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
+      text: "One Acre [4840 Sq. Yards] | Farm Natura is located near the Airport, Srisailam highway & is prestigious Farmhouses For Sale in Hyderabad concept. It is located Near Maheshwaram",
     },
   ];
   
@@ -165,10 +165,10 @@ const FarmLandOptions = () => {
               <Image src={card.image} alt="Farm Land" layout="fill" objectFit="cover" />
             </div>
             <p className="text-gray-700 text-[12px] lg:text-sm w-[2200px]:text-xl mt-4 text-center">{card.text}</p>
-            <button className="mt-4 px-4 py-2 border border-green-600 text-green-600 text-[14px] lg:text-sm xl:text-lg w-[2200px]:text-2xl rounded-lg 
+            {/* <button className="mt-4 px-4 py-2 border border-green-600 text-green-600 text-[14px] lg:text-sm xl:text-lg w-[2200px]:text-2xl rounded-lg 
               hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}  >
               Download Brochure
-            </button>
+            </button> */}
           </div>  
         ))}
            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />

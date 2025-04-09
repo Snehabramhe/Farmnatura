@@ -77,7 +77,8 @@ const FarmingExperience: React.FC = () => {
         {/* Title */}
         <div className="mb-8 lg:w-2/3 z-10 mx-auto lg:ml-0">
           <h1 ref={titleRef} className="text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-black-600 flex items-center md:items-start text-center md:text-left">
-            The Farming Experience
+          THE FARM LIFE EXPERIENCE
+
             <img src="/images/leave.svg" alt="leaf" width={90} className="w-[45px] md:w-[90px] md:ml-2 md:-mt-5" />
           </h1>
         </div>
@@ -85,11 +86,24 @@ const FarmingExperience: React.FC = () => {
         {/* Project Description */}
         <div ref={descriptionRef} className="mb-12 text-gray-700 lg:w-2/3 z-10 text-center lg:text-left" style={{ fontSize: "16px" }}>
           <p>
-            We are proud to present Planet Green, a stunning new project that is destined to be a residential and commercial showcase of Nature Friendly.
+          At Farm Natura, your land is a living, breathing space that grows with you.
+
           </p>
           <br />
           <p>
-            Green Investment Farm Nature is located near the Airport. Srisailam highway is a prestigious Farmhouse For Sale in Hyderabad concept. It is located near Maheshwaram. The project has been set up at a land rich in resources like abundant water, naturally nutrient-rich soil, and ideal climatic conditions. This project supports sustainable farming & diverse fruit plantations.
+          Each farmland plot is professionally maintained, naturally nurtured, and ready for you to start experiencing the joys of growing your own food, building your dream farmhouse, or simply escaping to nature whenever you choose.
+
+          </p>
+          <br />
+          <p>
+          Whether you’re here every weekend or once a month, your land stays active, fertile, and toxin-free, so you can enjoy the benefits without the burden.
+
+          </p>
+          <br />
+          <p>
+          It’s not just land. It’s peace of mind, rooted in nature.
+
+
           </p>
         </div>
         

@@ -45,17 +45,20 @@ const About = () => {
           <h2
             className="font-jost font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[50px] text-primary-text my-10"
             id="about-heading"
-          >
-            Why Managed Farmland
+          >  ONE DECISION TO A COMPLETE LIFE
           </h2>
           <p
-            className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
-            id="about-content"
-          >
-            Farm Natura offers a community of like-minded families from Hyderabad,
-            where lifestyle is built basing on Natural Farming with an intent to
-            focus on Health & Happiness.
-          </p>
+  className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
+  id="about-content"
+>
+  You reach a point in life where peace matters more than pace.<br />
+  Where what you eat, how it's grown, and how you live, truly matters.<br />
+  At Farm Natura, we’ve spent 6+ years nurturing this soil to be 100% chemical-free.<br />
+  You own the land. We maintain it.<br />
+  You grow your food. We support it.
+</p>
+
+
         </div>
       </div>
 

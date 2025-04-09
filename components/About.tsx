@@ -180,7 +180,7 @@ const AboutSection: React.FC = () => {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#404040]"
                 style={{ fontFamily: "Jost", fontWeight: 600 }}
               >
-                Evolution Natural
+                Founder’s Vision
               </h2>
               <h2
                 className="text-3xl md:text-4xl lg:text-5xl mt-2 md:mt-1 lg:mt-0 font-bold text-[#404040] flex items-center"
@@ -202,16 +202,14 @@ const AboutSection: React.FC = () => {
                   fontWeight: 400
                 }}
               >
-                 Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
+                 Farm Natura was started with a mission to reconnect people with nature through natural farming. Our vision is to create chemical-free, self-sufficient communities that harmonize human life with nature's rhythms. We believe in transforming farmland into living spaces that nourish both body and soul. By combining traditional farming wisdom with modern ecological practices, we aim to build a blueprint for holistic, sustainable living. Farm Natura is more than a project - it's a movement towards a healthier, more connected way of life.
               </p>
-              <a
+              {/* <a
                 className="fade-in mt-13 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
-              </a>
+              </a> */}
             </div>
 
             <div className="relative w-full md:w-[40%] h-[280px] sm:h-[320px] md:h-[300px] lg:h-[400px] xl:h-[500px] 2xl:w-[1163px] top-10 flex justify-center">
@@ -429,7 +427,7 @@ const AboutSection: React.FC = () => {
                     fontWeight: 500,
                   }}
                 >
-                  Creating self-sufficient
+                  OUR VISION 
                 </h3>
                 <p
                   className="text-black text-[12px] lg:text-[16px] max-w-md text-left"
@@ -438,9 +436,8 @@ const AboutSection: React.FC = () => {
                     fontWeight: 400,
                   }}
                 >
-                  We are proud to present Planet Green, a stunning new precinct
-                  that is destined to be the residential and commercial
-                  showpiece of Nature Friendly.
+                 To create India’s most inspiring model of natural living where urban families reconnect with nature, live consciously, and thrive in harmony with nature.
+
                 </p>
               </div>
             </div>
@@ -464,7 +461,7 @@ const AboutSection: React.FC = () => {
                     fontWeight: 500,
                   }}
                 >
-                  Sustainable communities close to nature
+                  OUR MISSION
                 </h3>
                 <p
                   className="text-black text-[12px] lg:text-[16px] max-w-md  md:text-left"
@@ -473,9 +470,8 @@ const AboutSection: React.FC = () => {
                     fontWeight: 400,
                   }}
                 >
-                  We are proud to present Planet Green, a stunning new precinct
-                  that is destined to be the residential and commercial
-                  showpiece of Nature Friendly.
+                  To build self-sustaining farming communities rooted in natural practices, mindful living, and collective well-being while preserving the environment, promoting local ecosystems, and offering a healthier way of life for generations to come.
+
                 </p>
               </div>
             </div>
@@ -488,12 +484,12 @@ const AboutSection: React.FC = () => {
                 color: "#358B6C",
               }}
             >
-              <a
+              {/* <a
                 className="inline-block border border-green-600 text-green-600 px-8 py-2 rounded-lg text-lg transition duration-300 hover:bg-green-600 hover:text-white"
                 onClick={() => setModalOpen(true)}
               >
                 Download Brochure
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -546,9 +542,8 @@ const AboutSection: React.FC = () => {
                 fontSize: "16px",
               }}
             >
-               Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The  Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced  Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
+               Planet Green is built on an idea that reconnecting people with nature can transform the way we live, grow, and invest. At our core, we’re not just building projects; we’re restoring a lost relationship between urban life and the natural world. We aim to create environments where people don’t just reside — they belong, grow, and thrive in harmony with nature.
+
             </p>
 
             {/* Planet Green Logo */}

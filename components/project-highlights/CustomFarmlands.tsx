@@ -77,7 +77,7 @@ const CustomFarmlands = () => {
           className="text-2xl flex flex-col mx-auto md:ml-0 text-center md:text-left relative md:text-5xl font-bold text--800 w-[320px] h-[120px] space-y-3"
           style={{ fontFamily: "Jost", fontWeight: 600 }}
         >
-          <span>Customisable Farmlands</span>
+          <span>YOUR FARMLAND. YOUR WAY.</span>
           {/* Animated Leaf Image */}
           <Image
             // ref={leafRef}
@@ -85,7 +85,7 @@ const CustomFarmlands = () => {
             alt="Leaf Icon"
             width={90}
             height={81}
-            className="absolute -right-8 md:right-2 bottom-18 md:bottom-0 w-[22%] md:w-[90]"
+            className="absolute -right-8 md:right-[-10] bottom-18 md:bottom-[-32] w-[22%] md:w-[90]"
           />
         </h2>
 
@@ -99,9 +99,9 @@ const CustomFarmlands = () => {
               fontSize: "18px",
             }}
           >
-            We are proud to present Planet Green, a stunning new precinct that is
-            destined to be the residential and commercial showpiece of Nature
-            Friendly.
+           <br/>When you build your farmhouse at Farm Natura, you're creating a sanctuary for your family, rooted in nature.
+
+
           </p>
           <p
             className="text-black-700 mt-2"
@@ -111,12 +111,19 @@ const CustomFarmlands = () => {
               fontSize: "18px",
             }}
           >
-            Grow investments | Farm Natura is located near the Airport, Srisailam
-            highway & is a prestigious Farmhouses For Sale in Hyderabad concept.
-            It is located Near Maheshwaram. The project has been set up at a land
-            rich in resources like abundant water, naturally nutrient-rich soil,
-            apt climatic conditions, and easy access to farming. This project
-            deals with sustainable Farming & varieties of fruit plantation.
+            Wake up to the sounds of birds, sip chai in your own green courtyard, grow vegetables just steps from your kitchen, and spend evenings under open skies.
+
+          </p>
+          <p
+            className="text-black-700 mt-2"
+            style={{
+              fontFamily: "Josefin Sans",
+              fontWeight: 400,
+              fontSize: "18px",
+            }}
+          >
+            With fully maintained farmlands, chemical-free soil, and fresh air all around, your farmhouse becomes your personal space of health and happiness.
+
           </p>
         </div>
       </div>
@@ -146,9 +153,9 @@ const CustomFarmlands = () => {
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 {item.title}
               </h3>
-              <button className="mt-2 px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}   >
+              {/* <button className="mt-2 px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white transition"  onClick={() => setModalOpen(true)}   >
                 Download Brochure
-              </button>
+              </button> */}
             </div>
           </div>
         ))}

@@ -95,8 +95,8 @@ const KeyHighlights = () => {
           {/* Left Column - Highlights List */}
           <div className="w-full lg:w-1/3 xl:w-2/5">
             <div className="flex items-center mb-6 md:mb-8 lg:mb-10" id="highlights-header">
-              <h2 className="font-jost font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-primary-text">
-                Key Highlights
+              <h2 className="font-jost font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl text-primary-text">
+              AN<br/>UNMATCHED<br/> EXPERIENCE<br/> IN<br/>HYDERABAD
               </h2>
             </div>
 
