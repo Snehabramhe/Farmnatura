@@ -4,13 +4,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import { Button } from "../ui/button";
-import Modal from "../Common/Formmodal"
+import Modal from "../Common/Formmodal";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Choose = () => {
-
   const [isModalOpen, setModalOpen] = useState(false);
   useGSAP(
     () => {
@@ -74,13 +72,15 @@ const Choose = () => {
     { dependencies: [] }
   );
 
-
   return (
     <div className="relative w-full overflow-x-hidden bg-white">
       <div className="mt-8 md:mt-11 px-4 sm:px-6 md:px-8 lg:px-[30px] xl:px-[100px]">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 md:gap-8 lg:gap-0">
-          <div className="flex flex-row items-center relative" id="header-heading">
+          <div
+            className="flex flex-row items-center relative"
+            id="header-heading"
+          >
             <h1 className="font-jost text-2xl sm:text-3xl md:text-4xl lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold text-primary-text leading-tight">
               Reason to
               <br />
@@ -104,7 +104,10 @@ const Choose = () => {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end w-full lg:w-[60%] xl:w-[50%]" id="header-explore">
+          <div
+            className="flex flex-col sm:flex-row items-start sm:items-center justify-end w-full lg:w-[60%] xl:w-[50%]"
+            id="header-explore"
+          >
             <Image
               src="/svg/choose-farmland.svg"
               width={200}
@@ -117,9 +120,11 @@ const Choose = () => {
                 WHAT MAKES IT THE RIGHT PLACE FOR YOU?
               </p>
               <p className="mt-2 sm:mt-3 font-sofia-pro-regular text-sm sm:text-base md:text-[15px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px] text-black">
-              6+ Years of Revitalization of Soil.<br/>
-Regular R&D to Monitor Soil Health.<br/>
-Expert Assistance & Maintenance.
+                6+ Years of Revitalization of Soil.
+                <br />
+                Regular R&D to Monitor Soil Health.
+                <br />
+                Expert Assistance & Maintenance.
               </p>
               {/* <div className="mt-2 sm:mt-3 flex justify-center md:justify-start">
                 <Button variant="outline" onClick={() => setModalOpen(true)}>
@@ -166,36 +171,32 @@ Expert Assistance & Maintenance.
             </div>
           </div>
 
-         <div
-           className="mt-25 sm:mt-20 md:mt-18 lg:absolute lg:bottom-[-95%] xl:bottom-[-80%] 2xl:bottom-[-40%] left-0 w-full lg:w-[70%] xl:w-[110%] 2xl:w-[100%]"
-           id="images-content"
-         >
-           <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
-            
-           KANDUKUR
+          <div
+            className="mt-25 sm:mt-20 md:mt-18 lg:absolute lg:bottom-[-95%] xl:bottom-[-80%] 2xl:bottom-[-40%] left-0 w-full lg:w-[70%] xl:w-[110%] 2xl:w-[100%]"
+            id="images-content"
+          >
+            <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
+              KANDUKUR
             </p>
-          
-           <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
-            
-           THE FUTURE CITY OF HYDERABAD
-           </p>
-          <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-md 2xl:text-xl mt-2 sm:mt-3 md:mt-4 ml-0 sm:ml-1 w-full lg:max-w-[100%] xl:max-w-[65%] 2xl:max-w-[68%]">
-          Located in Hyderabad’s fastest-growing zone, Farm Natura offers you the best of both worlds - peaceful countryside living with the promise of booming infrastructure, upcoming developments, and seamless connectivity to the city.
-Just 25 minutes from the RGI Airport, this is where nature meets next.
 
-25 Minutes From RGI Airport
-20 Minutes From ORR
-Upcoming 200-Acre AI City
-Proposed Young India Skills University
-
-
-           </p>
-           {/* <div className="flex justify-center md:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1">
+            <p className="font-jost text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-[32px] text-primary-text font-semibold mb-4 sm:mb-5 md:mb-6 ml-0 sm:ml-1">
+              THE FUTURE CITY OF HYDERABAD
+            </p>
+            <p className="font-sofia-pro-regular text-sm sm:text-base md:text-lg lg:text-base xl:text-md 2xl:text-xl mt-2 sm:mt-3 md:mt-4 ml-0 sm:ml-1 w-full lg:max-w-[100%] xl:max-w-[65%] 2xl:max-w-[68%]">
+              Located in Hyderabad’s fastest-growing zone, Farm Natura offers
+              you the best of both worlds - peaceful countryside living with the
+              promise of booming infrastructure, upcoming developments, and
+              seamless connectivity to the city. Just 25 minutes from the RGI
+              Airport, this is where nature meets next. 25 Minutes From RGI
+              Airport 20 Minutes From ORR Upcoming 200-Acre AI City Proposed
+              Young India Skills University
+            </p>
+            {/* <div className="flex justify-center md:justify-start mt-6 sm:mt-7 md:mt-8 lg:mt-8 xl:mt-10 ml-0 sm:ml-1">
              <Button variant="outline" onClick={() => setModalOpen(true)}>
                <p className="text-primary-green text-sm sm:text-base md:text-[15px]">Download Brochure</p>
              </Button>
            </div> */}
-         </div>
+          </div>
         </div>
       </div>
 

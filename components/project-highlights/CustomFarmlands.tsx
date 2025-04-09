@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,9 +16,9 @@ const CustomFarmlands = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLDivElement>(null);
   const gridItemsRef = useRef<HTMLDivElement[]>([]);
-  const leavetreeRef = useRef<HTMLImageElement>(null);  // Ref for leavetree.svg
+  const leavetreeRef = useRef<HTMLImageElement>(null); // Ref for leavetree.svg
 
-   const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -34,10 +34,21 @@ const CustomFarmlands = () => {
         },
       });
 
-      tl.from(titleRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=1")
-        .from(paragraphRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=0.5")
-        .from(leavetreeRef.current, { x: -100, opacity: 0, duration: 1, ease: "power5.out" }, "-=0.5")
-
+      tl.from(
+        titleRef.current,
+        { x: -100, opacity: 0, duration: 1, ease: "power5.out" },
+        "-=1"
+      )
+        .from(
+          paragraphRef.current,
+          { x: -100, opacity: 0, duration: 1, ease: "power5.out" },
+          "-=0.5"
+        )
+        .from(
+          leavetreeRef.current,
+          { x: -100, opacity: 0, duration: 1, ease: "power5.out" },
+          "-=0.5"
+        );
 
       // Animating grid items from the left
       gridItemsRef.current.forEach((item) => {
@@ -60,7 +71,10 @@ const CustomFarmlands = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F2E6] py-8 md:py-16 px-6 md:px-16">
+    <section
+      ref={sectionRef}
+      className="relative bg-[#F5F2E6] py-8 md:py-16 px-6 md:px-16"
+    >
       <Image
         ref={leavetreeRef}
         src="/images/leavetree.svg"
@@ -99,9 +113,9 @@ const CustomFarmlands = () => {
               fontSize: "18px",
             }}
           >
-           <br/>When you build your farmhouse at Farm Natura, you're creating a sanctuary for your family, rooted in nature.
-
-
+            <br />
+            When you build your farmhouse at Farm Natura, you&rsquo;re creating
+            a sanctuary for your family, rooted in nature.
           </p>
           <p
             className="text-black-700 mt-2"
@@ -111,8 +125,9 @@ const CustomFarmlands = () => {
               fontSize: "18px",
             }}
           >
-            Wake up to the sounds of birds, sip chai in your own green courtyard, grow vegetables just steps from your kitchen, and spend evenings under open skies.
-
+            Wake up to the sounds of birds, sip chai in your own green
+            courtyard, grow vegetables just steps from your kitchen, and spend
+            evenings under open skies.
           </p>
           <p
             className="text-black-700 mt-2"
@@ -122,8 +137,9 @@ const CustomFarmlands = () => {
               fontSize: "18px",
             }}
           >
-            With fully maintained farmlands, chemical-free soil, and fresh air all around, your farmhouse becomes your personal space of health and happiness.
-
+            With fully maintained farmlands, chemical-free soil, and fresh air
+            all around, your farmhouse becomes your personal space of health and
+            happiness.
           </p>
         </div>
       </div>

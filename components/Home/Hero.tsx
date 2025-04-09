@@ -39,7 +39,7 @@ const Hero = () => {
     <div className="relative w-screen overflow-x-hidden overflow-y-hidden bg-primary-bg">
       <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center">
         <h1
-          className="font-jost font-semibold text-center text-[32px] mt-5 leading-tight sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[80px] 2xl:text-[100px] text-primary-text"
+          className="font-jost font-semibold text-center text-[24px] mt-5 leading-tight sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[80px] 2xl:text-[100px] text-primary-text"
           id="hero-heading"
         >
           LIVE THE FARM LIFE,

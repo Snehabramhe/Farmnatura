@@ -199,11 +199,20 @@ const AboutSection: React.FC = () => {
                 className="mt-9 w-full text-black text-sm lg:text-md xl:text-lg 2xl:text-xl"
                 style={{
                   fontFamily: "Sofia Pro",
-                  fontWeight: 400
+                  fontWeight: 400,
                 }}
               >
-                 Farm Natura was started with a mission to reconnect people with nature through natural farming. Our vision is to create chemical-free, self-sufficient communities that harmonize human life with nature's rhythms. We believe in transforming farmland into living spaces that nourish both body and soul. By combining traditional farming wisdom with modern ecological practices, we aim to build a blueprint for holistic, sustainable living. Farm Natura is more than a project - it's a movement towards a healthier, more connected way of life.
+                Farm Natura was started with a mission to reconnect people with
+                nature through natural farming. Our vision is to create
+                chemical-free, self-sufficient communities that harmonize human
+                life with nature&rsquo;s rhythms. We believe in transforming
+                farmland into living spaces that nourish both body and soul. By
+                combining traditional farming wisdom with modern ecological
+                practices, we aim to build a blueprint for holistic, sustainable
+                living. Farm Natura is more than a project - it&rsquo;s a
+                movement towards a healthier, more connected way of life.
               </p>
+
               {/* <a
                 className="fade-in mt-13 inline-block border border-green-700 text-green-700 px-6 py-2 rounded-lg text-lg font-semibold transition duration-300 hover:bg-green-700 hover:text-white"
                 onClick={() => setModalOpen(true)}
@@ -275,9 +284,19 @@ const AboutSection: React.FC = () => {
                     fontWeight: 400,
                   }}
                 >
-                   Farm Natura offers a community of like-minded families from Hyderabad, where lifestyle is built basing on Natural Farming with an intent to focus on Health & Happiness. <br/><br/>
-              Respct Mother Nature And Land. &quot;We Are Part Of Nature; Therefore, We Must Coexist With The Other Creatures That Live Among Us.&quot; <br/><br/>
-              Our passion is to promote the &ldquo;Agri&rdquo; based Culture and bringing back the Ecological balanced Lifestyle with Health and Happiness. We respect the Mother Nature and nourish the land by restoring its original fertility back into its Natural State for the generations to come.
+                  Farm Natura offers a community of like-minded families from
+                  Hyderabad, where lifestyle is built basing on Natural Farming
+                  with an intent to focus on Health & Happiness. <br />
+                  <br />
+                  Respct Mother Nature And Land. &quot;We Are Part Of Nature;
+                  Therefore, We Must Coexist With The Other Creatures That Live
+                  Among Us.&quot; <br />
+                  <br />
+                  Our passion is to promote the &ldquo;Agri&rdquo; based Culture
+                  and bringing back the Ecological balanced Lifestyle with
+                  Health and Happiness. We respect the Mother Nature and nourish
+                  the land by restoring its original fertility back into its
+                  Natural State for the generations to come.
                 </p>
               </div>
 
@@ -427,7 +446,7 @@ const AboutSection: React.FC = () => {
                     fontWeight: 500,
                   }}
                 >
-                  OUR VISION 
+                  OUR VISION
                 </h3>
                 <p
                   className="text-black text-[12px] lg:text-[16px] max-w-md text-left"
@@ -436,8 +455,9 @@ const AboutSection: React.FC = () => {
                     fontWeight: 400,
                   }}
                 >
-                 To create India’s most inspiring model of natural living where urban families reconnect with nature, live consciously, and thrive in harmony with nature.
-
+                  To create India’s most inspiring model of natural living where
+                  urban families reconnect with nature, live consciously, and
+                  thrive in harmony with nature.
                 </p>
               </div>
             </div>
@@ -470,8 +490,10 @@ const AboutSection: React.FC = () => {
                     fontWeight: 400,
                   }}
                 >
-                  To build self-sustaining farming communities rooted in natural practices, mindful living, and collective well-being while preserving the environment, promoting local ecosystems, and offering a healthier way of life for generations to come.
-
+                  To build self-sustaining farming communities rooted in natural
+                  practices, mindful living, and collective well-being while
+                  preserving the environment, promoting local ecosystems, and
+                  offering a healthier way of life for generations to come.
                 </p>
               </div>
             </div>
@@ -498,7 +520,7 @@ const AboutSection: React.FC = () => {
         {/* Background Image in Corner */}
         <div className="absolute -top-68 md:-right-32 lg:-right-15 w-0 md:w-[400px] h-[400px] lg:w-[400px] lg:h-[500px] z-[-1]">
           <Image
-            src="/images/corner-plant.svg" 
+            src="/images/corner-plant.svg"
             alt="Corner Plant"
             width={500}
             height={300}
@@ -509,21 +531,21 @@ const AboutSection: React.FC = () => {
         {/* About Section */}
         <div
           ref={About}
-            className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
+          className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 mt-0 md:mt-0"
         >
           {/* Left Side - Text */}
           <div ref={About} className="md:pr-0 text-center md:text-left">
             <h2
               ref={About}
               className="text-3xl md:text-4xl font-bold text-gray-900 -mt-10 md:mt-50"
-              style={{ fontFamily: "Jost", fontWeight: 600}}
+              style={{ fontFamily: "Jost", fontWeight: 600 }}
             >
               About Planet
             </h2>
             <h2
               ref={About}
               className="relative text-3xl md:text-4xl font-bold text-gray-900 ml-10 mt-2"
-              style={{ fontFamily: "Jost", fontWeight: 600}}
+              style={{ fontFamily: "Jost", fontWeight: 600 }}
             >
               Green Infra
               <Image
@@ -542,8 +564,12 @@ const AboutSection: React.FC = () => {
                 fontSize: "16px",
               }}
             >
-               Planet Green is built on an idea that reconnecting people with nature can transform the way we live, grow, and invest. At our core, we’re not just building projects; we’re restoring a lost relationship between urban life and the natural world. We aim to create environments where people don’t just reside — they belong, grow, and thrive in harmony with nature.
-
+              Planet Green is built on an idea that reconnecting people with
+              nature can transform the way we live, grow, and invest. At our
+              core, we’re not just building projects; we’re restoring a lost
+              relationship between urban life and the natural world. We aim to
+              create environments where people don’t just reside — they belong,
+              grow, and thrive in harmony with nature.
             </p>
 
             {/* Planet Green Logo */}
@@ -571,7 +597,7 @@ const AboutSection: React.FC = () => {
             className="relative md:w-screen h-[400px] md:h-[600px] lg:h-[700px] rounded-lg shadow-lg overflow-hidden md:mt-42 mt-0"
           >
             <Image
-              src="/images/farm-field.svg" 
+              src="/images/farm-field.svg"
               alt="Farm Field"
               width={982}
               height={500}

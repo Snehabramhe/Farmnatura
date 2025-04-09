@@ -18,7 +18,6 @@ const About = () => {
           start: "top 90%",
           end: "bottom 60%",
           toggleActions: "play none play reset",
-
         },
       });
       gsap.from("#about-content", {
@@ -43,22 +42,28 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 pt-8 sm:pt-11 md:pt-16 z-10 flex-1">
         <div className="text-center">
           <h2
-            className="font-jost font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[50px] text-primary-text my-10"
+            className="font-jost font-semibold text-[24px] text-3xl sm:text-4xl md:text-5xl lg:text-[50px] text-primary-text my-10"
             id="about-heading"
-          >  ONE DECISION TO A COMPLETE LIFE
+          >
+            {" "}
+            ONE DECISION TO A COMPLETE LIFE
           </h2>
           <p
-  className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
-  id="about-content"
->
-  You reach a point in life where peace matters more than pace.<br />
-  Where what you eat, how it's grown, and how you live, truly matters.<br />
-  At Farm Natura, we’ve spent 6+ years nurturing this soil to be 100% chemical-free.<br />
-  You own the land. We maintain it.<br />
-  You grow your food. We support it.
-</p>
-
-
+            className="font-sofia-pro-regular text-sm sm:text-lg md:text-xl xl:text-2xl mt-4 sm:mt-6 md:mt-8 leading-relaxed"
+            id="about-content"
+          >
+            You reach a point in life where peace matters more than pace.
+            <br />
+            Where what you eat, how it&rsquo;s grown, and how you live, truly
+            matters.
+            <br />
+            At Farm Natura, we&rsquo;ve spent 6+ years nurturing this soil to be
+            100% chemical-free.
+            <br />
+            You own the land. We maintain it.
+            <br />
+            You grow your food. We support it.
+          </p>
         </div>
       </div>
 
@@ -81,14 +86,17 @@ const About = () => {
               alt="about-right"
               className="object-contain object-right"
               style={{
-                transform: 'translateY(-20%)',
-                right: '-15%'
+                transform: "translateY(-20%)",
+                right: "-15%",
               }}
             />
           </div>
 
           {/* For laptop/desktop - larger fixed size */}
-          <div className="hidden lg:block relative" style={{ width: '800px', height: '800px' }}>
+          <div
+            className="hidden lg:block relative"
+            style={{ width: "800px", height: "800px" }}
+          >
             <Image
               src="/svg/about-right.svg"
               width={1200}
@@ -96,9 +104,9 @@ const About = () => {
               alt="about-right"
               className="object-contain  w-[400] xl:w-[600] top-50 xl:top-20 right-0"
               style={{
-                transform: 'translateY(-20%)',
-                position: 'absolute',
-                maxWidth: 'none'
+                transform: "translateY(-20%)",
+                position: "absolute",
+                maxWidth: "none",
               }}
             />
           </div>
