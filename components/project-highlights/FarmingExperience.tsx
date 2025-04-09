@@ -45,22 +45,22 @@ const FarmingExperience: React.FC = () => {
       { x: 0, opacity: 1, duration: 1.5, ease: "power5.out", stagger: 0.4 },
       "-=1"
     )
-    .to(
-      [rightImageRef.current],
-      { x: 0, opacity: 1, duration: 1, ease: "power5.out" },
-      "-=1"
-    )
-    .to(
-      Array.from(featureIconsRef.current?.children || []),
-      { x: 0, opacity: 1, duration: 1, ease: "power5.out", },
-      "-=1"
-    )
-    .to(
-      [farmImageRef.current],
-      { x: 0, opacity: 1, duration: 1.5, ease: "power5.out"},
-      "-=1"
-    );
-    ;     
+      .to(
+        [rightImageRef.current],
+        { x: 0, opacity: 1, duration: 1, ease: "power5.out" },
+        "-=1"
+      )
+      .to(
+        Array.from(featureIconsRef.current?.children || []),
+        { x: 0, opacity: 1, duration: 1, ease: "power5.out", },
+        "-=1"
+      )
+      .to(
+        [farmImageRef.current],
+        { x: 0, opacity: 1, duration: 1.5, ease: "power5.out" },
+        "-=1"
+      );
+    ;
   }, []);
 
 
@@ -77,7 +77,7 @@ const FarmingExperience: React.FC = () => {
         {/* Title */}
         <div className="mb-8 lg:w-2/3 z-10 mx-auto lg:ml-0">
           <h1 ref={titleRef} className="text-2xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-black-600 flex items-center md:items-start text-center md:text-left">
-          THE FARM LIFE EXPERIENCE
+            THE FARM LIFE EXPERIENCE
 
             <img src="/images/leave.svg" alt="leaf" width={90} className="w-[45px] md:w-[90px] md:ml-2 md:-mt-5" />
           </h1>
@@ -86,79 +86,89 @@ const FarmingExperience: React.FC = () => {
         {/* Project Description */}
         <div ref={descriptionRef} className="mb-12 text-gray-700 lg:w-2/3 z-10 text-center lg:text-left" style={{ fontSize: "16px" }}>
           <p>
-          At Farm Natura, your land is a living, breathing space that grows with you.
+            At Farm Natura, your land is a living, breathing space that grows with you.
 
           </p>
           <br />
           <p>
-          Each farmland plot is professionally maintained, naturally nurtured, and ready for you to start experiencing the joys of growing your own food, building your dream farmhouse, or simply escaping to nature whenever you choose.
+            Each farmland plot is professionally maintained, naturally nurtured, and ready for you to start experiencing the joys of growing your own food, building your dream farmhouse, or simply escaping to nature whenever you choose.
 
           </p>
           <br />
           <p>
-          Whether you’re here every weekend or once a month, your land stays active, fertile, and toxin-free, so you can enjoy the benefits without the burden.
+            Whether you’re here every weekend or once a month, your land stays active, fertile, and toxin-free, so you can enjoy the benefits without the burden.
 
           </p>
           <br />
           <p>
-          It’s not just land. It’s peace of mind, rooted in nature.
+            It’s not just land. It’s peace of mind, rooted in nature.
 
 
           </p>
         </div>
-        
+
         {/* middle images */}
         <div className="flex flex-col-reverse lg:flex-row lg:justify-between">
-          {/* Feature Icons */}
-          <div ref={featureIconsRef} className="grid grid-cols-2 md:grid-cols-4 lg:w-2/3 gap-8 justify-center mb-12">
-          {[
-    {
-      icon: "/images/flower.svg",
-      title: "Farm Land Within HMDA Limits",
-      link: "/farm-land",
-    },
-    {
-      icon: "/images/sunflower.svg",
-      title: "Serene Natural Contours of Land",
-      link: "/serene-land",
-    },
-    {
-      icon: "/images/yard-work.svg",
-      title: "Rich Black Cotton Soil Near to Village",
-      link: "/black-soil",
-    },
-    {
-      icon: "/images/farmer.svg",
-      title: "Practicing Farming with Indigenous Seeds",
-      link: "/indigenous-farming",
-    },
-  ].map((feature, index) => (
-    <div
-    key={index}
-    className="flex flex-col items-center space-y-2 w-[65%]"
+  {/* Feature Icons */}
+  <div
+    ref={featureIconsRef}
+    className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center items-center w-full lg:w-2/3 mb-12"
   >
-    <div
-  onClick={() => handleRedirect(feature.link)}
-  className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition cursor-pointer"
->
-  <img
-    src={feature.icon}
-    alt={feature.title}
-    width="70%"
-    height="70%"
-  />
-</div>
-    <p className="text-sm text-center text-gray-700">{feature.title}</p>
-  </div>
-  ))}
-          </div>
-
-
-          {/* Right Image */}
-          <div ref={rightImageRef} className="w-full lg:w-1/3 mt-[-30%] lg:mt-[-20%] 2xl:mt-[-10%] bg-white relative">
-            <img src="/images/farm-exp-2.svg" alt="Farm Illustration" className="object-cover 2xl:w-[70%] 2xl:ml-[30%]" />
-          </div>
+    {[
+      {
+        icon: "/images/flower.svg",
+        title: "Farm Land Within HMDA Limits",
+        link: "/farm-land",
+      },
+      {
+        icon: "/images/sunflower.svg",
+        title: "Serene Natural Contours of Land",
+        link: "/serene-land",
+      },
+      {
+        icon: "/images/yard-work.svg",
+        title: "Rich Black Cotton Soil Near to Village",
+        link: "/black-soil",
+      },
+      {
+        icon: "/images/farmer.svg",
+        title: "Practicing Farming with Indigenous Seeds",
+        link: "/indigenous-farming",
+      },
+    ].map((feature, index) => (
+      <div
+        key={index}
+        className="flex flex-col items-center space-y-2 w-full sm:w-[80%] md:w-full"
+      >
+        <div
+          onClick={() => handleRedirect(feature.link)}
+          className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition cursor-pointer"
+        >
+          <img
+            src={feature.icon}
+            alt={feature.title}
+            width="70%"
+            height="70%"
+          />
         </div>
+        <p className="text-sm text-center text-gray-700">{feature.title}</p>
+      </div>
+    ))}
+  </div>
+
+  {/* Right Image */}
+  <div
+    ref={rightImageRef}
+    className="w-full lg:w-1/3 mt-[-30%] lg:mt-[-20%] 2xl:mt-[-10%] bg-white relative"
+  >
+    <img
+      src="/images/farm-exp-2.svg"
+      alt="Farm Illustration"
+      className="object-cover 2xl:w-[70%] 2xl:ml-[30%]"
+    />
+  </div>
+</div>
+
 
       </div>
 
