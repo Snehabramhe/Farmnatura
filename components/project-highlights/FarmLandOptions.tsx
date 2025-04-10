@@ -49,8 +49,7 @@ const FarmLandOptions = () => {
             trigger: containerRef.current,
             start: "top 90%",
             end: "top 30%",
-            toggleActions: "play reverse play reverse",
-            scrub: 1,
+            toggleActions: "play none none reset",
           },
           defaults: { ease: "power1.out", duration: 1.5 },
         });
@@ -69,7 +68,7 @@ const FarmLandOptions = () => {
             trigger: containerRef.current,
             start: "top 85%",
             end: "bottom 30%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reset",
           },
         });
       }, containerRef);
@@ -85,8 +84,7 @@ const FarmLandOptions = () => {
             trigger: containerRef.current,
             start: "top 95%", // Later trigger for mobile
             end: "top 40%",
-            toggleActions: "play reverse play reverse",
-            scrub: 1,
+            toggleActions: "play none none reset",
           },
           defaults: { ease: "power1.out", duration: 1 },
         });
@@ -106,7 +104,7 @@ const FarmLandOptions = () => {
             trigger: containerRef.current,
             start: "top 95%", // Triggers later for better visibility
             end: "bottom 50%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reset",
           },
         });
       }, containerRef);

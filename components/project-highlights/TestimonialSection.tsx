@@ -22,7 +22,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
           start: "top 85%",
           end: "top 50%",
           scrub: 1,
-          toggleActions: "play none none reverse",
+          toggleActions: "play none none reset",
         },
       });
     }, sectionRef);

@@ -30,7 +30,7 @@ const CustomFarmlands = () => {
           trigger: sectionRef.current,
           start: "top 80%", // Animation starts when 80% of section is visible
           end: "bottom 50%", // Animation reverses when scrolling up
-          toggleActions: "play reverse play reset",
+          toggleActions: "play none none reset"
         },
       });
 
@@ -61,7 +61,8 @@ const CustomFarmlands = () => {
             trigger: item,
             start: "top 90%", // Trigger the animation when the item is 80% in view
             end: "top 70%", // Reverse when 70% of the item leaves the viewport
-            toggleActions: "play none play reverse", // Play on enter and reverse on leave
+            toggleActions: "play none none reset",
+ // Play on enter and reverse on leave
           },
         });
       });

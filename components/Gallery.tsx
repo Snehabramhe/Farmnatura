@@ -89,7 +89,7 @@ const Gallery = () => {
           scrollTrigger: {
             trigger: titleRef.current,
             start: "top 100%",
-            toggleActions: "play none play reset",
+            toggleActions: "play none none none",
           },
         }
       );
@@ -105,7 +105,7 @@ const Gallery = () => {
           scrollTrigger: {
             trigger: galleryRef.current,
             start: "top 50%",
-            toggleActions: "play none play reset",
+            toggleActions: "play none none none ",
           },
         }
       );

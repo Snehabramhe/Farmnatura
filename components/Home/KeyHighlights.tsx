@@ -19,7 +19,7 @@ const KeyHighlights = () => {
       scrollTrigger: {
         trigger: "#highlights-section",
         start: "top 100%",
-        toggleActions: "play none play reset",
+        toggleActions: "play none none reset"
       },
     });
 
@@ -40,7 +40,7 @@ const KeyHighlights = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: listItemRef.current,
-          toggleActions: "play none play reset",
+          toggleActions: "play none none reset"
         },
       }
     );

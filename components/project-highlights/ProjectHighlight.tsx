@@ -19,7 +19,7 @@ const ProjectHighlight: React.FC = () => {
           scrollTrigger: {
             trigger: headingRef.current,
             start: "top 80%",
-            toggleActions: "play reverse play reverse",
+            toggleActions: "play none none reset",
             once: false,
           },
         }

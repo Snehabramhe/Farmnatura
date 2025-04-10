@@ -17,7 +17,7 @@ const About = () => {
           trigger: "#about-heading",
           start: "top 90%",
           end: "bottom 60%",
-          toggleActions: "play none play reset",
+          toggleActions: "play none none reset"
         },
       });
       gsap.from("#about-content", {
@@ -29,7 +29,7 @@ const About = () => {
           trigger: "#about-heading",
           start: "top 90%",
           end: "bottom 60%",
-          toggleActions: "play none play reset",
+          toggleActions: "play none none reset"
         },
       });
     },

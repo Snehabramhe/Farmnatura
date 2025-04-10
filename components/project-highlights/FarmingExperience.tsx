@@ -35,7 +35,7 @@ const FarmingExperience: React.FC = () => {
         trigger: containerRef.current,
         start: "top 80%",
         end: "bottom 60%",
-        toggleActions: "play none play reset",
+        toggleActions: "play none none reset"
         // scrub: 0.5,
       },
     });
