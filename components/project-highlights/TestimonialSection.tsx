@@ -70,7 +70,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
             <div className="absolute -bottom-4 left-1 md:-top-8 md:left-8 z-20 w-25 h-15 md:w-48 md:h-56">
               <div className="overflow-hidden shadow-lg border-2 md:border-4 border-white bg-white">
                 <Image
-                  src="/images/girl-img.svg"
+                  src="/images/girl-img.png"
                   alt="Testimonial User"
                   width={200}
                   height={250}
@@ -91,13 +91,13 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
                 className="text-sm md:text-base font-medium text-black-700 mb-0 md:mb-1"
                 style={{ fontFamily: "Jost" }}
               >
-                Ridhira Sheik
+                Raghavendra Challa
               </p>
               <p
                 className="text-xs md:text-sm text-black-500"
                 style={{ fontFamily: "Jost" }}
               >
-                Product Manager
+                {/* Product Manager */}
               </p>
             </div>
           </div>
@@ -111,15 +111,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
               className="text-sm md:text-base leading-relaxed md:pl-56"
               style={{ fontFamily: "Jost" }}
             >
-              &ldquo;I couldn&apos;t have asked for a better place to call home than
-              FARM NATURA Urban One. From the moment I stepped into this vibrant
-              community, I knew I had made the right choice. Everything here
-              exceeded all my expectations, offering a perfect blend of comfort
-              and elegance. What truly sets Farm Natura apart is the sense of
-              belonging it provides &ndash; the friendly neighbours, the top-notch
-              amenities, and the beautifully landscaped surroundings. Living here
-              has been an incredible experience, and I can&apos;t imagine being
-              anywhere else.&rdquo;
+              &ldquo;One of the best investments which has a rapid growth .. I had purchased a plot around 6 months back and now it’s increased by 20% .. the place is awesome far away from the crowded city , it’s a nature clicked place .. thanks to team planet green .&rdquo;
             </p>
           </div>
         </div>

@@ -147,9 +147,9 @@ const CustomFarmlands = () => {
       {/* Grid Section with Animation */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mt-7">
         {[
-          { src: "/images/cucumber.svg", title: "Building Your Farmland" },
-          { src: "/images/greenland.svg", title: "Design Options" },
-          { src: "/images/house.svg", title: "Costs" },
+          { src: "/images/cucumber.svg", title: "" },  
+          { src: "/images/greenland.svg", title: "" },
+          { src: "/images/house.svg", title: "" },
         ].map((item, index) => (
           <div
             key={index}
@@ -183,3 +183,9 @@ const CustomFarmlands = () => {
 };
 
 export default CustomFarmlands;
+
+// Building Your Farmland
+
+// Design Options
+
+// Costs
