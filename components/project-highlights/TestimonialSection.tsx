@@ -82,7 +82,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({ bgColor })=> {
             {/* Name and Designation - Positioned to right of image */}
             <div className="ml-28 md:ml-64 pt-4 md:pt-8">
               <h3
-                className="-ml-20 md:ml-0 text-lg md:text-2xl font-semibold text-gray-900 mb-3 md:mb-2"
+                className="-ml-20 md:ml-0 text-lg md:text-2xl font-semibold text-gray-900 mb-8 md:mb-2"
                 style={{ fontFamily: "Jost" }}
               >
                 Excellency Of Living Standards
