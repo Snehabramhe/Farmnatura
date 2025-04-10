@@ -16,12 +16,61 @@ import FarmNaturaFooter from "./project-highlights/FarmNaturaFooter";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const allImages = [img1, img2, img3, img4, img5, img1, img2, img3, img4, img5];
+const youtubeVideos = [
+  <iframe
+    key="1"
+    src="https://www.youtube.com/embed/C_XpxL-KpOs"
+    title="YouTube video 1"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+  <iframe
+    key="2"
+    src="https://www.youtube.com/embed/owtXLPUAH9g?si=dcX1JERLby_0U6ef"
+    title="YouTube video 2"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+  <iframe
+    key="3"
+    src="https://www.youtube.com/embed/mgT9ySCyooc?si=YoW1l3o0qcEsLqGV"
+    title="YouTube video 3"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+  <iframe
+    key="4"
+    src="https://www.youtube.com/embed/tDs5icKaxQQ?si=Votc8bvBv-ldvkHg"
+    title="YouTube video 4"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+  <iframe
+    key="5"
+    src="https://www.youtube.com/embed/BY2d9W9o3t8?si=vA8i0K32VB-KX1IB"
+    title="YouTube video 5"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+  <iframe
+    key="6"
+    src="https://www.youtube.com/embed/N7pTLiM0Zzo?si=NF4YGnKf_B-MB0YG"
+    title="YouTube video 6"
+    className="w-full h-full rounded-lg"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />,
+];
+
+const imageSet = [img1, img2, img3, img4, img5];
 
 const Gallery = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const imagesPerSet = 5;
-
+  const [showVideos, setShowVideos] = useState(true);
   const titleRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
@@ -29,14 +78,13 @@ const Gallery = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 50 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1.2, 
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: titleRef.current,
@@ -45,7 +93,7 @@ const Gallery = () => {
           },
         }
       );
-  
+
       gsap.fromTo(
         galleryRef.current,
         { opacity: 0, y: 50 },
@@ -61,25 +109,7 @@ const Gallery = () => {
           },
         }
       );
-  
-      gsap.fromTo(
-        imageRefs.current,
-        { opacity: 0, scale: 0.8, y: 50 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.2,
-          ease: "power2.out",
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: galleryRef.current,
-            start: "top 50%",
-            toggleActions: "play none play reset",
-          },
-        }
-      );
-  
+
       if (specialImageRef.current) {
         gsap.fromTo(
           specialImageRef.current,
@@ -98,53 +128,37 @@ const Gallery = () => {
         );
       }
     });
-  
-    // Refresh ScrollTrigger after a short delay to ensure layout is correct.
+
     setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);
-  
+
     return () => ctx.revert();
   }, []);
-  
 
-  const currentImages = allImages.slice(startIndex, startIndex + imagesPerSet);
-
-
-  const nextImage = () => {
-    if (startIndex + imagesPerSet < allImages.length) {
-      setStartIndex(startIndex + imagesPerSet);
-      triggerPopUpAnimation(); 
-    }
-  };
-  
-  const prevImage = () => {
-    if (startIndex - imagesPerSet >= 0) {
-      setStartIndex(startIndex - imagesPerSet);
-      triggerPopUpAnimation();
-    }
-  };
-  
   const triggerPopUpAnimation = () => {
-  
-    gsap.fromTo(
-      imageRefs.current,
-      { scale: 0.8, opacity: 0 }, 
-      {
-        scale: 1,
-        opacity: 1, 
-        duration: 0.5, 
-        ease: "power3.out", 
-        stagger: 0.1, 
-      }
-    );
+    const galleryChildren = galleryRef.current?.children;
+
+    if (galleryChildren && galleryChildren.length > 0) {
+      gsap.fromTo(
+        Array.from(galleryChildren),
+        { scale: 0.8, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out",
+          stagger: 0.1,
+        }
+      );
+    }
   };
-  
+
   return (
     <div className="bg-[#FFFBE5] min-h-screen">
       <div className="lg:pt-[30px] pt-[40px] w-full">
         {/* Hero Section */}
-        <div className="relative w-ful h-[396px] md:h-[684px]">
+        <div className="relative w-full h-[396px] md:h-[684px]">
           <div
             ref={titleRef}
             className="absolute z-1 top-[40%] left-6 sm:left-10 md:left-16 lg:left-40 text-white"
@@ -156,7 +170,12 @@ const Gallery = () => {
               Gallery
             </h1>
           </div>
-          <Image src={image} alt="Farm Natura Background" layout="fill" className="object-cover" />
+          <Image
+            src={image}
+            alt="Farm Natura Background"
+            layout="fill"
+            className="object-cover"
+          />
         </div>
 
         {/* Special Image Section */}
@@ -173,33 +192,58 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-3 gap-5 px-15 mt-25">
-          <div className="md:col-span-2">
-            <Image src={currentImages[0]} alt="Main Image" width={800} height={400} className="w-full h-full object-cover rounded-lg" />
-          </div>
-          {currentImages.slice(1).map((img, idx) => (
-            <div key={idx}>
-              <Image
-                ref={(el) => {
-                  if (el) imageRefs.current[idx + 1] = el;
-                }}
-                src={img}
-                alt={`Small Image ${idx + 1}`}
-                width={400}
-                height={400}
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-          ))}
+        <div
+          ref={galleryRef}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 px-6 mt-10"
+        >
+          {showVideos ? (
+            youtubeVideos.map((iframe, index) => (
+              <div key={index} className="w-full aspect-video">
+                {iframe}
+              </div>
+            ))
+          ) : (
+            <>
+              <div className="md:col-span-2">
+                <Image
+                  src={imageSet[0]}
+                  alt="Main Image"
+                  width={800}
+                  height={400}
+                  className="w-full h-full object-cover rounded-lg"
+                  ref={(el) => {
+                    if (el) imageRefs.current[0] = el;
+                  }}
+                />
+              </div>
+              {imageSet.slice(1).map((img, idx) => (
+                <div key={idx}>
+                  <Image
+                    src={img}
+                    alt={`Small Image ${idx + 1}`}
+                    width={400}
+                    height={400}
+                    className="w-full h-auto rounded-lg"
+                    ref={(el) => {
+                      if (el) imageRefs.current[idx + 1] = el;
+                    }}
+                  />
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Navigation Button */}
         <div className="flex justify-center items-center gap-20 mt-10 lg:mb-20">
           <button
-            onClick={prevImage}
-            disabled={startIndex === 0}
+            onClick={() => {
+              setShowVideos(true);
+              triggerPopUpAnimation();
+            }}
+            disabled={showVideos}
             className={`flex flex-col items-center transition-transform ${
-              startIndex === 0 ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
+              showVideos ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
             }`}
           >
             <div className="w-16 h-16 border-2 border-green-700 rounded-full flex items-center justify-center relative">
@@ -210,10 +254,13 @@ const Gallery = () => {
           </button>
 
           <button
-            onClick={nextImage}
-            disabled={startIndex + imagesPerSet >= allImages.length}
+            onClick={() => {
+              setShowVideos(false);
+              triggerPopUpAnimation();
+            }}
+            disabled={!showVideos}
             className={`flex flex-col items-center transition-transform ${
-              startIndex + imagesPerSet >= allImages.length ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
+              !showVideos ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
             }`}
           >
             <div className="w-16 h-16 border-2 border-green-700 rounded-full flex items-center justify-center relative">
