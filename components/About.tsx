@@ -19,82 +19,79 @@ const AboutSection: React.FC = () => {
   const About = useRef<HTMLDivElement | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-   
-    if (textRef.current) {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (textRef.current) {
+        const anim = gsap.fromTo(
+          textRef.current,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 2.5,
+            ease: "power3.out",
+            paused: true,
+          }
+        );
+
+        ScrollTrigger.create({
+          trigger: textRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+  
+          onEnter: () => anim.play(),
+          onLeave: () => anim.reverse(),
+          onEnterBack: () => anim.play(),
+          onLeaveBack: () => anim.reverse(),
+          // markers: true, // uncomment for debug
+        });
+      }
+    });
+    if (evolutionRef.current) {
       const anim = gsap.fromTo(
-        textRef.current,
-        { y: 50, opacity: 0 },
+        evolutionRef.current.querySelectorAll("h2, p, a"),
+        { opacity: 0, y: -50 },
         {
-          y: 0,
           opacity: 1,
+          y: 0,
           duration: 2.5,
+          stagger: 0.3,
           ease: "power3.out",
-          paused: true,
+          scrollTrigger: {
+            trigger: evolutionRef.current,
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reset",
+            // onEnter: () => anim.play(),
+            // onLeave: () => anim.reverse(),
+            // onEnterBack: () => anim.play(),
+            // // onLeaveBack: () => anim.reverse(),
+          },
         }
       );
-
-      ScrollTrigger.create({
-        trigger: textRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        onEnter: () => anim.restart(), 
-        onLeaveBack: () => anim.pause(0), 
-      });
     }
-
-  
-    if (evolutionRef.current) {
-      gsap.utils
-        .toArray<HTMLElement>(evolutionRef.current.querySelectorAll("h2, p, a"))
-        .forEach((el) => {
-          gsap.fromTo(
-            el,
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 2.5,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                toggleActions: "play none none reset", 
-              },
-            }
-          );
-        });
-    }
-
-  
     if (researchRef.current) {
-      gsap.utils
-        .toArray<HTMLElement>(researchRef.current.querySelectorAll(".fade-in"))
-        .forEach((el) => {
-          gsap.fromTo(
-            el,
-            { opacity: 0, x: -50 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 2.5,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                toggleActions: "play none none reset",
-              },
-            }
-          );
-        });
+      gsap.fromTo(
+        researchRef.current.querySelectorAll(".fade-in"), // Target specific elements
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 2.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: researchRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reset",
+          },
+        }
+      );
     }
 
- 
     if (inspiredBy.current) {
       gsap.fromTo(
         inspiredBy.current,
-        { opacity: 0, y: -50 },
+        { opacity: 0, y: -100 },
         {
           opacity: 1,
           y: 0,
@@ -103,33 +100,32 @@ useEffect(() => {
           scrollTrigger: {
             trigger: inspiredBy.current,
             start: "top 80%",
-            toggleActions: "play none none reset",
+            end: "top 54%",
+            toggleActions: "play none none reset", // 👈 this is key!
+            scrub: 0.5,
           },
         }
       );
     }
-
-    // Section: vision
     if (vision.current) {
       gsap.fromTo(
         vision.current,
-        { opacity: 0, y: -50 },
+        { opacity: 0, y: -100 }, // from above and invisible
         {
           opacity: 1,
           y: 0,
-          duration: 2.5,
+          duration: 3,
           ease: "power3.out",
           scrollTrigger: {
             trigger: vision.current,
-            start: "top 50%",
-            end: "bottom 20%",
-            toggleActions: "play none none reset",
+            start: "top 80%", // when section enters
+            end: "bottom 20%", // when bottom of section is leaving
+            toggleActions: "play none none reset", // fade in on enter, fade out on leave
+            markers: false, // change to true for debugging
           },
         }
       );
     }
-
-    // Section: About
     if (About.current) {
       gsap.fromTo(
         About.current,
@@ -141,20 +137,16 @@ useEffect(() => {
           ease: "power3.out",
           scrollTrigger: {
             trigger: About.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reset",
+            start: "top 80%", // Trigger when top enters 80% viewport
+            end: "bottom 20%", // Ends when bottom reaches 20%
+            toggleActions: "play none none reset", // show/hide
+            markers: false, // set to true to debug
           },
         }
       );
     }
-  });
-
-  return () => ctx.revert();
-}, []);
-
-  
-  
+    return () => ctx.revert(); // cleanup on unmount
+  }, []);
 
   return (
     <div className="overflow-x-hidden">
