@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Choose = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const containerRef = useRef(null);
 
   useGSAP(
     () => {
@@ -35,11 +36,11 @@ const Choose = () => {
         });
       });
     },
-    { scope: typeof window !== "undefined" ? document.body : null }
+    { scope: containerRef }
   );
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-white">
+    <div ref={containerRef} className="relative w-full overflow-x-hidden bg-white">
       <div className="mt-8 md:mt-11 px-4 sm:px-6 md:px-8 lg:px-[30px] xl:px-[100px]">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 md:gap-8 lg:gap-0">
           <div className="flex flex-row items-center relative" id="header-heading">

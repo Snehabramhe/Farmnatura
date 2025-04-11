@@ -48,7 +48,7 @@ const AboutSection: React.FC = () => {
       }
     });
     if (evolutionRef.current) {
-      const anim = gsap.fromTo(
+       gsap.fromTo(
         evolutionRef.current.querySelectorAll("h2, p, a"),
         { opacity: 0, y: -50 },
         {
