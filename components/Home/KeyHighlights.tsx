@@ -2,10 +2,13 @@
 import { HIGHLIGHTS } from "@/lib/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 import Modal from "../Common/Formmodal";
 import { Button } from "../ui/button";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const KeyHighlights = () => {
   const [activeItem, setActiveItem] = useState(HIGHLIGHTS[0]);
@@ -15,36 +18,44 @@ const KeyHighlights = () => {
   const listItemRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#highlights-section",
-        start: "top 100%",
-        toggleActions: "play none none reset"
-      },
-    });
-
-    tl.fromTo(
+    // Animate the header
+    gsap.fromTo(
       "#highlights-header",
       { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    );
-
-    gsap.fromTo(
-      listItemRef.current,
-      { opacity: 0, x: -50 },
       {
         opacity: 1,
-        x: 0,
-        duration: 2,
-        stagger: 0.2,
+        y: 0,
+        duration: 1,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: listItemRef.current,
-          toggleActions: "play none none reset"
+          trigger: "#highlights-header",
+          start: "top 90%",
+          toggleActions: "play none none reset",
         },
       }
     );
-  });
+
+    // Animate list items
+    const items = listItemRef.current.filter((el) => el !== null);
+    if (items.length) {
+      gsap.fromTo(
+        items,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.5,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#highlights-section",
+            start: "top 90%",
+            toggleActions: "play none none reset",
+          },
+        }
+      );
+    }
+  }, []);
 
   const handleItemClick = (item: typeof HIGHLIGHTS[number]) => {
     if (activeItem.id !== item.id) {
@@ -96,7 +107,7 @@ const KeyHighlights = () => {
           <div className="w-full lg:w-1/3 xl:w-2/5">
             <div className="flex items-center mb-6 md:mb-8 lg:mb-10" id="highlights-header">
               <h2 className="font-jost text-[24px] font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-5xl text-primary-text">
-              AN<br/>UNMATCHED<br/> EXPERIENCE<br/> IN<br/>HYDERABAD
+                AN<br />UNMATCHED<br /> EXPERIENCE<br /> IN<br />HYDERABAD
               </h2>
             </div>
 
@@ -151,7 +162,7 @@ const KeyHighlights = () => {
                   alt={activeItem.title}
                   width={600}
                   height={400}
-                  className="w-full h-full object-cover   rounded-[16px] 2xl:rounded-[24px] "
+                  className="w-full h-full object-cover rounded-[16px] 2xl:rounded-[24px]"
                 />
               </div>
 
@@ -186,4 +197,4 @@ const KeyHighlights = () => {
   );
 };
 
-export default KeyHighlights;
+export default KeyHighlights;
